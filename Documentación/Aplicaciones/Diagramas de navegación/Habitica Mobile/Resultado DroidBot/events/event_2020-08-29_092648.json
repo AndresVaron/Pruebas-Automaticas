@@ -1,0 +1,48 @@
+{
+  "tag": "2020-08-29_092648",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": "Avatar Customization",
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          63
+        ],
+        [
+          289,
+          210
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/avatarView",
+      "checked": false,
+      "text": null,
+      "class": "android.view.View",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 17,
+      "temp_id": 18,
+      "size": "247*147",
+      "signature": "[class]android.view.View[resource_id]com.habitrpg.android.habitica.debug:id/avatarView[text]None[enabled,,]",
+      "view_str": "818a568bd580f388ff1c117df0e674b4",
+      "content_free_signature": "[class]android.view.View[resource_id]com.habitrpg.android.habitica.debug:id/avatarView"
+    }
+  },
+  "start_state": "8e1037a4af33acc5336e08a74640e4b3",
+  "stop_state": "8e1037a4af33acc5336e08a74640e4b3",
+  "event_str": "TouchEvent(state=8e1037a4af33acc5336e08a74640e4b3, view=818a568bd580f388ff1c117df0e674b4)"
+}

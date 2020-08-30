@@ -1,0 +1,10 @@
+{
+  "tag": "2020-08-29_092229",
+  "event": {
+    "event_type": "intent",
+    "intent": "am start com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity"
+  },
+  "start_state": "0fa7991099a0e6d099b17e621c913c7e",
+  "stop_state": "b20d5c151376d7010e2ac017f369902d",
+  "event_str": "IntentEvent(intent='am start com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity')"
+}

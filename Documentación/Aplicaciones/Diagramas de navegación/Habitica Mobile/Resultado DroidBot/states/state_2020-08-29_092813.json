@@ -1,0 +1,5644 @@
+{
+  "tag": "2020-08-29_092813",
+  "state_str": "8124d4ee5d1a425bac696f7abdd863c7",
+  "state_str_content_free": "5e677c2b9cda4b32871af332f4dfe4d2",
+  "foreground_activity": "com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity",
+  "activity_stack": [
+    "com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity"
+  ],
+  "background_services": [
+    "com.google.android.networkstack.tethering/com.android.networkstack.tethering.TetheringService",
+    "com.google.android.gms/.deviceconnection.service.DeviceConnectionWatcherService",
+    "com.android.systemui/.keyguard.KeyguardService",
+    "com.android.chrome/org.chromium.content.app.SandboxedProcessService0",
+    "com.google.android.gms/.measurement.service.MeasurementBrokerService",
+    "com.android.bluetooth/.btservice.AdapterService",
+    "com.android.systemui/.ImageWallpaper",
+    "com.google.android.gms/com.google.android.location.geocode.GeocodeService",
+    "com.google.android.gms/.auth.setup.devicesignals.LockScreenService",
+    "com.google.android.gms/.gcm.GcmService",
+    "com.google.android.gms/.auth.proximity.firstparty.SystemMemoryCacheService",
+    "com.android.phone/com.android.internal.telephony.CellularNetworkService",
+    "com.google.android.gms/com.google.location.nearby.direct.service.NearbyDirectService",
+    "com.google.android.gms/.chimera.PersistentBoundBrokerService",
+    "com.android.bluetooth/.gatt.GattService",
+    "com.google.android.gms/.chimera.GmsBoundBrokerService",
+    "com.google.android.gms/.fido.fido2.pollux.CableAuthenticatorService",
+    "com.google.android.googlequicksearchbox/com.google.android.apps.gsa.nowoverlayservice.DrawerOverlayService",
+    "com.habitrpg.android.habitica.debug/com.squareup.leakcanary.internal.HeapAnalyzerService",
+    "com.android.bluetooth/.pbap.BluetoothPbapService",
+    "com.google.android.gms/.beacon.BleService",
+    "com.google.android.gms/com.google.android.location.fused.FusedLocationService",
+    "com.google.android.inputmethod.latin/com.google.android.libraries.micore.training.cache.service.TrainingCacheManagerService",
+    "com.google.android.gms/.gcm.nts.SchedulerService",
+    "com.google.android.ext.services/android.ext.services.autofill.InlineSuggestionRenderServiceImpl",
+    "com.android.bluetooth/.a2dp.A2dpService",
+    "com.google.android.providers.media.module/com.android.providers.media.fuse.ExternalStorageServiceImpl",
+    "com.google.android.gms/.cast.media.CastMediaRouteProviderService",
+    "io.github.ylimit.droidbotapp/io.github.privacystreams.accessibility.PSAccessibilityService",
+    "com.google.android.gms/com.google.android.location.geofencer.service.GeofenceProviderService",
+    "com.google.android.gms/.thunderbird.EmergencyPersistentService",
+    "com.google.android.apps.nexuslauncher/com.android.launcher3.notification.NotificationListener",
+    "com.android.systemui/.SystemUIService",
+    "com.google.android.gms/.nearby.exposurenotification.service.ExposureMatchingService",
+    "com.android.chrome/org.chromium.content.app.PrivilegedProcessService0",
+    "android/.hardware.location.GeofenceHardwareService",
+    "com.android.se/.SecureElementService",
+    "com.google.android.gms/.chimera.PersistentDirectBootAwareApiService",
+    "com.android.bluetooth/.hid.HidDeviceService",
+    "com.google.android.ext.services/android.ext.services.notification.Assistant",
+    "com.google.android.gms/.auth.trustagent.GoogleTrustAgent",
+    "com.google.android.gms/.location.persistent.LocationPersistentService",
+    "com.google.android.gms/.nearby.discovery.service.DiscoveryService",
+    "com.google.android.gms/com.google.android.location.internal.PendingIntentCallbackService",
+    "com.google.android.gms/.nearby.messages.service.NearbyMessagesService",
+    "com.android.server.telecom/.components.BluetoothPhoneService",
+    "com.google.android.gms/com.google.android.location.internal.server.GoogleLocationService",
+    "com.google.android.gms/com.google.android.contextmanager.service.ContextManagerService",
+    "com.android.systemui/.dump.SystemUIAuxiliaryDumpService",
+    "com.google.android.gms/com.google.android.location.network.NetworkLocationService",
+    "com.android.stk/.StkAppService",
+    "com.google.android.gms/com.google.android.location.internal.GoogleLocationManagerService",
+    "com.google.android.inputmethod.latin/com.android.inputmethod.latin.LatinIME",
+    "com.android.phone/com.android.internal.telephony.dataconnection.CellularDataService",
+    "com.android.service.ims/.RcsService",
+    "com.android.server.telecom/.components.TelecomService",
+    "com.google.android.networkstack/com.android.server.NetworkStackService",
+    "com.android.bluetooth/.hfp.HeadsetService",
+    "com.google.android.googlequicksearchbox/com.google.android.voiceinteraction.GsaVoiceInteractionService",
+    "com.android.emulator.multidisplay/.MultiDisplayService",
+    "com.android.phone/.vvm.RemoteVvmTaskManager",
+    "com.android.ons/.OpportunisticNetworkService",
+    "com.google.android.apps.messaging/.shared.datamodel.action.execution.ActionExecutorImpl",
+    "com.google.android.gms/.common.stats.GmsCoreStatsService",
+    "com.google.android.gms/com.google.android.location.internal.server.HardwareArProviderService",
+    "com.android.bluetooth/.map.BluetoothMapService",
+    "com.android.phone/com.android.services.telephony.sip.components.TelephonySipService",
+    "com.android.phone/.TelephonyDebugService",
+    "com.android.bluetooth/.hid.HidHostService",
+    "com.android.bluetooth/.opp.BluetoothOppService",
+    "com.android.bluetooth/.pan.PanService",
+    "com.android.bluetooth/.avrcp.AvrcpTargetService",
+    "com.google.android.apps.nexuslauncher/com.android.quickstep.TouchInteractionService",
+    "com.google.android.cellbroadcastservice/com.android.cellbroadcastservice.DefaultCellBroadcastService",
+    "com.google.android.gm/org.chromium.content.app.SandboxedProcessService0"
+  ],
+  "views": [
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 3,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        1,
+        142,
+        143
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          0
+        ],
+        [
+          1080,
+          1920
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.FrameLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": -1,
+      "temp_id": 0,
+      "size": "1080*1920",
+      "signature": "[class]android.widget.FrameLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "4d5ed4ebc6b07c7f8e71980ff0a3fb4f",
+      "content_free_signature": "[class]android.widget.FrameLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        2
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          0
+        ],
+        [
+          1080,
+          1794
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 0,
+      "temp_id": 1,
+      "size": "1080*1794",
+      "signature": "[class]android.widget.LinearLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "a4181f678b5971421b87ee8f07b0d9bd",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        3
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          63
+        ],
+        [
+          1080,
+          1794
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.FrameLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 1,
+      "temp_id": 2,
+      "size": "1080*1731",
+      "signature": "[class]android.widget.FrameLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "dae0ee48c6b6847785e2fdd85adc9237",
+      "content_free_signature": "[class]android.widget.FrameLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        4
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          63
+        ],
+        [
+          1080,
+          1794
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/action_bar_root",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 2,
+      "temp_id": 3,
+      "size": "1080*1731",
+      "signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/action_bar_root[text]None[enabled,,]",
+      "view_str": "53864759c130cbd58fc3fc5ccfaa454c",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/action_bar_root"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        5
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          63
+        ],
+        [
+          1080,
+          1794
+        ]
+      ],
+      "resource_id": "android:id/content",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.FrameLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 3,
+      "temp_id": 4,
+      "size": "1080*1731",
+      "signature": "[class]android.widget.FrameLayout[resource_id]android:id/content[text]None[enabled,,]",
+      "view_str": "5d074a984a77d9ffb4e4b18ec13b73af",
+      "content_free_signature": "[class]android.widget.FrameLayout[resource_id]android:id/content"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 2,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        6,
+        89
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          63
+        ],
+        [
+          1080,
+          1794
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/drawer_layout",
+      "checked": false,
+      "text": null,
+      "class": "androidx.drawerlayout.widget.DrawerLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 4,
+      "temp_id": 5,
+      "size": "1080*1731",
+      "signature": "[class]androidx.drawerlayout.widget.DrawerLayout[resource_id]com.habitrpg.android.habitica.debug:id/drawer_layout[text]None[enabled,,]",
+      "view_str": "c17fe03ab2c61dedc5cbe7fefdf75896",
+      "content_free_signature": "[class]androidx.drawerlayout.widget.DrawerLayout[resource_id]com.habitrpg.android.habitica.debug:id/drawer_layout"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 3,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        7,
+        9,
+        21
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          63
+        ],
+        [
+          1080,
+          1794
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.view.ViewGroup",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 5,
+      "temp_id": 6,
+      "size": "1080*1731",
+      "signature": "[class]android.view.ViewGroup[resource_id]None[text]None[enabled,,]",
+      "view_str": "66486754f5f101ff7dd524b1d81522aa",
+      "content_free_signature": "[class]android.view.ViewGroup[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        8
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          63
+        ],
+        [
+          1080,
+          1794
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/overlayFrameLayout",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.RelativeLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 6,
+      "temp_id": 7,
+      "size": "1080*1731",
+      "signature": "[class]android.widget.RelativeLayout[resource_id]com.habitrpg.android.habitica.debug:id/overlayFrameLayout[text]None[enabled,,]",
+      "view_str": "7d552474c38947a5b270c20043c804e8",
+      "content_free_signature": "[class]android.widget.RelativeLayout[resource_id]com.habitrpg.android.habitica.debug:id/overlayFrameLayout"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          1379
+        ],
+        [
+          1080,
+          1794
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/snackbar_container",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.FrameLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 7,
+      "temp_id": 8,
+      "size": "1080*415",
+      "signature": "[class]android.widget.FrameLayout[resource_id]com.habitrpg.android.habitica.debug:id/snackbar_container[text]None[enabled,,]",
+      "view_str": "b9c23a4d5773bc724737c2ce7cccfa93",
+      "content_free_signature": "[class]android.widget.FrameLayout[resource_id]com.habitrpg.android.habitica.debug:id/snackbar_container"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        10
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          63
+        ],
+        [
+          1080,
+          210
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/appbar",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 6,
+      "temp_id": 9,
+      "size": "1080*147",
+      "signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/appbar[text]None[enabled,,]",
+      "view_str": "872184f1d3c7d2d18fd153816600a1d1",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/appbar"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        11
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          63
+        ],
+        [
+          1080,
+          210
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/collapsing_toolbar",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.FrameLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 9,
+      "temp_id": 10,
+      "size": "1080*147",
+      "signature": "[class]android.widget.FrameLayout[resource_id]com.habitrpg.android.habitica.debug:id/collapsing_toolbar[text]None[enabled,,]",
+      "view_str": "adbd6b161dfe525d6ef033e58d68508e",
+      "content_free_signature": "[class]android.widget.FrameLayout[resource_id]com.habitrpg.android.habitica.debug:id/collapsing_toolbar"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 4,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        12,
+        13,
+        19,
+        20
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          63
+        ],
+        [
+          1080,
+          210
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/toolbar",
+      "checked": false,
+      "text": null,
+      "class": "android.view.ViewGroup",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 10,
+      "temp_id": 11,
+      "size": "1080*147",
+      "signature": "[class]android.view.ViewGroup[resource_id]com.habitrpg.android.habitica.debug:id/toolbar[text]None[enabled,,]",
+      "view_str": "d4aa1a22cae9b3b50e44777b9db7a5c3",
+      "content_free_signature": "[class]android.view.ViewGroup[resource_id]com.habitrpg.android.habitica.debug:id/toolbar"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": "Close navigation drawer",
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          63
+        ],
+        [
+          147,
+          210
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.ImageButton",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 11,
+      "temp_id": 12,
+      "size": "147*147",
+      "signature": "[class]android.widget.ImageButton[resource_id]None[text]None[enabled,,]",
+      "view_str": "8a4984aa1836a520f8335cf5e4a4b327",
+      "content_free_signature": "[class]android.widget.ImageButton[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 2,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        14,
+        15
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          189,
+          101
+        ],
+        [
+          1038,
+          172
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.RelativeLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 11,
+      "temp_id": 13,
+      "size": "849*71",
+      "signature": "[class]android.widget.RelativeLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "5ec5addedf235246af0fc9c1717de220",
+      "content_free_signature": "[class]android.widget.RelativeLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          189,
+          101
+        ],
+        [
+          810,
+          172
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/toolbar_title",
+      "checked": false,
+      "text": "Time Travelers",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 13,
+      "temp_id": 14,
+      "size": "621*71",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/toolbar_title[text]Time Travelers[enabled,,]",
+      "view_str": "3f652a4a2f0e9a78894f0cf8b23b5949",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/toolbar_title"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        16
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          810,
+          111
+        ],
+        [
+          1038,
+          162
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/toolbar_accessory_container",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.FrameLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 13,
+      "temp_id": 15,
+      "size": "228*51",
+      "signature": "[class]android.widget.FrameLayout[resource_id]com.habitrpg.android.habitica.debug:id/toolbar_accessory_container[text]None[enabled,,]",
+      "view_str": "48a581e628d2657d9a8c68e72bbb7ab2",
+      "content_free_signature": "[class]android.widget.FrameLayout[resource_id]com.habitrpg.android.habitica.debug:id/toolbar_accessory_container"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 2,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        17,
+        18
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          810,
+          111
+        ],
+        [
+          1038,
+          162
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 15,
+      "temp_id": 16,
+      "size": "228*51",
+      "signature": "[class]android.widget.LinearLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "1d88c71fa7e155dd6cc42af1ead59045",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": "0 gold",
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          841,
+          111
+        ],
+        [
+          924,
+          162
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": "0",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 16,
+      "temp_id": 17,
+      "size": "83*51",
+      "signature": "[class]android.widget.TextView[resource_id]None[text]0[enabled,,]",
+      "view_str": "ec9de71b3b8f85d12d917e8a1fca7f66",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": "0 Gems",
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          955,
+          111
+        ],
+        [
+          1038,
+          162
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": "0",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 16,
+      "temp_id": 18,
+      "size": "83*51",
+      "signature": "[class]android.widget.TextView[resource_id]None[text]0[enabled,,]",
+      "view_str": "ec9de71b3b8f85d12d917e8a1fca7f66",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": false,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          189,
+          101
+        ],
+        [
+          189,
+          172
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": "Habitica Debug",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 11,
+      "temp_id": 19,
+      "size": "0*71",
+      "signature": "[class]android.widget.TextView[resource_id]None[text]Habitica Debug[enabled,,]",
+      "view_str": "046996fcc04fffd70bb4562cefc15562",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": false,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          1080,
+          63
+        ],
+        [
+          1080,
+          210
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "androidx.appcompat.widget.LinearLayoutCompat",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 11,
+      "temp_id": 20,
+      "size": "0*147",
+      "signature": "[class]androidx.appcompat.widget.LinearLayoutCompat[resource_id]None[text]None[enabled,,]",
+      "view_str": "4a84439f112ee20deac84baf146a4fcf",
+      "content_free_signature": "[class]androidx.appcompat.widget.LinearLayoutCompat[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        22
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          210
+        ],
+        [
+          1080,
+          1794
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/nav_host_fragment",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.FrameLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 6,
+      "temp_id": 21,
+      "size": "1080*1584",
+      "signature": "[class]android.widget.FrameLayout[resource_id]com.habitrpg.android.habitica.debug:id/nav_host_fragment[text]None[enabled,,]",
+      "view_str": "df47e575ab05b9cfa9e2b691849fca4a",
+      "content_free_signature": "[class]android.widget.FrameLayout[resource_id]com.habitrpg.android.habitica.debug:id/nav_host_fragment"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        23
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          210
+        ],
+        [
+          1080,
+          1794
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/viewPager",
+      "checked": false,
+      "text": null,
+      "class": "androidx.viewpager.widget.ViewPager",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 21,
+      "temp_id": 22,
+      "size": "1080*1584",
+      "signature": "[class]androidx.viewpager.widget.ViewPager[resource_id]com.habitrpg.android.habitica.debug:id/viewPager[text]None[enabled,,]",
+      "view_str": "dc4fd9e59d4ef86a3ba8aabff6bf726e",
+      "content_free_signature": "[class]androidx.viewpager.widget.ViewPager[resource_id]com.habitrpg.android.habitica.debug:id/viewPager"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        24
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          210
+        ],
+        [
+          1080,
+          1794
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.view.ViewGroup",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 22,
+      "temp_id": 23,
+      "size": "1080*1584",
+      "signature": "[class]android.view.ViewGroup[resource_id]None[text]None[enabled,,]",
+      "view_str": "6b9cd4867311d60512090dbe863d5afb",
+      "content_free_signature": "[class]android.view.ViewGroup[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 13,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        25,
+        32,
+        36,
+        41,
+        46,
+        50,
+        55,
+        60,
+        65,
+        69,
+        74,
+        79,
+        84
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          210
+        ],
+        [
+          1080,
+          1794
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/recyclerView",
+      "checked": false,
+      "text": null,
+      "class": "androidx.recyclerview.widget.RecyclerView",
+      "scrollable": true,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 23,
+      "temp_id": 24,
+      "size": "1080*1584",
+      "signature": "[class]androidx.recyclerview.widget.RecyclerView[resource_id]com.habitrpg.android.habitica.debug:id/recyclerView[text]None[enabled,,]",
+      "view_str": "74c54e1b8134e44f9d1f29e9169039c6",
+      "content_free_signature": "[class]androidx.recyclerview.widget.RecyclerView[resource_id]com.habitrpg.android.habitica.debug:id/recyclerView"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 4,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        26,
+        29,
+        30,
+        31
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          210
+        ],
+        [
+          1080,
+          646
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.FrameLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 24,
+      "temp_id": 25,
+      "size": "1080*436",
+      "signature": "[class]android.widget.FrameLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "b1b3c67af4c2af557cae23f0ec6cb9d0",
+      "content_free_signature": "[class]android.widget.FrameLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 2,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        27,
+        28
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          210
+        ],
+        [
+          1080,
+          536
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/npcBannerView",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.FrameLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 25,
+      "temp_id": 26,
+      "size": "1080*326",
+      "signature": "[class]android.widget.FrameLayout[resource_id]com.habitrpg.android.habitica.debug:id/npcBannerView[text]None[enabled,,]",
+      "view_str": "c9639349171c11832f494be4a0f8f147",
+      "content_free_signature": "[class]android.widget.FrameLayout[resource_id]com.habitrpg.android.habitica.debug:id/npcBannerView"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          210
+        ],
+        [
+          1080,
+          536
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/backgroundView",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.ImageView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 26,
+      "temp_id": 27,
+      "size": "1080*326",
+      "signature": "[class]android.widget.ImageView[resource_id]com.habitrpg.android.habitica.debug:id/backgroundView[text]None[enabled,,]",
+      "view_str": "90ec8e537e3493aeba7e9f3495d5f8d5",
+      "content_free_signature": "[class]android.widget.ImageView[resource_id]com.habitrpg.android.habitica.debug:id/backgroundView"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          210
+        ],
+        [
+          984,
+          536
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/sceneView",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.ImageView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 26,
+      "temp_id": 28,
+      "size": "984*326",
+      "signature": "[class]android.widget.ImageView[resource_id]com.habitrpg.android.habitica.debug:id/sceneView[text]None[enabled,,]",
+      "view_str": "2813203bc2812c74a49e8a95cd9ab4da",
+      "content_free_signature": "[class]android.widget.ImageView[resource_id]com.habitrpg.android.habitica.debug:id/sceneView"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          465
+        ],
+        [
+          1080,
+          539
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.view.View",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 25,
+      "temp_id": 29,
+      "size": "1080*74",
+      "signature": "[class]android.view.View[resource_id]None[text]None[enabled,,]",
+      "view_str": "c8d64ffdf0fde2fa40f22f5c5de42184",
+      "content_free_signature": "[class]android.view.View[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          118,
+          428
+        ],
+        [
+          475,
+          502
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/namePlate",
+      "checked": false,
+      "text": "Time Travelers",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 25,
+      "temp_id": 30,
+      "size": "357*74",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/namePlate[text]Time Travelers[enabled,,]",
+      "view_str": "7ad0ab3a4944abc3d53bdeb9337d1be9",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/namePlate"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          525
+        ],
+        [
+          1038,
+          635
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/descriptionView",
+      "checked": false,
+      "text": "Looks like you\u2019ll need a Mystic Hourglass to open the time portal and summon the Mysterious Time Travelers.",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 25,
+      "temp_id": 31,
+      "size": "996*110",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/descriptionView[text]None[enabled,,]",
+      "view_str": "aa11c4e62d651c2011ce6f6b7e549e3a",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/descriptionView"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 2,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        33,
+        34
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          646
+        ],
+        [
+          1080,
+          781
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 24,
+      "temp_id": 32,
+      "size": "1080*135",
+      "signature": "[class]android.widget.LinearLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "7f3f2eeb03764627469e5ed465b6f050",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          678
+        ],
+        [
+          1080,
+          681
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.view.View",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 32,
+      "temp_id": 33,
+      "size": "1080*3",
+      "signature": "[class]android.view.View[resource_id]None[text]None[enabled,,]",
+      "view_str": "ac6f75bd5dbcba331a67ece26dedf36f",
+      "content_free_signature": "[class]android.view.View[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        35
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          713
+        ],
+        [
+          1080,
+          749
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 32,
+      "temp_id": 34,
+      "size": "1080*36",
+      "signature": "[class]android.widget.LinearLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "5df120314871d1abd821801cd2d82cb1",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          713
+        ],
+        [
+          1038,
+          749
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/label",
+      "checked": false,
+      "text": "QUESTS",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 34,
+      "temp_id": 35,
+      "size": "996*36",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/label[text]QUESTS[enabled,,]",
+      "view_str": "ab2e116feb43e27334e3f3a2b5115e81",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/label"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        37
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          781
+        ],
+        [
+          270,
+          1107
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.RelativeLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 24,
+      "temp_id": 36,
+      "size": "270*326",
+      "signature": "[class]android.widget.RelativeLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "292432490ab0686106058305bba16568",
+      "content_free_signature": "[class]android.widget.RelativeLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 2,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        38,
+        39
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          30,
+          797
+        ],
+        [
+          240,
+          1091
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/container",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 36,
+      "temp_id": 37,
+      "size": "210*294",
+      "signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/container[text]None[enabled,,]",
+      "view_str": "22385142e90717cdffdd0f44be9f79a5",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/container"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          45,
+          813
+        ],
+        [
+          224,
+          992
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/imageView",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.ImageView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 37,
+      "temp_id": 38,
+      "size": "179*179",
+      "signature": "[class]android.widget.ImageView[resource_id]com.habitrpg.android.habitica.debug:id/imageView[text]None[enabled,,]",
+      "view_str": "ab774870646e2b300f8f1fcf26f9a2a6",
+      "content_free_signature": "[class]android.widget.ImageView[resource_id]com.habitrpg.android.habitica.debug:id/imageView"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        40
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          30,
+          1008
+        ],
+        [
+          240,
+          1091
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/buyButton",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 37,
+      "temp_id": 39,
+      "size": "210*83",
+      "signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/buyButton[text]None[enabled,,]",
+      "view_str": "10ff3fec8dac7538fb67756b663d58a7",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/buyButton"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          92,
+          1023
+        ],
+        [
+          178,
+          1076
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/priceLabel",
+      "checked": false,
+      "text": "1",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 39,
+      "temp_id": 40,
+      "size": "86*53",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/priceLabel[text]1[enabled,,]",
+      "view_str": "f72892b8175ea1768d125cf32d9db006",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/priceLabel"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        42
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          270,
+          781
+        ],
+        [
+          540,
+          1107
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.RelativeLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 24,
+      "temp_id": 41,
+      "size": "270*326",
+      "signature": "[class]android.widget.RelativeLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "292432490ab0686106058305bba16568",
+      "content_free_signature": "[class]android.widget.RelativeLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 2,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        43,
+        44
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          300,
+          797
+        ],
+        [
+          510,
+          1091
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/container",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 41,
+      "temp_id": 42,
+      "size": "210*294",
+      "signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/container[text]None[enabled,,]",
+      "view_str": "22385142e90717cdffdd0f44be9f79a5",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/container"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          315,
+          813
+        ],
+        [
+          494,
+          992
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/imageView",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.ImageView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 42,
+      "temp_id": 43,
+      "size": "179*179",
+      "signature": "[class]android.widget.ImageView[resource_id]com.habitrpg.android.habitica.debug:id/imageView[text]None[enabled,,]",
+      "view_str": "ab774870646e2b300f8f1fcf26f9a2a6",
+      "content_free_signature": "[class]android.widget.ImageView[resource_id]com.habitrpg.android.habitica.debug:id/imageView"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        45
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          300,
+          1008
+        ],
+        [
+          510,
+          1091
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/buyButton",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 42,
+      "temp_id": 44,
+      "size": "210*83",
+      "signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/buyButton[text]None[enabled,,]",
+      "view_str": "10ff3fec8dac7538fb67756b663d58a7",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/buyButton"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          362,
+          1023
+        ],
+        [
+          448,
+          1076
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/priceLabel",
+      "checked": false,
+      "text": "1",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 44,
+      "temp_id": 45,
+      "size": "86*53",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/priceLabel[text]1[enabled,,]",
+      "view_str": "f72892b8175ea1768d125cf32d9db006",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/priceLabel"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 2,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        47,
+        48
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          1107
+        ],
+        [
+          1080,
+          1242
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 24,
+      "temp_id": 46,
+      "size": "1080*135",
+      "signature": "[class]android.widget.LinearLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "7f3f2eeb03764627469e5ed465b6f050",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          1139
+        ],
+        [
+          1080,
+          1142
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.view.View",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 46,
+      "temp_id": 47,
+      "size": "1080*3",
+      "signature": "[class]android.view.View[resource_id]None[text]None[enabled,,]",
+      "view_str": "ac6f75bd5dbcba331a67ece26dedf36f",
+      "content_free_signature": "[class]android.view.View[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        49
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          1174
+        ],
+        [
+          1080,
+          1210
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 46,
+      "temp_id": 48,
+      "size": "1080*36",
+      "signature": "[class]android.widget.LinearLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "99a8b8d970361fce7ecab878df54e90a",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          1174
+        ],
+        [
+          1038,
+          1210
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/label",
+      "checked": false,
+      "text": "BACKGROUNDS",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 48,
+      "temp_id": 49,
+      "size": "996*36",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/label[text]BACKGROUNDS[enabled,,]",
+      "view_str": "3e324ee54aadc17c7b6a4816608dfbe3",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/label"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        51
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          1242
+        ],
+        [
+          270,
+          1568
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.RelativeLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 24,
+      "temp_id": 50,
+      "size": "270*326",
+      "signature": "[class]android.widget.RelativeLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "292432490ab0686106058305bba16568",
+      "content_free_signature": "[class]android.widget.RelativeLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 2,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        52,
+        53
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          30,
+          1258
+        ],
+        [
+          240,
+          1552
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/container",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 50,
+      "temp_id": 51,
+      "size": "210*294",
+      "signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/container[text]None[enabled,,]",
+      "view_str": "22385142e90717cdffdd0f44be9f79a5",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/container"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          45,
+          1274
+        ],
+        [
+          224,
+          1453
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/imageView",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.ImageView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 51,
+      "temp_id": 52,
+      "size": "179*179",
+      "signature": "[class]android.widget.ImageView[resource_id]com.habitrpg.android.habitica.debug:id/imageView[text]None[enabled,,]",
+      "view_str": "ab774870646e2b300f8f1fcf26f9a2a6",
+      "content_free_signature": "[class]android.widget.ImageView[resource_id]com.habitrpg.android.habitica.debug:id/imageView"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        54
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          30,
+          1469
+        ],
+        [
+          240,
+          1552
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/buyButton",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 51,
+      "temp_id": 53,
+      "size": "210*83",
+      "signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/buyButton[text]None[enabled,,]",
+      "view_str": "10ff3fec8dac7538fb67756b663d58a7",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/buyButton"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          92,
+          1484
+        ],
+        [
+          178,
+          1537
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/priceLabel",
+      "checked": false,
+      "text": "1",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 53,
+      "temp_id": 54,
+      "size": "86*53",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/priceLabel[text]1[enabled,,]",
+      "view_str": "f72892b8175ea1768d125cf32d9db006",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/priceLabel"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        56
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          270,
+          1242
+        ],
+        [
+          540,
+          1568
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.RelativeLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 24,
+      "temp_id": 55,
+      "size": "270*326",
+      "signature": "[class]android.widget.RelativeLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "292432490ab0686106058305bba16568",
+      "content_free_signature": "[class]android.widget.RelativeLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 2,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        57,
+        58
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          300,
+          1258
+        ],
+        [
+          510,
+          1552
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/container",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 55,
+      "temp_id": 56,
+      "size": "210*294",
+      "signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/container[text]None[enabled,,]",
+      "view_str": "22385142e90717cdffdd0f44be9f79a5",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/container"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          315,
+          1274
+        ],
+        [
+          494,
+          1453
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/imageView",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.ImageView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 56,
+      "temp_id": 57,
+      "size": "179*179",
+      "signature": "[class]android.widget.ImageView[resource_id]com.habitrpg.android.habitica.debug:id/imageView[text]None[enabled,,]",
+      "view_str": "ab774870646e2b300f8f1fcf26f9a2a6",
+      "content_free_signature": "[class]android.widget.ImageView[resource_id]com.habitrpg.android.habitica.debug:id/imageView"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        59
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          300,
+          1469
+        ],
+        [
+          510,
+          1552
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/buyButton",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 56,
+      "temp_id": 58,
+      "size": "210*83",
+      "signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/buyButton[text]None[enabled,,]",
+      "view_str": "10ff3fec8dac7538fb67756b663d58a7",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/buyButton"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          362,
+          1484
+        ],
+        [
+          448,
+          1537
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/priceLabel",
+      "checked": false,
+      "text": "1",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 58,
+      "temp_id": 59,
+      "size": "86*53",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/priceLabel[text]1[enabled,,]",
+      "view_str": "f72892b8175ea1768d125cf32d9db006",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/priceLabel"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        61
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          540,
+          1242
+        ],
+        [
+          810,
+          1568
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.RelativeLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 24,
+      "temp_id": 60,
+      "size": "270*326",
+      "signature": "[class]android.widget.RelativeLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "292432490ab0686106058305bba16568",
+      "content_free_signature": "[class]android.widget.RelativeLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 2,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        62,
+        63
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          570,
+          1258
+        ],
+        [
+          780,
+          1552
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/container",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 60,
+      "temp_id": 61,
+      "size": "210*294",
+      "signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/container[text]None[enabled,,]",
+      "view_str": "22385142e90717cdffdd0f44be9f79a5",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/container"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          585,
+          1274
+        ],
+        [
+          764,
+          1453
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/imageView",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.ImageView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 61,
+      "temp_id": 62,
+      "size": "179*179",
+      "signature": "[class]android.widget.ImageView[resource_id]com.habitrpg.android.habitica.debug:id/imageView[text]None[enabled,,]",
+      "view_str": "ab774870646e2b300f8f1fcf26f9a2a6",
+      "content_free_signature": "[class]android.widget.ImageView[resource_id]com.habitrpg.android.habitica.debug:id/imageView"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        64
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          570,
+          1469
+        ],
+        [
+          780,
+          1552
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/buyButton",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 61,
+      "temp_id": 63,
+      "size": "210*83",
+      "signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/buyButton[text]None[enabled,,]",
+      "view_str": "10ff3fec8dac7538fb67756b663d58a7",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/buyButton"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          632,
+          1484
+        ],
+        [
+          718,
+          1537
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/priceLabel",
+      "checked": false,
+      "text": "1",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 63,
+      "temp_id": 64,
+      "size": "86*53",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/priceLabel[text]1[enabled,,]",
+      "view_str": "f72892b8175ea1768d125cf32d9db006",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/priceLabel"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 2,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        66,
+        67
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          1568
+        ],
+        [
+          1080,
+          1703
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 24,
+      "temp_id": 65,
+      "size": "1080*135",
+      "signature": "[class]android.widget.LinearLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "7f3f2eeb03764627469e5ed465b6f050",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          1600
+        ],
+        [
+          1080,
+          1603
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.view.View",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 65,
+      "temp_id": 66,
+      "size": "1080*3",
+      "signature": "[class]android.view.View[resource_id]None[text]None[enabled,,]",
+      "view_str": "ac6f75bd5dbcba331a67ece26dedf36f",
+      "content_free_signature": "[class]android.view.View[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        68
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          1635
+        ],
+        [
+          1080,
+          1671
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 65,
+      "temp_id": 67,
+      "size": "1080*36",
+      "signature": "[class]android.widget.LinearLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "233c0d2337e1abd21b7c4150dba2aa02",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          1635
+        ],
+        [
+          1038,
+          1671
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/label",
+      "checked": false,
+      "text": "PETS",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 67,
+      "temp_id": 68,
+      "size": "996*36",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/label[text]PETS[enabled,,]",
+      "view_str": "2c7ccc92f6f8841b2ea3ca1d6d3ec127",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/label"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        70
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          1703
+        ],
+        [
+          270,
+          1794
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.RelativeLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 24,
+      "temp_id": 69,
+      "size": "270*91",
+      "signature": "[class]android.widget.RelativeLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "292432490ab0686106058305bba16568",
+      "content_free_signature": "[class]android.widget.RelativeLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 2,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        71,
+        72
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          30,
+          1719
+        ],
+        [
+          240,
+          1794
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/container",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 69,
+      "temp_id": 70,
+      "size": "210*75",
+      "signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/container[text]None[enabled,,]",
+      "view_str": "22385142e90717cdffdd0f44be9f79a5",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/container"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          45,
+          1735
+        ],
+        [
+          224,
+          1794
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/imageView",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.ImageView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 70,
+      "temp_id": 71,
+      "size": "179*59",
+      "signature": "[class]android.widget.ImageView[resource_id]com.habitrpg.android.habitica.debug:id/imageView[text]None[enabled,,]",
+      "view_str": "ab774870646e2b300f8f1fcf26f9a2a6",
+      "content_free_signature": "[class]android.widget.ImageView[resource_id]com.habitrpg.android.habitica.debug:id/imageView"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": false,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        73
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          30,
+          1930
+        ],
+        [
+          240,
+          1794
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/buyButton",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 70,
+      "temp_id": 72,
+      "size": "210*-136",
+      "signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/buyButton[text]None[enabled,,]",
+      "view_str": "10ff3fec8dac7538fb67756b663d58a7",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/buyButton"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": false,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          92,
+          1945
+        ],
+        [
+          178,
+          1794
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/priceLabel",
+      "checked": false,
+      "text": "1",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 72,
+      "temp_id": 73,
+      "size": "86*-151",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/priceLabel[text]1[enabled,,]",
+      "view_str": "f72892b8175ea1768d125cf32d9db006",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/priceLabel"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        75
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          270,
+          1703
+        ],
+        [
+          540,
+          1794
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.RelativeLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 24,
+      "temp_id": 74,
+      "size": "270*91",
+      "signature": "[class]android.widget.RelativeLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "292432490ab0686106058305bba16568",
+      "content_free_signature": "[class]android.widget.RelativeLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 2,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        76,
+        77
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          300,
+          1719
+        ],
+        [
+          510,
+          1794
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/container",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 74,
+      "temp_id": 75,
+      "size": "210*75",
+      "signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/container[text]None[enabled,,]",
+      "view_str": "22385142e90717cdffdd0f44be9f79a5",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/container"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          315,
+          1735
+        ],
+        [
+          494,
+          1794
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/imageView",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.ImageView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 75,
+      "temp_id": 76,
+      "size": "179*59",
+      "signature": "[class]android.widget.ImageView[resource_id]com.habitrpg.android.habitica.debug:id/imageView[text]None[enabled,,]",
+      "view_str": "ab774870646e2b300f8f1fcf26f9a2a6",
+      "content_free_signature": "[class]android.widget.ImageView[resource_id]com.habitrpg.android.habitica.debug:id/imageView"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": false,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        78
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          300,
+          1930
+        ],
+        [
+          510,
+          1794
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/buyButton",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 75,
+      "temp_id": 77,
+      "size": "210*-136",
+      "signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/buyButton[text]None[enabled,,]",
+      "view_str": "10ff3fec8dac7538fb67756b663d58a7",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/buyButton"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": false,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          362,
+          1945
+        ],
+        [
+          448,
+          1794
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/priceLabel",
+      "checked": false,
+      "text": "1",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 77,
+      "temp_id": 78,
+      "size": "86*-151",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/priceLabel[text]1[enabled,,]",
+      "view_str": "f72892b8175ea1768d125cf32d9db006",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/priceLabel"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        80
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          540,
+          1703
+        ],
+        [
+          810,
+          1794
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.RelativeLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 24,
+      "temp_id": 79,
+      "size": "270*91",
+      "signature": "[class]android.widget.RelativeLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "292432490ab0686106058305bba16568",
+      "content_free_signature": "[class]android.widget.RelativeLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 2,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        81,
+        82
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          570,
+          1719
+        ],
+        [
+          780,
+          1794
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/container",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 79,
+      "temp_id": 80,
+      "size": "210*75",
+      "signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/container[text]None[enabled,,]",
+      "view_str": "22385142e90717cdffdd0f44be9f79a5",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/container"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          585,
+          1735
+        ],
+        [
+          764,
+          1794
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/imageView",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.ImageView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 80,
+      "temp_id": 81,
+      "size": "179*59",
+      "signature": "[class]android.widget.ImageView[resource_id]com.habitrpg.android.habitica.debug:id/imageView[text]None[enabled,,]",
+      "view_str": "ab774870646e2b300f8f1fcf26f9a2a6",
+      "content_free_signature": "[class]android.widget.ImageView[resource_id]com.habitrpg.android.habitica.debug:id/imageView"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": false,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        83
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          570,
+          1930
+        ],
+        [
+          780,
+          1794
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/buyButton",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 80,
+      "temp_id": 82,
+      "size": "210*-136",
+      "signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/buyButton[text]None[enabled,,]",
+      "view_str": "10ff3fec8dac7538fb67756b663d58a7",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/buyButton"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": false,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          632,
+          1945
+        ],
+        [
+          718,
+          1794
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/priceLabel",
+      "checked": false,
+      "text": "1",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 82,
+      "temp_id": 83,
+      "size": "86*-151",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/priceLabel[text]1[enabled,,]",
+      "view_str": "f72892b8175ea1768d125cf32d9db006",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/priceLabel"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        85
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          810,
+          1703
+        ],
+        [
+          1080,
+          1794
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.RelativeLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 24,
+      "temp_id": 84,
+      "size": "270*91",
+      "signature": "[class]android.widget.RelativeLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "292432490ab0686106058305bba16568",
+      "content_free_signature": "[class]android.widget.RelativeLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 2,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        86,
+        87
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          840,
+          1719
+        ],
+        [
+          1050,
+          1794
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/container",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 84,
+      "temp_id": 85,
+      "size": "210*75",
+      "signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/container[text]None[enabled,,]",
+      "view_str": "22385142e90717cdffdd0f44be9f79a5",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/container"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          855,
+          1735
+        ],
+        [
+          1034,
+          1794
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/imageView",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.ImageView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 85,
+      "temp_id": 86,
+      "size": "179*59",
+      "signature": "[class]android.widget.ImageView[resource_id]com.habitrpg.android.habitica.debug:id/imageView[text]None[enabled,,]",
+      "view_str": "ab774870646e2b300f8f1fcf26f9a2a6",
+      "content_free_signature": "[class]android.widget.ImageView[resource_id]com.habitrpg.android.habitica.debug:id/imageView"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": false,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        88
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          840,
+          1930
+        ],
+        [
+          1050,
+          1794
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/buyButton",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 85,
+      "temp_id": 87,
+      "size": "210*-136",
+      "signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/buyButton[text]None[enabled,,]",
+      "view_str": "10ff3fec8dac7538fb67756b663d58a7",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/buyButton"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": false,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          902,
+          1945
+        ],
+        [
+          988,
+          1794
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/priceLabel",
+      "checked": false,
+      "text": "1",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 87,
+      "temp_id": 88,
+      "size": "86*-151",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/priceLabel[text]1[enabled,,]",
+      "view_str": "f72892b8175ea1768d125cf32d9db006",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/priceLabel"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 2,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        90,
+        102
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          63
+        ],
+        [
+          912,
+          1794
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/navigation_drawer",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 5,
+      "temp_id": 89,
+      "size": "912*1731",
+      "signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/navigation_drawer[text]None[enabled,,]",
+      "view_str": "9a5910b630879dc51e38d75362209385",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/navigation_drawer"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 5,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        91,
+        93,
+        96,
+        98,
+        100
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          63
+        ],
+        [
+          912,
+          231
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/menuHeaderView",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 89,
+      "temp_id": 90,
+      "size": "912*168",
+      "signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/menuHeaderView[text]None[enabled,,]",
+      "view_str": "dd6c344543457f883fa4ab99964eddca",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/menuHeaderView"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        92
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          94
+        ],
+        [
+          147,
+          199
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.FrameLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 90,
+      "temp_id": 91,
+      "size": "105*105",
+      "signature": "[class]android.widget.FrameLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "7861b8fa01ab87fdf869bd922a72b2fa",
+      "content_free_signature": "[class]android.widget.FrameLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          94
+        ],
+        [
+          147,
+          199
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/avatarView",
+      "checked": false,
+      "text": null,
+      "class": "android.view.View",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 91,
+      "temp_id": 92,
+      "size": "105*105",
+      "signature": "[class]android.view.View[resource_id]com.habitrpg.android.habitica.debug:id/avatarView[text]None[enabled,,]",
+      "view_str": "ce70c517e538378ee020441cf5ff4e37",
+      "content_free_signature": "[class]android.view.View[resource_id]com.habitrpg.android.habitica.debug:id/avatarView"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 2,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        94,
+        95
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          189,
+          100
+        ],
+        [
+          559,
+          194
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 90,
+      "temp_id": 93,
+      "size": "370*94",
+      "signature": "[class]android.widget.LinearLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "b435814cf8ba65d67fb86d28ea9cca0c",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          189,
+          100
+        ],
+        [
+          403,
+          151
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/toolbarTitle",
+      "checked": false,
+      "text": "jeissonAvila",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 93,
+      "temp_id": 94,
+      "size": "214*51",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/toolbarTitle[text]jeissonAvila[enabled,,]",
+      "view_str": "e5f222a3646f26bd872751eb05d848f0",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/toolbarTitle"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          189,
+          151
+        ],
+        [
+          391,
+          194
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/usernameTextView",
+      "checked": false,
+      "text": "@jeissonAvila",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 93,
+      "temp_id": 95,
+      "size": "202*43",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/usernameTextView[text]@jeissonAvila[enabled,,]",
+      "view_str": "b4afc7b1026edcca3c01537902286d2a",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/usernameTextView"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        97
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          601,
+          63
+        ],
+        [
+          688,
+          231
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/notificationsButtonWrapper",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.RelativeLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 90,
+      "temp_id": 96,
+      "size": "87*168",
+      "signature": "[class]android.widget.RelativeLayout[resource_id]com.habitrpg.android.habitica.debug:id/notificationsButtonWrapper[text]None[enabled,,]",
+      "view_str": "2d634f4f38de533a6e58ea18ac91e20c",
+      "content_free_signature": "[class]android.widget.RelativeLayout[resource_id]com.habitrpg.android.habitica.debug:id/notificationsButtonWrapper"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": "Notifications",
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          601,
+          120
+        ],
+        [
+          654,
+          173
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/notificationsButton",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.ImageView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 96,
+      "temp_id": 97,
+      "size": "53*53",
+      "signature": "[class]android.widget.ImageView[resource_id]com.habitrpg.android.habitica.debug:id/notificationsButton[text]None[enabled,,]",
+      "view_str": "59913423a199b4979704ec56a3e98ac8",
+      "content_free_signature": "[class]android.widget.ImageView[resource_id]com.habitrpg.android.habitica.debug:id/notificationsButton"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        99
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          709,
+          63
+        ],
+        [
+          796,
+          231
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/messagesButtonWrapper",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.RelativeLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 90,
+      "temp_id": 98,
+      "size": "87*168",
+      "signature": "[class]android.widget.RelativeLayout[resource_id]com.habitrpg.android.habitica.debug:id/messagesButtonWrapper[text]None[enabled,,]",
+      "view_str": "ecc3fdfa945149ee1b9c8c1a937b5232",
+      "content_free_signature": "[class]android.widget.RelativeLayout[resource_id]com.habitrpg.android.habitica.debug:id/messagesButtonWrapper"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": "Messages",
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          709,
+          115
+        ],
+        [
+          772,
+          178
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/messagesButton",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.ImageView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 98,
+      "temp_id": 99,
+      "size": "63*63",
+      "signature": "[class]android.widget.ImageView[resource_id]com.habitrpg.android.habitica.debug:id/messagesButton[text]None[enabled,,]",
+      "view_str": "266286e5e3bed1ab1b43189143d90cc1",
+      "content_free_signature": "[class]android.widget.ImageView[resource_id]com.habitrpg.android.habitica.debug:id/messagesButton"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        101
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          796,
+          63
+        ],
+        [
+          909,
+          231
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/settingsButtonWrapper",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.RelativeLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 90,
+      "temp_id": 100,
+      "size": "113*168",
+      "signature": "[class]android.widget.RelativeLayout[resource_id]com.habitrpg.android.habitica.debug:id/settingsButtonWrapper[text]None[enabled,,]",
+      "view_str": "fbdbb85e2f55283fff645f861db1826d",
+      "content_free_signature": "[class]android.widget.RelativeLayout[resource_id]com.habitrpg.android.habitica.debug:id/settingsButtonWrapper"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": "Settings",
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          817,
+          115
+        ],
+        [
+          880,
+          178
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/settingsButton",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.ImageView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 100,
+      "temp_id": 101,
+      "size": "63*63",
+      "signature": "[class]android.widget.ImageView[resource_id]com.habitrpg.android.habitica.debug:id/settingsButton[text]None[enabled,,]",
+      "view_str": "f5bf16b8beb21e691f230a55d438ab46",
+      "content_free_signature": "[class]android.widget.ImageView[resource_id]com.habitrpg.android.habitica.debug:id/settingsButton"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 14,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        103,
+        106,
+        109,
+        112,
+        113,
+        116,
+        119,
+        122,
+        125,
+        128,
+        132,
+        133,
+        136,
+        139
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          231
+        ],
+        [
+          912,
+          1794
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/recyclerView",
+      "checked": false,
+      "text": null,
+      "class": "androidx.recyclerview.widget.RecyclerView",
+      "scrollable": true,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 89,
+      "temp_id": 102,
+      "size": "912*1563",
+      "signature": "[class]androidx.recyclerview.widget.RecyclerView[resource_id]com.habitrpg.android.habitica.debug:id/recyclerView[text]None[enabled,,]",
+      "view_str": "51526f7c98e17bf18960f36c4797b4db",
+      "content_free_signature": "[class]androidx.recyclerview.widget.RecyclerView[resource_id]com.habitrpg.android.habitica.debug:id/recyclerView"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        104
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          231
+        ],
+        [
+          912,
+          292
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 102,
+      "temp_id": 103,
+      "size": "912*61",
+      "signature": "[class]android.widget.LinearLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "0c896a96364f8dfdcdc0442b24560d36",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        105
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          231
+        ],
+        [
+          870,
+          254
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 103,
+      "temp_id": 104,
+      "size": "828*23",
+      "signature": "[class]android.widget.LinearLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "281502806464d1266600d63587f712d1",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          231
+        ],
+        [
+          247,
+          254
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/titleTextView",
+      "checked": false,
+      "text": "Quest Shop",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 104,
+      "temp_id": 105,
+      "size": "205*23",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/titleTextView[text]Quest Shop[enabled,,]",
+      "view_str": "150aee775c5965e490d48c3a95c211bd",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/titleTextView"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        107
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          292
+        ],
+        [
+          912,
+          418
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 102,
+      "temp_id": 106,
+      "size": "912*126",
+      "signature": "[class]android.widget.LinearLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "0c896a96364f8dfdcdc0442b24560d36",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        108
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          329
+        ],
+        [
+          870,
+          380
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 106,
+      "temp_id": 107,
+      "size": "828*51",
+      "signature": "[class]android.widget.LinearLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "b8a76de0e7d3155511d711c91f4dd4b3",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          329
+        ],
+        [
+          305,
+          380
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/titleTextView",
+      "checked": false,
+      "text": "Seasonal Shop",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 107,
+      "temp_id": 108,
+      "size": "263*51",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/titleTextView[text]Seasonal Shop[enabled,,]",
+      "view_str": "29694088906abdaa8494f478f6c30718",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/titleTextView"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        110
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          418
+        ],
+        [
+          912,
+          544
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 102,
+      "temp_id": 109,
+      "size": "912*126",
+      "signature": "[class]android.widget.LinearLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "0c896a96364f8dfdcdc0442b24560d36",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        111
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          455
+        ],
+        [
+          870,
+          506
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 109,
+      "temp_id": 110,
+      "size": "828*51",
+      "signature": "[class]android.widget.LinearLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "e5c334eef02bcf3b8b695894ce7e0240",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          455
+        ],
+        [
+          304,
+          506
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/titleTextView",
+      "checked": false,
+      "text": "Time Travelers",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 110,
+      "temp_id": 111,
+      "size": "262*51",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/titleTextView[text]Time Travelers[enabled,,]",
+      "view_str": "fdcd476327ff314ac12efba4195a77bd",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/titleTextView"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          544
+        ],
+        [
+          912,
+          602
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": "INVENTORY",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 102,
+      "temp_id": 112,
+      "size": "912*58",
+      "signature": "[class]android.widget.TextView[resource_id]None[text]INVENTORY[enabled,,]",
+      "view_str": "10e2367dcac1a14034ae3b7c0b23e464",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        114
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          602
+        ],
+        [
+          912,
+          728
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 102,
+      "temp_id": 113,
+      "size": "912*126",
+      "signature": "[class]android.widget.LinearLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "0c896a96364f8dfdcdc0442b24560d36",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        115
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          639
+        ],
+        [
+          870,
+          690
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 113,
+      "temp_id": 114,
+      "size": "828*51",
+      "signature": "[class]android.widget.LinearLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "920b127c126fc47691924a6e3dd6cba5",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          639
+        ],
+        [
+          424,
+          690
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/titleTextView",
+      "checked": false,
+      "text": "Avatar Customization",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 114,
+      "temp_id": 115,
+      "size": "382*51",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/titleTextView[text]Avatar Customization[enabled,,]",
+      "view_str": "aafcf5e36aba7db3990c1ba4d2219b7b",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/titleTextView"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        117
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          728
+        ],
+        [
+          912,
+          854
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 102,
+      "temp_id": 116,
+      "size": "912*126",
+      "signature": "[class]android.widget.LinearLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "0c896a96364f8dfdcdc0442b24560d36",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        118
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          765
+        ],
+        [
+          870,
+          816
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 116,
+      "temp_id": 117,
+      "size": "828*51",
+      "signature": "[class]android.widget.LinearLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "9d9069b6a3d84a0b53373b6276e87573",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          765
+        ],
+        [
+          232,
+          816
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/titleTextView",
+      "checked": false,
+      "text": "Equipment",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 117,
+      "temp_id": 118,
+      "size": "190*51",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/titleTextView[text]Equipment[enabled,,]",
+      "view_str": "e521105847d313da88fa61321a845476",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/titleTextView"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        120
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          854
+        ],
+        [
+          912,
+          980
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 102,
+      "temp_id": 119,
+      "size": "912*126",
+      "signature": "[class]android.widget.LinearLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "0c896a96364f8dfdcdc0442b24560d36",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        121
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          891
+        ],
+        [
+          870,
+          942
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 119,
+      "temp_id": 120,
+      "size": "828*51",
+      "signature": "[class]android.widget.LinearLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "fba0028336a03ec26c5949941943239d",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          891
+        ],
+        [
+          142,
+          942
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/titleTextView",
+      "checked": false,
+      "text": "Items",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 120,
+      "temp_id": 121,
+      "size": "100*51",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/titleTextView[text]Items[enabled,,]",
+      "view_str": "dc15db9b107418690d2d6b7e91a81b76",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/titleTextView"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        123
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          980
+        ],
+        [
+          912,
+          1106
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 102,
+      "temp_id": 122,
+      "size": "912*126",
+      "signature": "[class]android.widget.LinearLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "0c896a96364f8dfdcdc0442b24560d36",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        124
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          1017
+        ],
+        [
+          870,
+          1068
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 122,
+      "temp_id": 123,
+      "size": "828*51",
+      "signature": "[class]android.widget.LinearLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "4b89b2af9ac1ce40fb3958d7a4e510d7",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          1017
+        ],
+        [
+          302,
+          1068
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/titleTextView",
+      "checked": false,
+      "text": "Pets & Mounts",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 123,
+      "temp_id": 124,
+      "size": "260*51",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/titleTextView[text]Pets & Mounts[enabled,,]",
+      "view_str": "bd3b69863dbcdd29db3a829c410650b0",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/titleTextView"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        126
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          1106
+        ],
+        [
+          912,
+          1232
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 102,
+      "temp_id": 125,
+      "size": "912*126",
+      "signature": "[class]android.widget.LinearLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "0c896a96364f8dfdcdc0442b24560d36",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        127
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          1143
+        ],
+        [
+          870,
+          1194
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 125,
+      "temp_id": 126,
+      "size": "828*51",
+      "signature": "[class]android.widget.LinearLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "cc52618d012fb27c282a18f48d068872",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          1143
+        ],
+        [
+          321,
+          1194
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/titleTextView",
+      "checked": false,
+      "text": "Purchase Gems",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 126,
+      "temp_id": 127,
+      "size": "279*51",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/titleTextView[text]Purchase Gems[enabled,,]",
+      "view_str": "07917ce30b5a7b5f102c900caba195a9",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/titleTextView"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        129
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          1232
+        ],
+        [
+          912,
+          1358
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 102,
+      "temp_id": 128,
+      "size": "912*126",
+      "signature": "[class]android.widget.LinearLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "0c896a96364f8dfdcdc0442b24560d36",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 2,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        130,
+        131
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          1250
+        ],
+        [
+          870,
+          1340
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 128,
+      "temp_id": 129,
+      "size": "828*90",
+      "signature": "[class]android.widget.LinearLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "e9e51155563f71630fe753287e7db7fa",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          1250
+        ],
+        [
+          266,
+          1301
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/titleTextView",
+      "checked": false,
+      "text": "Subscription",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 129,
+      "temp_id": 130,
+      "size": "224*51",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/titleTextView[text]Subscription[enabled,,]",
+      "view_str": "91688dc2a0eb68b8ac750581835455ac",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/titleTextView"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          1301
+        ],
+        [
+          357,
+          1340
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/additionalInfoView",
+      "checked": false,
+      "text": "Get more out of Habitica",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 129,
+      "temp_id": 131,
+      "size": "315*39",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/additionalInfoView[text]Get more out of Habitica[enabled,,]",
+      "view_str": "a29685ccfc196c8ccccc1573e49ddb4b",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/additionalInfoView"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          1358
+        ],
+        [
+          912,
+          1416
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": "ABOUT",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 102,
+      "temp_id": 132,
+      "size": "912*58",
+      "signature": "[class]android.widget.TextView[resource_id]None[text]ABOUT[enabled,,]",
+      "view_str": "c1ffd603c51c17b5326f55de118d0502",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        134
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          1416
+        ],
+        [
+          912,
+          1542
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 102,
+      "temp_id": 133,
+      "size": "912*126",
+      "signature": "[class]android.widget.LinearLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "0c896a96364f8dfdcdc0442b24560d36",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        135
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          1453
+        ],
+        [
+          870,
+          1504
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 133,
+      "temp_id": 134,
+      "size": "828*51",
+      "signature": "[class]android.widget.LinearLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "7918f06b2fa2f9f086ce06e4e5e13ef7",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          1453
+        ],
+        [
+          141,
+          1504
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/titleTextView",
+      "checked": false,
+      "text": "News",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 134,
+      "temp_id": 135,
+      "size": "99*51",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/titleTextView[text]News[enabled,,]",
+      "view_str": "019b19a776e1929c10479d144bebfd47",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/titleTextView"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        137
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          1542
+        ],
+        [
+          912,
+          1668
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 102,
+      "temp_id": 136,
+      "size": "912*126",
+      "signature": "[class]android.widget.LinearLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "0c896a96364f8dfdcdc0442b24560d36",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        138
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          1579
+        ],
+        [
+          870,
+          1630
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 136,
+      "temp_id": 137,
+      "size": "828*51",
+      "signature": "[class]android.widget.LinearLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "b89859fdd28577cf9e7ee329d1cf9ad0",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          1579
+        ],
+        [
+          241,
+          1630
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/titleTextView",
+      "checked": false,
+      "text": "Help & FAQ",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 137,
+      "temp_id": 138,
+      "size": "199*51",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/titleTextView[text]Help & FAQ[enabled,,]",
+      "view_str": "482b114bd07dd8e08e2fd50c5cb21666",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/titleTextView"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        140
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          1668
+        ],
+        [
+          912,
+          1794
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 102,
+      "temp_id": 139,
+      "size": "912*126",
+      "signature": "[class]android.widget.LinearLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "0c896a96364f8dfdcdc0442b24560d36",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        141
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          1705
+        ],
+        [
+          870,
+          1756
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 139,
+      "temp_id": 140,
+      "size": "828*51",
+      "signature": "[class]android.widget.LinearLayout[resource_id]None[text]None[enabled,,]",
+      "view_str": "58bfa84ceb81f4c928d3b9db91c3783d",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]None"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          1705
+        ],
+        [
+          149,
+          1756
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/titleTextView",
+      "checked": false,
+      "text": "About",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 140,
+      "temp_id": 141,
+      "size": "107*51",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/titleTextView[text]About[enabled,,]",
+      "view_str": "4dcad969e1dc1b274ae8ee8f9f98c3c3",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/titleTextView"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": false,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          0
+        ],
+        [
+          1080,
+          63
+        ]
+      ],
+      "resource_id": "android:id/statusBarBackground",
+      "checked": false,
+      "text": null,
+      "class": "android.view.View",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 0,
+      "temp_id": 142,
+      "size": "1080*63",
+      "signature": "[class]android.view.View[resource_id]android:id/statusBarBackground[text]None[enabled,,]",
+      "view_str": "51c8e8b5aa131df9e869c56eb5e36977",
+      "content_free_signature": "[class]android.view.View[resource_id]android:id/statusBarBackground"
+    },
+    {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": false,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          1794
+        ],
+        [
+          1080,
+          1920
+        ]
+      ],
+      "resource_id": "android:id/navigationBarBackground",
+      "checked": false,
+      "text": null,
+      "class": "android.view.View",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 0,
+      "temp_id": 143,
+      "size": "1080*126",
+      "signature": "[class]android.view.View[resource_id]android:id/navigationBarBackground[text]None[enabled,,]",
+      "view_str": "a605dbc1bf263f2940031eb73edf13cb",
+      "content_free_signature": "[class]android.view.View[resource_id]android:id/navigationBarBackground"
+    }
+  ]
+}

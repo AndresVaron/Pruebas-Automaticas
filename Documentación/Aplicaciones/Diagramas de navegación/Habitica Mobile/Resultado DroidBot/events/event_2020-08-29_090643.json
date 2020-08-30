@@ -1,0 +1,48 @@
+{
+  "tag": "2020-08-29_090643",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          336,
+          651
+        ],
+        [
+          743,
+          764
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/titleTextView",
+      "checked": false,
+      "text": "Not Enough Gold",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 11,
+      "temp_id": 12,
+      "size": "407*113",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/titleTextView[text]Not Enough Gold[enabled,,]",
+      "view_str": "fc12cc05e48ec36f030ef7720df92077",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/titleTextView"
+    }
+  },
+  "start_state": "cf38ddf2d5cd039885143a3cfa878ef0",
+  "stop_state": "cf38ddf2d5cd039885143a3cfa878ef0",
+  "event_str": "TouchEvent(state=cf38ddf2d5cd039885143a3cfa878ef0, view=fc12cc05e48ec36f030ef7720df92077)"
+}

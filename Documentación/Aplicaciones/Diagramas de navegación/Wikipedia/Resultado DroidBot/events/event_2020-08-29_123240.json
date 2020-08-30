@@ -1,0 +1,51 @@
+{
+  "tag": "2020-08-29_123240",
+  "event": {
+    "event_type": "scroll",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "org.wikipedia.alpha",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        11
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          210
+        ],
+        [
+          1080,
+          1794
+        ]
+      ],
+      "resource_id": "org.wikipedia.alpha:id/about_scrollview",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.ScrollView",
+      "scrollable": true,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 9,
+      "temp_id": 10,
+      "size": "1080*1584",
+      "signature": "[class]android.widget.ScrollView[resource_id]org.wikipedia.alpha:id/about_scrollview[text]None[enabled,,]",
+      "view_str": "70fbbebf63147eba9af6b82c1cb99780",
+      "content_free_signature": "[class]android.widget.ScrollView[resource_id]org.wikipedia.alpha:id/about_scrollview"
+    },
+    "direction": "LEFT"
+  },
+  "start_state": "a7a88d8ad50df71fa213b186ce0f9acb",
+  "stop_state": "5267d2e4ac9da142558f65430f5a4b86",
+  "event_str": "ScrollEvent(state=a7a88d8ad50df71fa213b186ce0f9acb, view=70fbbebf63147eba9af6b82c1cb99780, direction=LEFT)"
+}

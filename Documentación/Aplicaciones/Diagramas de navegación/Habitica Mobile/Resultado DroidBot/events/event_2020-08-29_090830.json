@@ -1,0 +1,48 @@
+{
+  "tag": "2020-08-29_090830",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          65,
+          652
+        ],
+        [
+          868,
+          691
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/notesTextView",
+      "checked": false,
+      "text": "Watch TV, play a game, eat a treat, it\u2019s up to you!",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 130,
+      "temp_id": 132,
+      "size": "803*39",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/notesTextView[text]None[enabled,,]",
+      "view_str": "869489b87efa948437b359e08ea91fc2",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/notesTextView"
+    }
+  },
+  "start_state": "f104b2cda348bcbb9d0ef41d20bb2810",
+  "stop_state": "24e108d844247e37f526c6fc8f93e4ff",
+  "event_str": "TouchEvent(state=f104b2cda348bcbb9d0ef41d20bb2810, view=869489b87efa948437b359e08ea91fc2)"
+}

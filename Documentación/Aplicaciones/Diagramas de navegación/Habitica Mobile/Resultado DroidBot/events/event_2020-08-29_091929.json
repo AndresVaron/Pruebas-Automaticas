@@ -1,0 +1,48 @@
+{
+  "tag": "2020-08-29_091929",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": "Navigate up",
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          63
+        ],
+        [
+          147,
+          210
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "android.widget.ImageButton",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 7,
+      "temp_id": 8,
+      "size": "147*147",
+      "signature": "[class]android.widget.ImageButton[resource_id]None[text]None[enabled,,]",
+      "view_str": "e41b5444fac57842acafbc7430814146",
+      "content_free_signature": "[class]android.widget.ImageButton[resource_id]None"
+    }
+  },
+  "start_state": "45f8048f5a0978649a46ddd6e47afed5",
+  "stop_state": "cadab1a259d971f9fd1fe10d9681f5f4",
+  "event_str": "TouchEvent(state=45f8048f5a0978649a46ddd6e47afed5, view=e41b5444fac57842acafbc7430814146)"
+}

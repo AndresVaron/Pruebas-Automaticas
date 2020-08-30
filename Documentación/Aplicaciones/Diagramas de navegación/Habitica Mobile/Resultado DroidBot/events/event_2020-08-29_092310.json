@@ -1,0 +1,48 @@
+{
+  "tag": "2020-08-29_092310",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          1521
+        ],
+        [
+          1038,
+          1621
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/reset_tutorial_button",
+      "checked": false,
+      "text": "Reset Tutorials",
+      "class": "android.widget.Button",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 20,
+      "temp_id": 35,
+      "size": "996*100",
+      "signature": "[class]android.widget.Button[resource_id]com.habitrpg.android.habitica.debug:id/reset_tutorial_button[text]Reset Tutorials[enabled,,]",
+      "view_str": "a72027809f592053826de2171f54aa4a",
+      "content_free_signature": "[class]android.widget.Button[resource_id]com.habitrpg.android.habitica.debug:id/reset_tutorial_button"
+    }
+  },
+  "start_state": "14895bbccf7574f4b543eba7e074b370",
+  "stop_state": "14895bbccf7574f4b543eba7e074b370",
+  "event_str": "TouchEvent(state=14895bbccf7574f4b543eba7e074b370, view=a72027809f592053826de2171f54aa4a)"
+}

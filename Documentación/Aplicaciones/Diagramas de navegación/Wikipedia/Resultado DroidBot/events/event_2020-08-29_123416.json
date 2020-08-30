@@ -1,0 +1,48 @@
+{
+  "tag": "2020-08-29_123416",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "org.wikipedia.alpha",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": "Close",
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          954,
+          73
+        ],
+        [
+          1080,
+          199
+        ]
+      ],
+      "resource_id": "org.wikipedia.alpha:id/close_button",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.ImageView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 2684,
+      "temp_id": 2693,
+      "size": "126*126",
+      "signature": "[class]android.widget.ImageView[resource_id]org.wikipedia.alpha:id/close_button[text]None[enabled,,]",
+      "view_str": "023fc55409b8a6895f66d153409442f2",
+      "content_free_signature": "[class]android.widget.ImageView[resource_id]org.wikipedia.alpha:id/close_button"
+    }
+  },
+  "start_state": "c5847e47b62dddcb52421a92dac146fa",
+  "stop_state": "e4963ea4947d733b8fba5f4070016842",
+  "event_str": "TouchEvent(state=c5847e47b62dddcb52421a92dac146fa, view=023fc55409b8a6895f66d153409442f2)"
+}

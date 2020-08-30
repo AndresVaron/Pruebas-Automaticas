@@ -1,0 +1,48 @@
+{
+  "tag": "2020-08-29_122927",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "org.wikipedia.alpha",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          84,
+          1187
+        ],
+        [
+          600,
+          1313
+        ]
+      ],
+      "resource_id": "org.wikipedia.alpha:id/positiveButton",
+      "checked": false,
+      "text": "LOG IN / JOIN WIKIPEDIA",
+      "class": "android.widget.Button",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 24,
+      "temp_id": 25,
+      "size": "516*126",
+      "signature": "[class]android.widget.Button[resource_id]org.wikipedia.alpha:id/positiveButton[text]LOG IN / JOIN WIKIPEDIA[enabled,,]",
+      "view_str": "7fa46e4867050505db1a3ce6eb56b634",
+      "content_free_signature": "[class]android.widget.Button[resource_id]org.wikipedia.alpha:id/positiveButton"
+    }
+  },
+  "start_state": "9cfd194e68406138c497fe4516e15103",
+  "stop_state": "e53caf7a3c4816a4c483b0811bdc129d",
+  "event_str": "TouchEvent(state=9cfd194e68406138c497fe4516e15103, view=7fa46e4867050505db1a3ce6eb56b634)"
+}

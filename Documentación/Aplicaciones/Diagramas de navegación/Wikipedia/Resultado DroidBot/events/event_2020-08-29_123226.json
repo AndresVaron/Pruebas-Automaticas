@@ -1,0 +1,59 @@
+{
+  "tag": "2020-08-29_123226",
+  "event": {
+    "event_type": "scroll",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "org.wikipedia.alpha",
+      "visible": true,
+      "checkable": false,
+      "child_count": 9,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        14,
+        17,
+        21,
+        25,
+        31,
+        37,
+        41,
+        44,
+        50
+      ],
+      "focused": true,
+      "bounds": [
+        [
+          0,
+          210
+        ],
+        [
+          1080,
+          1794
+        ]
+      ],
+      "resource_id": "org.wikipedia.alpha:id/recycler_view",
+      "checked": false,
+      "text": null,
+      "class": "androidx.recyclerview.widget.RecyclerView",
+      "scrollable": true,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 12,
+      "temp_id": 13,
+      "size": "1080*1584",
+      "signature": "[class]androidx.recyclerview.widget.RecyclerView[resource_id]org.wikipedia.alpha:id/recycler_view[text]None[enabled,,]",
+      "view_str": "abf412d4c057ac5068d342f28b4263f8",
+      "content_free_signature": "[class]androidx.recyclerview.widget.RecyclerView[resource_id]org.wikipedia.alpha:id/recycler_view"
+    },
+    "direction": "DOWN"
+  },
+  "start_state": "ffbb9d4696420e05e30254502f2f9a50",
+  "stop_state": "a7a88d8ad50df71fa213b186ce0f9acb",
+  "event_str": "ScrollEvent(state=ffbb9d4696420e05e30254502f2f9a50, view=abf412d4c057ac5068d342f28b4263f8, direction=DOWN)"
+}

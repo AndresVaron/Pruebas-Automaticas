@@ -1,0 +1,48 @@
+{
+  "tag": "2020-08-29_122941",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "org.wikipedia.alpha",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          1294
+        ],
+        [
+          1038,
+          1420
+        ]
+      ],
+      "resource_id": "org.wikipedia.alpha:id/create_account_login_button",
+      "checked": false,
+      "text": "LOG IN",
+      "class": "android.widget.Button",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 44,
+      "temp_id": 46,
+      "size": "996*126",
+      "signature": "[class]android.widget.Button[resource_id]org.wikipedia.alpha:id/create_account_login_button[text]LOG IN[enabled,,]",
+      "view_str": "6f770d73c5623f9d80c4008a7fbc4e54",
+      "content_free_signature": "[class]android.widget.Button[resource_id]org.wikipedia.alpha:id/create_account_login_button"
+    }
+  },
+  "start_state": "e53caf7a3c4816a4c483b0811bdc129d",
+  "stop_state": "5231334f93a8ca7573c3e42c634adce6",
+  "event_str": "TouchEvent(state=e53caf7a3c4816a4c483b0811bdc129d, view=6f770d73c5623f9d80c4008a7fbc4e54)"
+}

@@ -1,0 +1,48 @@
+{
+  "tag": "2020-08-29_092338",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          71,
+          1015
+        ],
+        [
+          345,
+          1066
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": "Update the App",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 28,
+      "temp_id": 29,
+      "size": "274*51",
+      "signature": "[class]android.widget.TextView[resource_id]None[text]Update the App[enabled,,]",
+      "view_str": "ea6e4d565f9169692b164a2ff72a7c84",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]None"
+    }
+  },
+  "start_state": "6878e81ac4a4075dd431c3f34707a508",
+  "stop_state": "6878e81ac4a4075dd431c3f34707a508",
+  "event_str": "TouchEvent(state=6878e81ac4a4075dd431c3f34707a508, view=ea6e4d565f9169692b164a2ff72a7c84)"
+}

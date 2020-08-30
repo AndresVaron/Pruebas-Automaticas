@@ -1,0 +1,50 @@
+{
+  "tag": "2020-08-29_092616",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": "Food",
+      "children": [
+        25
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          479,
+          210
+        ],
+        [
+          668,
+          352
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "androidx.appcompat.app.ActionBar$Tab",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 19,
+      "temp_id": 24,
+      "size": "189*142",
+      "signature": "[class]androidx.appcompat.app.ActionBar$Tab[resource_id]None[text]None[enabled,,]",
+      "view_str": "a7cb5115c13dadd66d7b5a2e7c4047b2",
+      "content_free_signature": "[class]androidx.appcompat.app.ActionBar$Tab[resource_id]None"
+    }
+  },
+  "start_state": "501bcdfb28c0b4866e7a73a416a22557",
+  "stop_state": "bddf29596871de1247c31e8da8020f42",
+  "event_str": "TouchEvent(state=501bcdfb28c0b4866e7a73a416a22557, view=a7cb5115c13dadd66d7b5a2e7c4047b2)"
+}

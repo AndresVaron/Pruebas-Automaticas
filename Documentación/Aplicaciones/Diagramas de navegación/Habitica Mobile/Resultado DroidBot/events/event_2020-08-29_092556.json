@@ -1,0 +1,48 @@
+{
+  "tag": "2020-08-29_092556",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": false,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          1462,
+          1794
+        ],
+        [
+          1080,
+          1794
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/openEmptyMarketButton",
+      "checked": false,
+      "text": "OPEN MARKET",
+      "class": "android.widget.Button",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 47,
+      "temp_id": 48,
+      "size": "-382*0",
+      "signature": "[class]android.widget.Button[resource_id]com.habitrpg.android.habitica.debug:id/openEmptyMarketButton[text]OPEN MARKET[enabled,,]",
+      "view_str": "c0efcdaf38da656100900094bfee33a7",
+      "content_free_signature": "[class]android.widget.Button[resource_id]com.habitrpg.android.habitica.debug:id/openEmptyMarketButton"
+    }
+  },
+  "start_state": "0ebd14747ed159796dc9416f4a143834",
+  "stop_state": "0ebd14747ed159796dc9416f4a143834",
+  "event_str": "TouchEvent(state=0ebd14747ed159796dc9416f4a143834, view=c0efcdaf38da656100900094bfee33a7)"
+}

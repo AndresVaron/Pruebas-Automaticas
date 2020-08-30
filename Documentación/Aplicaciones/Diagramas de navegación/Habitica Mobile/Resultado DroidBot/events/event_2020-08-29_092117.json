@@ -1,0 +1,48 @@
+{
+  "tag": "2020-08-29_092117",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          977
+        ],
+        [
+          1038,
+          1077
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/createPartyButton",
+      "checked": false,
+      "text": "Create Party",
+      "class": "android.widget.Button",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 32,
+      "temp_id": 35,
+      "size": "996*100",
+      "signature": "[class]android.widget.Button[resource_id]com.habitrpg.android.habitica.debug:id/createPartyButton[text]Create Party[enabled,,]",
+      "view_str": "ca5e49f95a44c1d8ba7c5fed6878bb40",
+      "content_free_signature": "[class]android.widget.Button[resource_id]com.habitrpg.android.habitica.debug:id/createPartyButton"
+    }
+  },
+  "start_state": "496b4125cfa07c0bac333a67b1601417",
+  "stop_state": "bf54b9b8cf861e21bdd9cd218e5438d1",
+  "event_str": "TouchEvent(state=496b4125cfa07c0bac333a67b1601417, view=ca5e49f95a44c1d8ba7c5fed6878bb40)"
+}

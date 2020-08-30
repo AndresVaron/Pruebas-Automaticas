@@ -1,0 +1,48 @@
+{
+  "tag": "2020-08-29_123423",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "org.wikipedia.alpha",
+      "visible": false,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": "More options",
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          953,
+          0
+        ],
+        [
+          1080,
+          -42
+        ]
+      ],
+      "resource_id": "org.wikipedia.alpha:id/page_toolbar_button_show_overflow_menu",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.ImageView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": true,
+      "parent": 2676,
+      "temp_id": 2679,
+      "size": "127*-42",
+      "signature": "[class]android.widget.ImageView[resource_id]org.wikipedia.alpha:id/page_toolbar_button_show_overflow_menu[text]None[enabled,,]",
+      "view_str": "efc337d048525a7e1f4cc7f006383420",
+      "content_free_signature": "[class]android.widget.ImageView[resource_id]org.wikipedia.alpha:id/page_toolbar_button_show_overflow_menu"
+    }
+  },
+  "start_state": "40475f32e9f03c10ca0ec02491b48d31",
+  "stop_state": "fd3ed1115d8028d6a022442680cae60f",
+  "event_str": "TouchEvent(state=40475f32e9f03c10ca0ec02491b48d31, view=efc337d048525a7e1f4cc7f006383420)"
+}

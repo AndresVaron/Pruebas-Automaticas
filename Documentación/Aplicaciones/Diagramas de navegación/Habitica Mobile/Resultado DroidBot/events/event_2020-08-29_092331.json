@@ -1,0 +1,48 @@
+{
+  "tag": "2020-08-29_092331",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          71,
+          1077
+        ],
+        [
+          1009,
+          1246
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": "We\u2019re constantly pushing out new fixes, so be sure to check the Play Store to see if there are any updates available.",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 28,
+      "temp_id": 30,
+      "size": "938*169",
+      "signature": "[class]android.widget.TextView[resource_id]None[text]None[enabled,,]",
+      "view_str": "0455d8efe802064beb79664c52e708d3",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]None"
+    }
+  },
+  "start_state": "6878e81ac4a4075dd431c3f34707a508",
+  "stop_state": "6878e81ac4a4075dd431c3f34707a508",
+  "event_str": "TouchEvent(state=6878e81ac4a4075dd431c3f34707a508, view=0455d8efe802064beb79664c52e708d3)"
+}

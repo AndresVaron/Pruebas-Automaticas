@@ -1,0 +1,48 @@
+{
+  "tag": "2020-08-29_090909",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": true,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          184,
+          880
+        ],
+        [
+          1038,
+          931
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/edit_text",
+      "checked": false,
+      "text": "New checklist entry",
+      "class": "android.widget.EditText",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": true,
+      "parent": 24,
+      "temp_id": 26,
+      "size": "854*51",
+      "signature": "[class]android.widget.EditText[resource_id]com.habitrpg.android.habitica.debug:id/edit_text[text]New checklist entry[enabled,,]",
+      "view_str": "0abea9437d41af94c3afa9b56ef504ae",
+      "content_free_signature": "[class]android.widget.EditText[resource_id]com.habitrpg.android.habitica.debug:id/edit_text"
+    }
+  },
+  "start_state": "df8d62e2720f635b43b20040293f58d7",
+  "stop_state": "df8d62e2720f635b43b20040293f58d7",
+  "event_str": "TouchEvent(state=df8d62e2720f635b43b20040293f58d7, view=0abea9437d41af94c3afa9b56ef504ae)"
+}

@@ -1,0 +1,48 @@
+{
+  "tag": "2020-08-29_090756",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          347,
+          1146
+        ],
+        [
+          733,
+          1246
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": "Take me Back",
+      "class": "android.widget.Button",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 18,
+      "temp_id": 19,
+      "size": "386*100",
+      "signature": "[class]android.widget.Button[resource_id]None[text]Take me Back[enabled,,]",
+      "view_str": "1158f41863b7710989ab3b42b98f5c13",
+      "content_free_signature": "[class]android.widget.Button[resource_id]None"
+    }
+  },
+  "start_state": "cf38ddf2d5cd039885143a3cfa878ef0",
+  "stop_state": "9d847d33bfdfffb4073629bdb91ae889",
+  "event_str": "TouchEvent(state=cf38ddf2d5cd039885143a3cfa878ef0, view=1158f41863b7710989ab3b42b98f5c13)"
+}

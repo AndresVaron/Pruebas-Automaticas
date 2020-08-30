@@ -1,0 +1,48 @@
+{
+  "tag": "2020-08-29_091013",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": "Delete Reminder",
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          1521
+        ],
+        [
+          142,
+          1600
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/button",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.ImageButton",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 48,
+      "temp_id": 49,
+      "size": "100*79",
+      "signature": "[class]android.widget.ImageButton[resource_id]com.habitrpg.android.habitica.debug:id/button[text]None[enabled,,]",
+      "view_str": "a8bed7071db30e761a74529b16746318",
+      "content_free_signature": "[class]android.widget.ImageButton[resource_id]com.habitrpg.android.habitica.debug:id/button"
+    }
+  },
+  "start_state": "e6d428d8db8f818ea33ddf9c72b998c1",
+  "stop_state": "381cb00e46a1bb12bea4f1a82e85b6fd",
+  "event_str": "TouchEvent(state=e6d428d8db8f818ea33ddf9c72b998c1, view=a8bed7071db30e761a74529b16746318)"
+}

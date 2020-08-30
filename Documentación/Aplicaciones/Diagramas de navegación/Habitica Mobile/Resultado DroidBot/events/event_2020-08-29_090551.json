@@ -1,0 +1,48 @@
+{
+  "tag": "2020-08-29_090551",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "com.google.android.apps.nexuslauncher",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": "Voice search",
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          870,
+          1609
+        ],
+        [
+          1017,
+          1756
+        ]
+      ],
+      "resource_id": "com.google.android.apps.nexuslauncher:id/mic_icon",
+      "checked": false,
+      "text": null,
+      "class": "android.view.View",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 24,
+      "temp_id": 27,
+      "size": "147*147",
+      "signature": "[class]android.view.View[resource_id]com.google.android.apps.nexuslauncher:id/mic_icon[text]None[enabled,,]",
+      "view_str": "cef6d8dcb25313b1012b4d7a445550fd",
+      "content_free_signature": "[class]android.view.View[resource_id]com.google.android.apps.nexuslauncher:id/mic_icon"
+    }
+  },
+  "start_state": "ce1f358e1988c14ff299765892827163",
+  "stop_state": "0ca6fa1241d749b63b06a62b31631333",
+  "event_str": "TouchEvent(state=ce1f358e1988c14ff299765892827163, view=cef6d8dcb25313b1012b4d7a445550fd)"
+}

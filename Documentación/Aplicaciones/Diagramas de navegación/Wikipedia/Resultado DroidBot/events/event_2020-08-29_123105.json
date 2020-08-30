@@ -1,0 +1,48 @@
+{
+  "tag": "2020-08-29_123105",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "org.wikipedia.alpha",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          551,
+          1326
+        ],
+        [
+          923,
+          1451
+        ]
+      ],
+      "resource_id": "org.wikipedia.alpha:id/button_theme_sepia",
+      "checked": false,
+      "text": "SEPIA",
+      "class": "android.widget.Button",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 24,
+      "temp_id": 25,
+      "size": "372*125",
+      "signature": "[class]android.widget.Button[resource_id]org.wikipedia.alpha:id/button_theme_sepia[text]SEPIA[enabled,,]",
+      "view_str": "4982b085947605735fbabb828668a609",
+      "content_free_signature": "[class]android.widget.Button[resource_id]org.wikipedia.alpha:id/button_theme_sepia"
+    }
+  },
+  "start_state": "1c813dfdf31ff6ea036fed0fe5c6fde4",
+  "stop_state": "b651dce01384903161ef7f4e9bf11ea4",
+  "event_str": "TouchEvent(state=1c813dfdf31ff6ea036fed0fe5c6fde4, view=4982b085947605735fbabb828668a609)"
+}

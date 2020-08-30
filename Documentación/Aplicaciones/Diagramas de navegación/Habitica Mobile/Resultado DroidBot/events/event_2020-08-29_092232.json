@@ -1,0 +1,48 @@
+{
+  "tag": "2020-08-29_092232",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          1200
+        ],
+        [
+          1080,
+          1251
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/sourceCodeLink",
+      "checked": false,
+      "text": "Habitica is available as open source software on Github",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 20,
+      "temp_id": 28,
+      "size": "1080*51",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/sourceCodeLink[text]None[enabled,,]",
+      "view_str": "97f31c4a3d76198230419ef98017f578",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/sourceCodeLink"
+    }
+  },
+  "start_state": "b20d5c151376d7010e2ac017f369902d",
+  "stop_state": "0fa7991099a0e6d099b17e621c913c7e",
+  "event_str": "TouchEvent(state=b20d5c151376d7010e2ac017f369902d, view=97f31c4a3d76198230419ef98017f578)"
+}

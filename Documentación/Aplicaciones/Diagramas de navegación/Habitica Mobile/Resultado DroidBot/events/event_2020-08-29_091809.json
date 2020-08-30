@@ -1,0 +1,48 @@
+{
+  "tag": "2020-08-29_091809",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": false,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          53,
+          2479
+        ],
+        [
+          1027,
+          1794
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/gift_gems_button",
+      "checked": false,
+      "text": "Gift Gems",
+      "class": "android.widget.Button",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 15,
+      "temp_id": 51,
+      "size": "974*-685",
+      "signature": "[class]android.widget.Button[resource_id]com.habitrpg.android.habitica.debug:id/gift_gems_button[text]Gift Gems[enabled,,]",
+      "view_str": "738d1a062267b106ed2666e0d1ec3250",
+      "content_free_signature": "[class]android.widget.Button[resource_id]com.habitrpg.android.habitica.debug:id/gift_gems_button"
+    }
+  },
+  "start_state": "991fe693c457c26e8855acfc00a35c9f",
+  "stop_state": "991fe693c457c26e8855acfc00a35c9f",
+  "event_str": "TouchEvent(state=991fe693c457c26e8855acfc00a35c9f, view=738d1a062267b106ed2666e0d1ec3250)"
+}

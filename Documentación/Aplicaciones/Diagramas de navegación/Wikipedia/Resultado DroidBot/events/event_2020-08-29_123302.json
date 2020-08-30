@@ -1,0 +1,48 @@
+{
+  "tag": "2020-08-29_123302",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "com.android.chrome",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          349,
+          1642
+        ],
+        [
+          730,
+          1768
+        ]
+      ],
+      "resource_id": "com.android.chrome:id/terms_accept",
+      "checked": false,
+      "text": "Accept & continue",
+      "class": "android.widget.Button",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 6,
+      "temp_id": 15,
+      "size": "381*126",
+      "signature": "[class]android.widget.Button[resource_id]com.android.chrome:id/terms_accept[text]Accept & continue[enabled,,]",
+      "view_str": "852a9e21e0d73c0c773404cb6b0421e3",
+      "content_free_signature": "[class]android.widget.Button[resource_id]com.android.chrome:id/terms_accept"
+    }
+  },
+  "start_state": "0fa7991099a0e6d099b17e621c913c7e",
+  "stop_state": "9325a504004c624448ba9ac5f5c73b74",
+  "event_str": "TouchEvent(state=0fa7991099a0e6d099b17e621c913c7e, view=852a9e21e0d73c0c773404cb6b0421e3)"
+}

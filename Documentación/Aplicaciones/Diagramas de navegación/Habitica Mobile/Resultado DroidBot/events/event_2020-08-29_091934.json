@@ -1,0 +1,48 @@
+{
+  "tag": "2020-08-29_091934",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          170,
+          1512
+        ],
+        [
+          910,
+          1565
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/checkedTextView",
+      "checked": false,
+      "text": "10 min cardio",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 138,
+      "temp_id": 139,
+      "size": "740*53",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/checkedTextView[text]10 min cardio[enabled,,]",
+      "view_str": "24ee2f34d52fe22b35f657d38098c286",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/checkedTextView"
+    }
+  },
+  "start_state": "cadab1a259d971f9fd1fe10d9681f5f4",
+  "stop_state": "ca1fc67cc665e7a7e311eb0dfff13343",
+  "event_str": "TouchEvent(state=cadab1a259d971f9fd1fe10d9681f5f4, view=24ee2f34d52fe22b35f657d38098c286)"
+}

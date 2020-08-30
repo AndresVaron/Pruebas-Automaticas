@@ -1,0 +1,48 @@
+{
+  "tag": "2020-08-29_092152",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": false,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          1259,
+          1184
+        ],
+        [
+          1080,
+          1493
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/message_text",
+      "checked": false,
+      "text": "@Pandawalker yep, anyone can submit ideas for quests on the Trello board. Habitica admins select one of the submissions, so it can be fairly slow since there's at most one new quest per month. It took me about a year for my first one to be accepted, and another year for the second one, and that's been it.",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 132,
+      "temp_id": 142,
+      "size": "-179*309",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/message_text[text]None[enabled,,]",
+      "view_str": "ee0e171ae6b3df1b768646173a41fe29",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/message_text"
+    }
+  },
+  "start_state": "d643f875eae5b308c5941b2df2763551",
+  "stop_state": "2c65855d8ce5de1518ce19a30a3aba97",
+  "event_str": "TouchEvent(state=d643f875eae5b308c5941b2df2763551, view=ee0e171ae6b3df1b768646173a41fe29)"
+}

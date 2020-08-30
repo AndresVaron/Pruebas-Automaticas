@@ -1,0 +1,48 @@
+{
+  "tag": "2020-08-29_090807",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          188,
+          850
+        ],
+        [
+          892,
+          913
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/titleTextView",
+      "checked": false,
+      "text": "Enchanted Armoire",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 20,
+      "temp_id": 22,
+      "size": "704*63",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/titleTextView[text]Enchanted Armoire[enabled,,]",
+      "view_str": "4a1acbb22a8d2b1a04e7dc0c259d355e",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/titleTextView"
+    }
+  },
+  "start_state": "74f425b8908cd540a86b6dcd222a2483",
+  "stop_state": "74f425b8908cd540a86b6dcd222a2483",
+  "event_str": "TouchEvent(state=74f425b8908cd540a86b6dcd222a2483, view=4a1acbb22a8d2b1a04e7dc0c259d355e)"
+}

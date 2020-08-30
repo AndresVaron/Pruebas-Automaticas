@@ -1,0 +1,48 @@
+{
+  "tag": "2020-08-29_091150",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": false,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          1250,
+          1093
+        ],
+        [
+          1080,
+          1146
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/checkedTextView",
+      "checked": false,
+      "text": "Set up workout schedule",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 202,
+      "temp_id": 203,
+      "size": "-170*53",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/checkedTextView[text]Set up workout schedule[enabled,,]",
+      "view_str": "837908d6d72c55f8b1dc1e15fa34fe9d",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/checkedTextView"
+    }
+  },
+  "start_state": "314e5cff76063d322ffdb64d1515ca30",
+  "stop_state": "314e5cff76063d322ffdb64d1515ca30",
+  "event_str": "TouchEvent(state=314e5cff76063d322ffdb64d1515ca30, view=837908d6d72c55f8b1dc1e15fa34fe9d)"
+}

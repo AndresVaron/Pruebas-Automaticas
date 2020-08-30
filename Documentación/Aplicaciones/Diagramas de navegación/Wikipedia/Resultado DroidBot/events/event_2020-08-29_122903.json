@@ -1,0 +1,48 @@
+{
+  "tag": "2020-08-29_122903",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "org.wikipedia.alpha",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          424,
+          289
+        ],
+        [
+          655,
+          499
+        ]
+      ],
+      "resource_id": "org.wikipedia.alpha:id/about_logo_image",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.ImageView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 12,
+      "temp_id": 13,
+      "size": "231*210",
+      "signature": "[class]android.widget.ImageView[resource_id]org.wikipedia.alpha:id/about_logo_image[text]None[enabled,,]",
+      "view_str": "046ff6a47f9df316f252140e380cb795",
+      "content_free_signature": "[class]android.widget.ImageView[resource_id]org.wikipedia.alpha:id/about_logo_image"
+    }
+  },
+  "start_state": "6c3a294f4bdd0b93067a49f9da091b95",
+  "stop_state": "6c3a294f4bdd0b93067a49f9da091b95",
+  "event_str": "TouchEvent(state=6c3a294f4bdd0b93067a49f9da091b95, view=046ff6a47f9df316f252140e380cb795)"
+}

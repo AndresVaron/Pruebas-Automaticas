@@ -1,0 +1,50 @@
+{
+  "tag": "2020-08-29_092958",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": "Discover",
+      "children": [
+        26
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          540,
+          210
+        ],
+        [
+          1080,
+          352
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": null,
+      "class": "androidx.appcompat.app.ActionBar$Tab",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 22,
+      "temp_id": 25,
+      "size": "540*142",
+      "signature": "[class]androidx.appcompat.app.ActionBar$Tab[resource_id]None[text]None[enabled,,]",
+      "view_str": "abc52337827db0bcd483bac0b4d399d4",
+      "content_free_signature": "[class]androidx.appcompat.app.ActionBar$Tab[resource_id]None"
+    }
+  },
+  "start_state": "94874360a2867e6c3b29aecfe051cf43",
+  "stop_state": "c19c956e692e6952560a42210a154ed0",
+  "event_str": "TouchEvent(state=94874360a2867e6c3b29aecfe051cf43, view=abc52337827db0bcd483bac0b4d399d4)"
+}

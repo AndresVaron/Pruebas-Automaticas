@@ -1,0 +1,516 @@
+Activity Resolver Table:
+  Schemes:
+      http:
+        4b3ad5c com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity filter 34949eb
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "habitica.com": -1
+          Path: "PatternMatcher{LITERAL: /inventory/equipment}"
+        4b3ad5c com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity filter 17c4348
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "habitica.com": -1
+          Path: "PatternMatcher{LITERAL: /tasks}"
+        4b3ad5c com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity filter 18c5e1
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "habitica.com": -1
+          Path: "PatternMatcher{LITERAL: /}"
+        4b3ad5c com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity filter 3dcff06
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "habitica.com": -1
+          Path: "PatternMatcher{LITERAL: /party}"
+        4b3ad5c com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity filter f7099c7
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "habitica.com": -1
+          Path: "PatternMatcher{LITERAL: /party/quest}"
+        4b3ad5c com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity filter 8b64bf4
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "habitica.com": -1
+          Path: "PatternMatcher{LITERAL: /user/stats}"
+        4b3ad5c com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity filter 37adf1d
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "habitica.com": -1
+          Path: "PatternMatcher{LITERAL: /tavern}"
+        4b3ad5c com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity filter 8ba0592
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "habitica.com": -1
+          Path: "PatternMatcher{LITERAL: /groups/myGuilds}"
+        4b3ad5c com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity filter 5d30b63
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "habitica.com": -1
+          Path: "PatternMatcher{LITERAL: /challenges/myChallenges}"
+        4b3ad5c com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity filter 9e63360
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "habitica.com": -1
+          Path: "PatternMatcher{LITERAL: /challenges/findChallenges}"
+        4b3ad5c com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity filter 6eb5019
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "habitica.com": -1
+          Path: "PatternMatcher{LITERAL: /inventory/items}"
+        4b3ad5c com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity filter eee8de
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "habitica.com": -1
+          Path: "PatternMatcher{LITERAL: /inventory/stable}"
+        4b3ad5c com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity filter a60fabf
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "habitica.com": -1
+          Path: "PatternMatcher{LITERAL: /static/faq}"
+        4b3ad5c com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity filter 66b258c
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "habitica.com": -1
+          Path: "PatternMatcher{PREFIX: /groups/guild/}"
+        4b3ad5c com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity filter 757d4d5
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "habitica.com": -1
+          Path: "PatternMatcher{PREFIX: /challenges/}"
+      https:
+        4b3ad5c com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity filter 40f893a
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "https"
+          Authority: "habitica.com": -1
+          Path: "PatternMatcher{GLOB: /}"
+        4b3ad5c com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity filter 34949eb
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "habitica.com": -1
+          Path: "PatternMatcher{LITERAL: /inventory/equipment}"
+        4b3ad5c com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity filter 17c4348
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "habitica.com": -1
+          Path: "PatternMatcher{LITERAL: /tasks}"
+        4b3ad5c com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity filter 18c5e1
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "habitica.com": -1
+          Path: "PatternMatcher{LITERAL: /}"
+        4b3ad5c com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity filter 3dcff06
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "habitica.com": -1
+          Path: "PatternMatcher{LITERAL: /party}"
+        4b3ad5c com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity filter f7099c7
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "habitica.com": -1
+          Path: "PatternMatcher{LITERAL: /party/quest}"
+        4b3ad5c com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity filter 8b64bf4
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "habitica.com": -1
+          Path: "PatternMatcher{LITERAL: /user/stats}"
+        4b3ad5c com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity filter 37adf1d
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "habitica.com": -1
+          Path: "PatternMatcher{LITERAL: /tavern}"
+        4b3ad5c com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity filter 8ba0592
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "habitica.com": -1
+          Path: "PatternMatcher{LITERAL: /groups/myGuilds}"
+        4b3ad5c com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity filter 5d30b63
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "habitica.com": -1
+          Path: "PatternMatcher{LITERAL: /challenges/myChallenges}"
+        4b3ad5c com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity filter 9e63360
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "habitica.com": -1
+          Path: "PatternMatcher{LITERAL: /challenges/findChallenges}"
+        4b3ad5c com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity filter 6eb5019
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "habitica.com": -1
+          Path: "PatternMatcher{LITERAL: /inventory/items}"
+        4b3ad5c com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity filter eee8de
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "habitica.com": -1
+          Path: "PatternMatcher{LITERAL: /inventory/stable}"
+        4b3ad5c com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity filter a60fabf
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "habitica.com": -1
+          Path: "PatternMatcher{LITERAL: /static/faq}"
+        4b3ad5c com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity filter 66b258c
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "habitica.com": -1
+          Path: "PatternMatcher{PREFIX: /groups/guild/}"
+        4b3ad5c com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity filter 757d4d5
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "habitica.com": -1
+          Path: "PatternMatcher{PREFIX: /challenges/}"
+        4fcb4ea com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.PrefsActivity filter 5b483db
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "https"
+          Authority: "habitica.com": -1
+          Path: "PatternMatcher{GLOB: /settings/.*}"
+        46b0e78 com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.FullProfileActivity filter 8cde951
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "https"
+          Authority: "habitica.com": -1
+          Path: "PatternMatcher{GLOB: /profile/.*}"
+
+  Non-Data Actions:
+      android.intent.action.MAIN:
+        4b3ad5c com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.MainActivity filter 7b0865
+          Action: "android.intent.action.MAIN"
+          Category: "android.intent.category.LAUNCHER"
+        74af742 com.habitrpg.android.habitica.debug/com.squareup.leakcanary.internal.DisplayLeakActivity filter 14d9353
+          Action: "android.intent.action.MAIN"
+          Category: "android.intent.category.LAUNCHER"
+      android.appwidget.action.APPWIDGET_CONFIGURE:
+        26935b6 com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.AddTaskWidgetActivity filter 5ed82b7
+          Action: "android.appwidget.action.APPWIDGET_CONFIGURE"
+        47e9a24 com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.ui.activities.HabitButtonWidgetActivity filter 8b6c98d
+          Action: "android.appwidget.action.APPWIDGET_CONFIGURE"
+
+Receiver Resolver Table:
+  Non-Data Actions:
+      ACCEPT_PARTY_INVITE:
+        a95458e com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.receivers.LocalNotificationActionReceiver filter 69411af
+          Action: "ACCEPT_PARTY_INVITE"
+          Action: "REJECT_PARTY_INVITE"
+          Action: "ACCEPT_QUEST_INVITE"
+          Action: "REJECT_QUEST_INVITE"
+      com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED:
+        893b4f2 com.habitrpg.android.habitica.debug/com.facebook.CurrentAccessTokenExpirationBroadcastReceiver filter d31f743
+          Action: "com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED"
+      com.google.android.c2dm.intent.RECEIVE:
+        86ee1c0 com.habitrpg.android.habitica.debug/com.google.firebase.iid.FirebaseInstanceIdReceiver filter a7ecef9
+          Action: "com.google.android.c2dm.intent.RECEIVE"
+      REJECT_QUEST_INVITE:
+        a95458e com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.receivers.LocalNotificationActionReceiver filter 69411af
+          Action: "ACCEPT_PARTY_INVITE"
+          Action: "REJECT_PARTY_INVITE"
+          Action: "ACCEPT_QUEST_INVITE"
+          Action: "REJECT_QUEST_INVITE"
+      android.intent.action.BOOT_COMPLETED:
+        6c909bc com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.receivers.TaskAlarmBootReceiver filter 7f89d45
+          Action: "android.intent.action.BOOT_COMPLETED"
+      ACCEPT_QUEST_INVITE:
+        a95458e com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.receivers.LocalNotificationActionReceiver filter 69411af
+          Action: "ACCEPT_PARTY_INVITE"
+          Action: "REJECT_PARTY_INVITE"
+          Action: "ACCEPT_QUEST_INVITE"
+          Action: "REJECT_QUEST_INVITE"
+      android.appwidget.action.APPWIDGET_UPDATE:
+        d242c9a com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.widget.AvatarStatsWidgetProvider filter 71a19cb
+          Action: "android.appwidget.action.APPWIDGET_UPDATE"
+        7fb05a8 com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.widget.DailiesWidgetProvider filter 98ac8c1
+          Action: "android.appwidget.action.APPWIDGET_UPDATE"
+        f887866 com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.widget.TodoListWidgetProvider filter 6ae87a7
+          Action: "android.appwidget.action.APPWIDGET_UPDATE"
+        7ced454 com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.widget.HabitButtonWidgetProvider filter 4ba2ffd
+          Action: "android.appwidget.action.APPWIDGET_UPDATE"
+      android.intent.action.NOTIFY:
+        61d3490 com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.receivers.TaskReceiver filter 7d37189
+          Action: "android.intent.action.NOTIFY"
+      REJECT_PARTY_INVITE:
+        a95458e com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.receivers.LocalNotificationActionReceiver filter 69411af
+          Action: "ACCEPT_PARTY_INVITE"
+          Action: "REJECT_PARTY_INVITE"
+          Action: "ACCEPT_QUEST_INVITE"
+          Action: "REJECT_QUEST_INVITE"
+
+Service Resolver Table:
+  Non-Data Actions:
+      com.google.firebase.INSTANCE_ID_EVENT:
+        24059ec com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.helpers.notifications.HabiticaFirebaseInstanceIDService filter 95461b5
+          Action: "com.google.firebase.INSTANCE_ID_EVENT"
+      com.google.firebase.MESSAGING_EVENT:
+        8a42e3e com.habitrpg.android.habitica.debug/com.habitrpg.android.habitica.helpers.notifications.HabiticaFirebaseMessagingService filter 5f2c49f
+          Action: "com.google.firebase.MESSAGING_EVENT"
+        5b0f04a com.habitrpg.android.habitica.debug/com.google.firebase.messaging.FirebaseMessagingService filter 8c90bbb
+          Action: "com.google.firebase.MESSAGING_EVENT"
+          mPriority=-500, mOrder=0, mHasStaticPartialTypes=false, mHasDynamicPartialTypes=false
+
+Registered ContentProviders:
+  com.habitrpg.android.habitica.debug/com.facebook.marketing.internal.MarketingInitProvider:
+    Provider{17925fa com.habitrpg.android.habitica.debug/com.facebook.marketing.internal.MarketingInitProvider}
+  com.habitrpg.android.habitica.debug/com.google.firebase.perf.provider.FirebasePerfProvider:
+    Provider{38387ab com.habitrpg.android.habitica.debug/com.google.firebase.perf.provider.FirebasePerfProvider}
+  com.habitrpg.android.habitica.debug/com.google.firebase.provider.FirebaseInitProvider:
+    Provider{b990e08 com.habitrpg.android.habitica.debug/com.google.firebase.provider.FirebaseInitProvider}
+  com.habitrpg.android.habitica.debug/com.facebook.internal.FacebookInitProvider:
+    Provider{4a199a1 com.habitrpg.android.habitica.debug/com.facebook.internal.FacebookInitProvider}
+  com.habitrpg.android.habitica.debug/com.squareup.leakcanary.internal.LeakCanaryFileProvider:
+    Provider{923a7c6 com.habitrpg.android.habitica.debug/com.squareup.leakcanary.internal.LeakCanaryFileProvider}
+  com.habitrpg.android.habitica.debug/androidx.lifecycle.ProcessLifecycleOwnerInitializer:
+    Provider{a70f387 com.habitrpg.android.habitica.debug/androidx.lifecycle.ProcessLifecycleOwnerInitializer}
+  com.habitrpg.android.habitica.debug/androidx.core.content.FileProvider:
+    Provider{db502b4 com.habitrpg.android.habitica.debug/androidx.core.content.FileProvider}
+
+ContentProvider Authorities:
+  [com.habitrpg.android.habitica.debug.lifecycle-process]:
+    Provider{a70f387 com.habitrpg.android.habitica.debug/androidx.lifecycle.ProcessLifecycleOwnerInitializer}
+      applicationInfo=ApplicationInfo{81d2edd com.habitrpg.android.habitica.debug}
+  [com.habitrpg.android.habitica.debug.firebaseinitprovider]:
+    Provider{b990e08 com.habitrpg.android.habitica.debug/com.google.firebase.provider.FirebaseInitProvider}
+      applicationInfo=ApplicationInfo{4a27a52 com.habitrpg.android.habitica.debug}
+  [com.habitrpg.android.habitica.debug.FacebookInitProvider]:
+    Provider{4a199a1 com.habitrpg.android.habitica.debug/com.facebook.internal.FacebookInitProvider}
+      applicationInfo=ApplicationInfo{7df4123 com.habitrpg.android.habitica.debug}
+  [com.habitrpg.android.habitica.debug.MarketingInitProvider]:
+    Provider{17925fa com.habitrpg.android.habitica.debug/com.facebook.marketing.internal.MarketingInitProvider}
+      applicationInfo=ApplicationInfo{3f99620 com.habitrpg.android.habitica.debug}
+  [com.habitrpg.android.habitica.debug.firebaseperfprovider]:
+    Provider{38387ab com.habitrpg.android.habitica.debug/com.google.firebase.perf.provider.FirebasePerfProvider}
+      applicationInfo=ApplicationInfo{9c2dbd9 com.habitrpg.android.habitica.debug}
+  [com.habitrpg.android.habitica.debug.fileprovider]:
+    Provider{db502b4 com.habitrpg.android.habitica.debug/androidx.core.content.FileProvider}
+      applicationInfo=ApplicationInfo{9c9e99e com.habitrpg.android.habitica.debug}
+  [com.squareup.leakcanary.fileprovider.com.habitrpg.android.habitica.debug]:
+    Provider{923a7c6 com.habitrpg.android.habitica.debug/com.squareup.leakcanary.internal.LeakCanaryFileProvider}
+      applicationInfo=ApplicationInfo{e5acc7f com.habitrpg.android.habitica.debug}
+
+Key Set Manager:
+  [com.habitrpg.android.habitica.debug]
+      Signing KeySets: 32
+
+Packages:
+  Package [com.habitrpg.android.habitica.debug] (31f44c):
+    userId=10151
+    pkg=Package{c7c5c95 com.habitrpg.android.habitica.debug}
+    codePath=/data/app/~~VLuAaJTdFpv635FPyAxQpQ==/com.habitrpg.android.habitica.debug-N055tUVUSXs6_uD5mu0seA==
+    resourcePath=/data/app/~~VLuAaJTdFpv635FPyAxQpQ==/com.habitrpg.android.habitica.debug-N055tUVUSXs6_uD5mu0seA==
+    legacyNativeLibraryDir=/data/app/~~VLuAaJTdFpv635FPyAxQpQ==/com.habitrpg.android.habitica.debug-N055tUVUSXs6_uD5mu0seA==/lib
+    primaryCpuAbi=x86
+    secondaryCpuAbi=null
+    versionCode=2518 minSdk=21 targetSdk=28
+    versionName=2.8
+    splits=[base, config.en, config.x86, config.xxhdpi]
+    apkSigningVersion=2
+    applicationInfo=ApplicationInfo{c7c5c95 com.habitrpg.android.habitica.debug}
+    flags=[ DEBUGGABLE HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP ]
+    privateFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION PRIVATE_FLAG_REQUEST_LEGACY_EXTERNAL_STORAGE HAS_DOMAIN_URLS PARTIALLY_DIRECT_BOOT_AWARE PRIVATE_FLAG_ALLOW_NATIVE_HEAP_POINTER_TAGGING ]
+    forceQueryable=false
+    queriesPackages=[]
+    dataDir=/data/user/0/com.habitrpg.android.habitica.debug
+    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]
+    usesLibraries:
+      android.test.base
+    usesLibraryFiles:
+      /system/framework/android.test.base.jar
+    timeStamp=2020-08-29 08:48:52
+    firstInstallTime=2020-08-29 08:48:53
+    lastUpdateTime=2020-08-29 08:48:53
+    signatures=PackageSignatures{56701aa version:2, signatures:[5e7400ec], past signatures:[]}
+    installPermissionsFixed=true
+    pkgFlags=[ DEBUGGABLE HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP ]
+    requested permissions:
+      android.permission.ACCESS_NETWORK_STATE
+      android.permission.INTERNET
+      com.android.vending.BILLING
+      android.permission.RECEIVE_BOOT_COMPLETED
+      android.permission.READ_EXTERNAL_STORAGE: restricted=true
+      android.permission.WRITE_EXTERNAL_STORAGE: restricted=true
+      android.permission.FOREGROUND_SERVICE
+      android.permission.WAKE_LOCK
+      com.google.android.c2dm.permission.RECEIVE
+      com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
+      android.permission.ACCESS_MEDIA_LOCATION
+    install permissions:
+      com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE: granted=true
+      com.google.android.c2dm.permission.RECEIVE: granted=true
+      android.permission.FOREGROUND_SERVICE: granted=true
+      android.permission.RECEIVE_BOOT_COMPLETED: granted=true
+      android.permission.INTERNET: granted=true
+      com.android.vending.BILLING: granted=true
+      android.permission.ACCESS_NETWORK_STATE: granted=true
+      android.permission.WAKE_LOCK: granted=true
+    User 0: ceDataInode=131120 installed=true hidden=false suspended=false distractionFlags=0 stopped=false notLaunched=false enabled=0 instant=false virtual=false
+      gids=[3003]
+      runtime permissions:
+        android.permission.READ_EXTERNAL_STORAGE: granted=false, flags=[ USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED|RESTRICTION_INSTALLER_EXEMPT]
+        android.permission.WRITE_EXTERNAL_STORAGE: granted=false, flags=[ USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED|RESTRICTION_INSTALLER_EXEMPT]
+        android.permission.ACCESS_MEDIA_LOCATION: granted=false, flags=[ REVOKE_WHEN_REQUESTED|USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED]
+      enabledComponents:
+        com.squareup.leakcanary.DisplayLeakService
+        com.squareup.leakcanary.internal.RequestStoragePermissionActivity
+        com.squareup.leakcanary.internal.HeapAnalyzerService
+        com.squareup.leakcanary.internal.DisplayLeakActivity
+
+Queries:
+  system apps queryable: false
+  queries via package name:
+  queries via intent:
+  queryable via interaction:
+    User 0:
+      [com.android.location.fused,com.android.emulator.multidisplay,com.android.inputdevices,com.android.localtransport,com.android.server.telecom,com.android.dynsystem,android,com.android.settings,com.android.keychain,com.android.providers.settings,com.android.wallpaperbackup]:
+        com.habitrpg.android.habitica.debug
+      [com.google.android.gsf,com.google.android.gms]:
+        com.habitrpg.android.habitica.debug
+      com.google.android.inputmethod.latin:
+        com.habitrpg.android.habitica.debug
+
+Package Changes:
+  Sequence number=879
+  User 0:
+    seq=0, package=com.google.android.permissioncontroller
+    seq=1, package=com.android.systemui
+    seq=112, package=com.google.android.inputmethod.latin
+    seq=116, package=com.google.android.sdksetup
+    seq=131, package=com.google.android.music
+    seq=161, package=com.google.android.dialer
+    seq=163, package=com.google.android.cellbroadcastreceiver
+    seq=235, package=com.google.android.apps.messaging
+    seq=310, package=com.google.android.partnersetup
+    seq=407, package=com.google.android.youtube
+    seq=425, package=com.google.android.syncadapters.contacts
+    seq=427, package=com.google.android.apps.docs
+    seq=442, package=com.google.android.gsf
+    seq=445, package=com.google.android.calendar
+    seq=446, package=com.android.camera2
+    seq=447, package=com.google.android.googlequicksearchbox
+    seq=450, package=com.android.nfc
+    seq=451, package=com.android.stk
+    seq=453, package=com.android.traceur
+    seq=454, package=com.google.android.apps.maps
+    seq=457, package=com.google.android.apps.photos
+    seq=471, package=com.google.android.apps.enterprise.dmagent
+    seq=472, package=com.google.android.projection.gearhead
+    seq=488, package=com.google.android.videos
+    seq=498, package=com.google.android.gm
+    seq=506, package=com.android.vending
+    seq=540, package=com.google.android.gms
+    seq=545, package=com.habitrpg.android.habitica.debug
+    seq=769, package=com.android.settings
+    seq=877, package=com.google.android.setupwizard
+    seq=878, package=io.github.ylimit.droidbotapp
+
+
+Dexopt state:
+  [com.habitrpg.android.habitica.debug]
+    path: /data/app/~~VLuAaJTdFpv635FPyAxQpQ==/com.habitrpg.android.habitica.debug-N055tUVUSXs6_uD5mu0seA==/base.apk
+      x86: [status=run-from-apk] [reason=unknown]
+
+
+Compiler stats:
+  [com.habitrpg.android.habitica.debug]
+    (No recorded stats)
+
+APEX session state:
+
+Active APEX packages:
+
+
+Inactive APEX packages:
+
+
+Factory APEX packages:
+
+

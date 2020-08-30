@@ -1,0 +1,48 @@
+{
+  "tag": "2020-08-29_092156",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          11,
+          358
+        ],
+        [
+          1069,
+          484
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/publicGuildsButton",
+      "checked": false,
+      "text": "PUBLIC GUILDS",
+      "class": "android.widget.Button",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 21,
+      "temp_id": 25,
+      "size": "1058*126",
+      "signature": "[class]android.widget.Button[resource_id]com.habitrpg.android.habitica.debug:id/publicGuildsButton[text]PUBLIC GUILDS[enabled,,]",
+      "view_str": "ef372e272a0f63cb196f01b68b70415d",
+      "content_free_signature": "[class]android.widget.Button[resource_id]com.habitrpg.android.habitica.debug:id/publicGuildsButton"
+    }
+  },
+  "start_state": "2c65855d8ce5de1518ce19a30a3aba97",
+  "stop_state": "0dd1cf749cc366c551b9ab378ca4ed3d",
+  "event_str": "TouchEvent(state=2c65855d8ce5de1518ce19a30a3aba97, view=ef372e272a0f63cb196f01b68b70415d)"
+}

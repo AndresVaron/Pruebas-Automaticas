@@ -1,0 +1,48 @@
+{
+  "tag": "2020-08-29_090720",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": false,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          188,
+          924
+        ],
+        [
+          892,
+          1093
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/notesTextView",
+      "checked": false,
+      "text": "Open the Armoire to randomly receive special Equipment, Experience, or food! Equipment pieces remaining: 236",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 20,
+      "temp_id": 23,
+      "size": "704*169",
+      "signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/notesTextView[text]None[enabled,,]",
+      "view_str": "99818362006c2181dd2119444c8670b4",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]com.habitrpg.android.habitica.debug:id/notesTextView"
+    }
+  },
+  "start_state": "74f425b8908cd540a86b6dcd222a2483",
+  "stop_state": "f1c4d861aa5fab56b0c9fc3088195810",
+  "event_str": "TouchEvent(state=74f425b8908cd540a86b6dcd222a2483, view=99818362006c2181dd2119444c8670b4)"
+}

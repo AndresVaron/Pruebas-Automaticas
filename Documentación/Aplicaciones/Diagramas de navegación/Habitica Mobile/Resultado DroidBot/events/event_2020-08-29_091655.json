@@ -1,0 +1,48 @@
+{
+  "tag": "2020-08-29_091655",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": false,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": "Weekly, Not selected",
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          388,
+          1438
+        ],
+        [
+          692,
+          1512
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": "Weekly",
+      "class": "android.widget.TextView",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 44,
+      "temp_id": 46,
+      "size": "304*74",
+      "signature": "[class]android.widget.TextView[resource_id]None[text]Weekly[enabled,,]",
+      "view_str": "25bcb74e1717700df8e4c75504e2f341",
+      "content_free_signature": "[class]android.widget.TextView[resource_id]None"
+    }
+  },
+  "start_state": "2cda309c102b67fd82287b04acb1bde8",
+  "stop_state": "cadab1a259d971f9fd1fe10d9681f5f4",
+  "event_str": "TouchEvent(state=2cda309c102b67fd82287b04acb1bde8, view=25bcb74e1717700df8e4c75504e2f341)"
+}

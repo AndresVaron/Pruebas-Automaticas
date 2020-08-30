@@ -1,0 +1,48 @@
+{
+  "tag": "2020-08-29_123011",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "org.wikipedia.alpha",
+      "visible": true,
+      "checkable": true,
+      "child_count": 0,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": "Show password",
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          912,
+          638
+        ],
+        [
+          1038,
+          764
+        ]
+      ],
+      "resource_id": "org.wikipedia.alpha:id/text_input_end_icon",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.ImageButton",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 33,
+      "temp_id": 34,
+      "size": "126*126",
+      "signature": "[class]android.widget.ImageButton[resource_id]org.wikipedia.alpha:id/text_input_end_icon[text]None[enabled,,]",
+      "view_str": "57b301dd8bbf616e9d980c793fc8e0ac",
+      "content_free_signature": "[class]android.widget.ImageButton[resource_id]org.wikipedia.alpha:id/text_input_end_icon"
+    }
+  },
+  "start_state": "9cfd194e68406138c497fe4516e15103",
+  "stop_state": "9cfd194e68406138c497fe4516e15103",
+  "event_str": "TouchEvent(state=9cfd194e68406138c497fe4516e15103, view=57b301dd8bbf616e9d980c793fc8e0ac)"
+}

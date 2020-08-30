@@ -1,0 +1,60 @@
+{
+  "tag": "2020-08-29_092008",
+  "event": {
+    "event_type": "scroll",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 10,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        15,
+        16,
+        20,
+        24,
+        27,
+        30,
+        34,
+        35,
+        39,
+        43
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          210
+        ],
+        [
+          1080,
+          1794
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/recycler_view",
+      "checked": false,
+      "text": null,
+      "class": "androidx.recyclerview.widget.RecyclerView",
+      "scrollable": true,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 13,
+      "temp_id": 14,
+      "size": "1080*1584",
+      "signature": "[class]androidx.recyclerview.widget.RecyclerView[resource_id]com.habitrpg.android.habitica.debug:id/recycler_view[text]None[enabled,,]",
+      "view_str": "7ceeb89fa0453f8a146f4293d637ad24",
+      "content_free_signature": "[class]androidx.recyclerview.widget.RecyclerView[resource_id]com.habitrpg.android.habitica.debug:id/recycler_view"
+    },
+    "direction": "DOWN"
+  },
+  "start_state": "45f8048f5a0978649a46ddd6e47afed5",
+  "stop_state": "6be26f7f7eb24f83093d8ad782ee9ef9",
+  "event_str": "ScrollEvent(state=45f8048f5a0978649a46ddd6e47afed5, view=7ceeb89fa0453f8a146f4293d637ad24, direction=DOWN)"
+}

@@ -1,0 +1,48 @@
+{
+  "tag": "2020-08-29_123327",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "org.wikipedia.alpha",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": true,
+      "clickable": true,
+      "is_password": true,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          620
+        ],
+        [
+          1038,
+          783
+        ]
+      ],
+      "resource_id": null,
+      "checked": false,
+      "text": "Repeat password",
+      "class": "android.widget.EditText",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": true,
+      "parent": 29,
+      "temp_id": 30,
+      "size": "996*163",
+      "signature": "[class]android.widget.EditText[resource_id]None[text]Repeat password[enabled,,]",
+      "view_str": "d9d6c775978cf47903f957be8538110a",
+      "content_free_signature": "[class]android.widget.EditText[resource_id]None"
+    }
+  },
+  "start_state": "e53caf7a3c4816a4c483b0811bdc129d",
+  "stop_state": "e53caf7a3c4816a4c483b0811bdc129d",
+  "event_str": "TouchEvent(state=e53caf7a3c4816a4c483b0811bdc129d, view=d9d6c775978cf47903f957be8538110a)"
+}

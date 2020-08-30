@@ -1,0 +1,51 @@
+{
+  "tag": "2020-08-29_092657",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 2,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        147,
+        150
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          843,
+          1558
+        ],
+        [
+          1027,
+          1794
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/eyewear_item",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 130,
+      "temp_id": 146,
+      "size": "184*236",
+      "signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/eyewear_item[text]None[enabled,,]",
+      "view_str": "1f38513d4cbf95790c62cb64b544de8e",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/eyewear_item"
+    }
+  },
+  "start_state": "486d92233068fa82b8d5aa991b5b862b",
+  "stop_state": "2f1fad79a1f9302150f24349ca5cdab7",
+  "event_str": "TouchEvent(state=486d92233068fa82b8d5aa991b5b862b, view=1f38513d4cbf95790c62cb64b544de8e)"
+}

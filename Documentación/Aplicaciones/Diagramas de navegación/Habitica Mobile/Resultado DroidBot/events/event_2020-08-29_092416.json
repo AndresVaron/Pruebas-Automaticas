@@ -1,0 +1,48 @@
+{
+  "tag": "2020-08-29_092416",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          42,
+          1520
+        ],
+        [
+          1038,
+          1625
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/report_bug_button",
+      "checked": false,
+      "text": "Report a Bug",
+      "class": "android.widget.Button",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 74,
+      "temp_id": 87,
+      "size": "996*105",
+      "signature": "[class]android.widget.Button[resource_id]com.habitrpg.android.habitica.debug:id/report_bug_button[text]Report a Bug[enabled,,]",
+      "view_str": "b5e16ac12c6a4818be2ea3ceddeea178",
+      "content_free_signature": "[class]android.widget.Button[resource_id]com.habitrpg.android.habitica.debug:id/report_bug_button"
+    }
+  },
+  "start_state": "14895bbccf7574f4b543eba7e074b370",
+  "stop_state": "406b28da172dcfdafdf86c9aa786e130",
+  "event_str": "TouchEvent(state=14895bbccf7574f4b543eba7e074b370, view=b5e16ac12c6a4818be2ea3ceddeea178)"
+}

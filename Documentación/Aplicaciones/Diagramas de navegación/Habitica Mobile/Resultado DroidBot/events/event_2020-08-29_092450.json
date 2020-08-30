@@ -1,0 +1,51 @@
+{
+  "tag": "2020-08-29_092450",
+  "event": {
+    "event_type": "scroll",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 1,
+      "editable": false,
+      "clickable": false,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        15
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          0,
+          210
+        ],
+        [
+          1080,
+          1794
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/scroll_view",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.ScrollView",
+      "scrollable": true,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 13,
+      "temp_id": 14,
+      "size": "1080*1584",
+      "signature": "[class]android.widget.ScrollView[resource_id]com.habitrpg.android.habitica.debug:id/scroll_view[text]None[enabled,,]",
+      "view_str": "a2c53a9401d080b1184842242b908035",
+      "content_free_signature": "[class]android.widget.ScrollView[resource_id]com.habitrpg.android.habitica.debug:id/scroll_view"
+    },
+    "direction": "UP"
+  },
+  "start_state": "69e9668c9fe737f346f4980a4356743d",
+  "stop_state": "69e9668c9fe737f346f4980a4356743d",
+  "event_str": "ScrollEvent(state=69e9668c9fe737f346f4980a4356743d, view=a2c53a9401d080b1184842242b908035, direction=UP)"
+}

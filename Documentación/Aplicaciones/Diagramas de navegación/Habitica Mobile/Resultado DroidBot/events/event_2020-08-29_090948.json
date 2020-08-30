@@ -1,0 +1,51 @@
+{
+  "tag": "2020-08-29_090948",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": false,
+      "checkable": false,
+      "child_count": 2,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [
+        161,
+        162
+      ],
+      "focused": false,
+      "bounds": [
+        [
+          1987,
+          573
+        ],
+        [
+          1080,
+          735
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/buyButton",
+      "checked": false,
+      "text": null,
+      "class": "android.widget.LinearLayout",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 156,
+      "temp_id": 160,
+      "size": "-907*162",
+      "signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/buyButton[text]None[enabled,,]",
+      "view_str": "d46b7f476555603486d9cc790d456d74",
+      "content_free_signature": "[class]android.widget.LinearLayout[resource_id]com.habitrpg.android.habitica.debug:id/buyButton"
+    }
+  },
+  "start_state": "2c6cae85779dd644796ed9afa0c69abb",
+  "stop_state": "2c6cae85779dd644796ed9afa0c69abb",
+  "event_str": "TouchEvent(state=2c6cae85779dd644796ed9afa0c69abb, view=d46b7f476555603486d9cc790d456d74)"
+}

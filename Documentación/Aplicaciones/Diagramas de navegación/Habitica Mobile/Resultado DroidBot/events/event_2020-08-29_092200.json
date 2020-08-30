@@ -1,0 +1,48 @@
+{
+  "tag": "2020-08-29_092200",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": false,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          817,
+          1871
+        ],
+        [
+          1048,
+          1794
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/joinleaveButton",
+      "checked": false,
+      "text": "JOIN",
+      "class": "android.widget.Button",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 85,
+      "temp_id": 87,
+      "size": "231*-77",
+      "signature": "[class]android.widget.Button[resource_id]com.habitrpg.android.habitica.debug:id/joinleaveButton[text]JOIN[enabled,,]",
+      "view_str": "86a86e453a648b1154860490b54d77ef",
+      "content_free_signature": "[class]android.widget.Button[resource_id]com.habitrpg.android.habitica.debug:id/joinleaveButton"
+    }
+  },
+  "start_state": "0dd1cf749cc366c551b9ab378ca4ed3d",
+  "stop_state": "98ceb8d6a77febecda0d9762aa01576e",
+  "event_str": "TouchEvent(state=0dd1cf749cc366c551b9ab378ca4ed3d, view=86a86e453a648b1154860490b54d77ef)"
+}

@@ -1,0 +1,48 @@
+{
+  "tag": "2020-08-29_090822",
+  "event": {
+    "event_type": "touch",
+    "x": null,
+    "y": null,
+    "view": {
+      "package": "com.habitrpg.android.habitica.debug",
+      "visible": true,
+      "checkable": false,
+      "child_count": 0,
+      "editable": false,
+      "clickable": true,
+      "is_password": false,
+      "focusable": true,
+      "enabled": true,
+      "content_description": null,
+      "children": [],
+      "focused": false,
+      "bounds": [
+        [
+          152,
+          449
+        ],
+        [
+          383,
+          586
+        ]
+      ],
+      "resource_id": "com.habitrpg.android.habitica.debug:id/pin_button",
+      "checked": false,
+      "text": "UNPIN",
+      "class": "android.widget.Button",
+      "scrollable": false,
+      "selected": false,
+      "long_clickable": false,
+      "parent": 13,
+      "temp_id": 14,
+      "size": "231*137",
+      "signature": "[class]android.widget.Button[resource_id]com.habitrpg.android.habitica.debug:id/pin_button[text]UNPIN[enabled,,]",
+      "view_str": "8240e53ba557818bfceabdaeaa975b4d",
+      "content_free_signature": "[class]android.widget.Button[resource_id]com.habitrpg.android.habitica.debug:id/pin_button"
+    }
+  },
+  "start_state": "f104b2cda348bcbb9d0ef41d20bb2810",
+  "stop_state": "f104b2cda348bcbb9d0ef41d20bb2810",
+  "event_str": "TouchEvent(state=f104b2cda348bcbb9d0ef41d20bb2810, view=8240e53ba557818bfceabdaeaa975b4d)"
+}
