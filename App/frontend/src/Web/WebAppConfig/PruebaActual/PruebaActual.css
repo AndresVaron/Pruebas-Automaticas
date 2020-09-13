@@ -1,0 +1,32 @@
+.pruebaActualWebConfig {
+    position: relative;
+    height: 120px;
+    width: 120px;
+    background-color: #1d2f6f;
+    display: flex;
+    margin: 5px;
+    margin-left: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 40px;
+    border: solid 5px #1d2f6f;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.containerDeleteIconPruebaActualWebConfig {
+    height: 120px;
+    width: 120px;
+    border-radius: 20px;
+    position: absolute;
+    background-color: rgb(0, 0, 0, 0.3);
+}
+
+.containerDeleteIconPruebaActualWebConfig img {
+    height: 80px;
+    width: 80px;
+    margin-top: 20px;
+    margin-left: 20px;
+}

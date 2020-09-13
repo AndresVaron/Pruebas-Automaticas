@@ -1,0 +1,92 @@
+.containerInicioBotones {
+    width: 100%;
+    min-height: 70vh;
+    padding-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contBotonesIniciales {
+    height: 200px;
+    padding-bottom: 10vh;
+}
+
+.btnInicio {
+    border-radius: 20px;
+    background-color: white;
+    min-height: 100px;
+    max-height: 200px;
+    max-width: 200px;
+    min-width: 100px;
+    height: 40vw;
+    width: 40vw;
+    display: inline-block;
+    -webkit-box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.btnProbarWebInicio {
+    margin-left: 5vw;
+}
+
+.lblTituloInicio {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 5vh;
+}
+
+.containerBtnHistorico {
+    width: 100%;
+}
+
+.movilInicioIcon {
+    min-height: 40px;
+    max-height: 90px;
+    max-width: 90px;
+    min-width: 40px;
+    height: 15vw;
+    width: 15vw;
+    transform: rotate(-30deg);
+}
+.webInicioIcon {
+    min-height: 40px;
+    max-height: 90px;
+    max-width: 90px;
+    min-width: 40px;
+    height: 15vw;
+    width: 15vw;
+}
+
+.lblBtnInicio {
+    margin-top: 2vh;
+    font-weight: bold;
+}
+
+.contenedorBtnInicio {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnHistorico {
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    font-size: 20px;
+    padding: 10px;
+    color: gray;
+    border: solid 3px gray;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.btnHistorico:hover {
+    color: rgb(160, 160, 160);
+    border: solid 3px rgb(160, 160, 160);
+}

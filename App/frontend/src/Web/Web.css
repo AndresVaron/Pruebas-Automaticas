@@ -1,0 +1,150 @@
+.lblTitleWebApp {
+    padding-top: 5vh;
+    font-size: 32px;
+    padding-left: 5vw;
+}
+
+.containerAppsWeb {
+    margin-top: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+@media screen and (max-width: 769px) {
+    .containerAppsWeb {
+        width: 100%;
+    }
+}
+
+.curtain {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgb(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.modalCreateWebAppVersionCont {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalCreateWebAppVersion {
+    border-radius: 20px;
+    background-color: white;
+    padding-bottom: 15px;
+    -webkit-box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.5);
+    height: 200px;
+    width: 500px;
+    z-index: 3;
+}
+.modalCreateWebApp {
+    border-radius: 20px;
+    background-color: white;
+    padding-bottom: 15px;
+    -webkit-box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.5);
+    height: 160px;
+    width: 500px;
+    z-index: 3;
+}
+
+.closeButtonModal {
+    border: 0;
+    font-size: 30px;
+    float: right;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    height: 16px;
+    margin: 20px;
+}
+
+.createContainer {
+    padding: 20px;
+}
+.createContainer h1 {
+    margin-bottom: 16px;
+    font-size: 24px;
+}
+
+.guardarCrearVersionApp {
+    margin-left: auto;
+}
+
+.rowGuardarCrearVersionApp,
+.rowUrlCrearVersionApp,
+.rowVersionCrearVersionApp {
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 10px;
+}
+.lblCrearVersionApp {
+    margin-left: 5px;
+    font-size: 20px;
+    height: 100%;
+    width: 80px;
+}
+
+.createInput {
+    padding: 2px 8px !important;
+    border: solid 2px #989898 !important;
+    border-radius: 5px !important;
+}
+.createInput:focus {
+    outline: 0 !important;
+    box-shadow: 0 0 0 0.15rem rgba(0, 123, 255, 0.25);
+}
+
+.contWebAppCard {
+    margin-bottom: 30px;
+}
+
+.containerAppsWebCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botonCrearOtraAppWeb {
+    margin-left: auto;
+    margin-right: auto;
+    height: 60px;
+    width: 100px;
+    font-size: 30px;
+    padding: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    color: #989898;
+    border: solid 4px #989898;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.botonCrearOtraAppWeb:hover {
+    color: rgb(160, 160, 160);
+    border: solid 4px rgb(160, 160, 160);
+}
+
+.botonCrearOtraAppWeb img {
+    height: 40px;
+    width: 40px;
+    margin-left: 15px;
+    margin-top: -10px;
+}
