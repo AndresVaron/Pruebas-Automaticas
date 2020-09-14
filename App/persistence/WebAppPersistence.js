@@ -82,3 +82,31 @@ module.exports.deleteWebApp = async (id) => {
     const dbconn = MongoConnection.getInstance();
     return await dbconn.collection('webapps').deleteOne({ _id: id });
 };
+
+/*
+Retorna la lista completa de webapps
+*/
+
+module.exports.fetchWebAppVersionConfigs = async (id) => {
+    const dbconn = MongoConnection.getInstance();
+    return await dbconn
+        .collection('webappsconfigs')
+        .aggregate([
+            {
+                $match: {
+                    id_version: MongoFunctions.convertObjectId(id),
+                },
+            },
+        ])
+        .toArray();
+};
+
+/*
+Retorna de la bd la pregunta con el id dado.
+*/
+module.exports.fetchWebAppPrueba = async (id) => {
+    const dbconn = MongoConnection.getInstance();
+    return await dbconn
+        .collection('webappspruebas')
+        .findOne({ _id: MongoFunctions.convertObjectId(id) });
+};

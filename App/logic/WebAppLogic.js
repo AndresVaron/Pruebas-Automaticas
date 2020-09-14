@@ -194,3 +194,73 @@ module.exports.deleteWebApp = async (id) => {
         throw errJson;
     }
 };
+
+/* 
+Método encargado de obtener una webappversion
+*/
+module.exports.fetchWebAppVersion = async (idApp, id) => {
+    try {
+        const response = await WebAppPersistence.fetchWebApp(idApp);
+        if (response.length === 0) {
+            const errJson = {
+                errMsg: 'No existe una webapp con este id',
+                errCode: 400,
+            };
+            errJson.error = new Error();
+            throw errJson;
+        } else {
+            const found = response[0].versiones.find(
+                (ver) => ver._id.toString() === id
+            );
+            if (found === undefined) {
+                const errJson = {
+                    errMsg: 'No existe una version con este id',
+                    errCode: 400,
+                };
+                errJson.error = new Error();
+                throw errJson;
+            }
+            response[0].version = found;
+            delete response[0]['versiones'];
+            return response[0];
+        }
+    } catch (err) {
+        if (err.errCode) {
+            throw err;
+        }
+        const errJson = {
+            error: new Error(),
+            errMsg: err.toString(),
+            errCode: 500,
+        };
+        throw errJson;
+    }
+};
+
+/*
+Método encargado de obtener todas las apps web
+*/
+module.exports.fetchWebAppVersionConfigs = async (id) => {
+    try {
+        const configs = await WebAppPersistence.fetchWebAppVersionConfigs(id);
+        for (const config of configs) {
+            for (let j = 0; j < config.pruebas.length; j++) {
+                for (let i = 0; i < config.pruebas[j].length; i++) {
+                    config.pruebas[j][
+                        i
+                    ] = await WebAppPersistence.fetchWebAppPrueba(
+                        config.pruebas[j][i]
+                    );
+                }
+            }
+        }
+        return configs;
+    } catch (err) {
+        const errJson = {
+            error: new Error(),
+            errMsg: err.toString(),
+            errCode: 500,
+        };
+        throw errJson;
+    }
+};
