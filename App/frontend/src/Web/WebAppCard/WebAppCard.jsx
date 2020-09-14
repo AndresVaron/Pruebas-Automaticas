@@ -88,14 +88,17 @@ function WebAppCard(props) {
                         Borrar
                     </button>
                     <button
+                        disabled={!currentVersion}
                         className="bntConfirmarWebAppList"
                         onClick={() => {
-                            props.history.push(
-                                '/web/' +
-                                    props.app._id +
-                                    '/' +
-                                    currentVersion.value._id
-                            );
+                            if (currentVersion) {
+                                props.history.push(
+                                    '/web/' +
+                                        props.app._id +
+                                        '/' +
+                                        currentVersion.value._id
+                                );
+                            }
                         }}
                     >
                         Seleccionar
@@ -110,7 +113,7 @@ function WebAppCard(props) {
             <div className="webAppTitleRow">
                 <div className="lblNombreWebApp">{props.app.nombre}</div>
                 <div className="lblFechaWebApp">
-                    Creada: {props.app.fechaCreacion}
+                    Creada: {props.app.fechaCreacion.substring(0, 10)}
                 </div>
             </div>
             <div className="webAppInfoRow">

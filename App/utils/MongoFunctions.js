@@ -1,5 +1,4 @@
 const ObjectId = require('mongodb').ObjectID;
-const errors = require('../configs/errors');
 
 /*
 Convierte un string en un id de mongo, lanza una excepción en caso de que el id no se pueda convertir
@@ -8,7 +7,12 @@ module.exports.convertObjectId = (id) => {
     try {
         return ObjectId(id);
     } catch (err) {
-        throw errors.invalidMongoId;
+        const errJson = {
+            error: new Error(),
+            errMsg: 'El id no cumple con el formato de un id de mongo',
+            errCode: 400,
+        };
+        throw errJson;
     }
 };
 /*
@@ -20,6 +24,11 @@ module.exports.convertListOfObjectId = (list) => {
             return ObjectId(id);
         });
     } catch (err) {
-        throw errors.invalidMongoId;
+        const errJson = {
+            error: new Error(),
+            errMsg: 'El id no cumple con el formato de un id de mongo',
+            errCode: 400,
+        };
+        throw errJson;
     }
 };
