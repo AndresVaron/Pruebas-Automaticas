@@ -7,52 +7,7 @@ import closeIcon from '../Media/Icons/close.svg';
 import AddIcon from '../Media/Icons/addIcon.svg';
 
 function Web() {
-    const [apps, setApps] = useState([
-        {
-            _id: 'abcd',
-            nombre: 'Habitica',
-            fechaCreacion: '17/08/27',
-            numEjecuciones: '10',
-            numPruebas: '5',
-            numConfiguraciones: '3',
-            versiones: [
-                {
-                    _id: '12345',
-                    version: '1.1.1',
-                    url: 'https://habitica.com',
-                    fechaCreacion: '17/08/27',
-                },
-                {
-                    _id: '123456',
-                    version: '2.1',
-                    url: 'https://habiticaTest.com',
-                    fechaCreacion: '17/08/27',
-                },
-            ],
-        },
-        {
-            _id: 'abcd',
-            nombre: 'Habitica',
-            fechaCreacion: '17/08/27',
-            numEjecuciones: '10',
-            numPruebas: '5',
-            numConfiguraciones: '3',
-            versiones: [
-                {
-                    _id: '12345',
-                    version: '1.1.1',
-                    url: 'https://habitica.com',
-                    fechaCreacion: '17/08/27',
-                },
-                {
-                    _id: '123456',
-                    version: '2.1',
-                    url: 'https://habiticaTest.com',
-                    fechaCreacion: '17/08/27',
-                },
-            ],
-        },
-    ]);
+    const [apps, setApps] = useState([]);
 
     const [showCreateVersion, setShowCreateVersion] = useState(undefined);
     const [showDeleteApp, setShowDeleteApp] = useState(undefined);
@@ -65,13 +20,82 @@ function Web() {
         axiosInstance
             .get('/web')
             .then((resp) => {
-                setApps(resp);
+                setApps(resp.data);
             })
             .catch((err) => {
                 console.error(err);
             });
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+    const handleCreateApp = () => {
+        if (createAppNombre !== '') {
+            axiosInstance
+                .post('/web', {
+                    nombre: createAppNombre,
+                })
+                .then(() => {
+                    setCreateAppNombre('');
+                    setShowCreateApp(false);
+                    axiosInstance
+                        .get('/web')
+                        .then((resp) => {
+                            setApps(resp.data);
+                        })
+                        .catch((err) => {
+                            console.error(err);
+                        });
+                })
+                .catch((err) => {
+                    console.error(err);
+                });
+        }
+    };
+    const handleCreateAppVersion = () => {
+        if (createVersionUrl !== '' && createVersionVersion !== '') {
+            axiosInstance
+                .post('/web/' + showCreateVersion._id + '/versions', {
+                    version: createVersionVersion,
+                    url: createVersionUrl,
+                })
+                .then(() => {
+                    setCreateVersionUrl('');
+                    setCreateVersionVersion('');
+                    axiosInstance
+                        .get('/web')
+                        .then((resp) => {
+                            setApps(resp.data);
+                            setShowCreateVersion(undefined);
+                        })
+                        .catch((err) => {
+                            console.error(err);
+                        });
+                })
+                .catch((err) => {
+                    console.error(err);
+                });
+        }
+    };
+
+    const handleDeleteApp = () => {
+        axiosInstance
+            .delete('/web/' + showDeleteApp._id)
+            .then(() => {
+                setShowDeleteApp(undefined);
+                axiosInstance
+                    .get('/web')
+                    .then((resp) => {
+                        setApps(resp.data);
+                        setShowCreateVersion(undefined);
+                    })
+                    .catch((err) => {
+                        console.error(err);
+                    });
+            })
+            .catch((err) => {
+                console.error(err);
+            });
+    };
 
     const renderList = () => {
         return apps.map((app) => (
@@ -96,7 +120,7 @@ function Web() {
             }
             return valores.join('.');
         } else {
-            return 'Version';
+            return 'X.X.X';
         }
     };
 
@@ -153,6 +177,7 @@ function Web() {
                                     }
                                     onClick={() => {
                                         //Crear la version de la app y refresca la info.
+                                        handleCreateAppVersion();
                                     }}
                                 >
                                     Confirmar
@@ -185,6 +210,7 @@ function Web() {
                                     className="bntCancelarWebAppList"
                                     onClick={() => {
                                         //Borar la app en showDeleteApp
+                                        handleDeleteApp();
                                     }}
                                 >
                                     Borrar
@@ -227,6 +253,7 @@ function Web() {
                                     disabled={createAppNombre === ''}
                                     onClick={() => {
                                         //Crear la version la app y refresca la info.
+                                        handleCreateApp();
                                     }}
                                 >
                                     Confirmar
