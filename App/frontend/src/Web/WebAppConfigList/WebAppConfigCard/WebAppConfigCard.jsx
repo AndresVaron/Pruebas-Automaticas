@@ -27,7 +27,7 @@ function WebAppCard(props) {
                                             key={prueba._id}
                                             className="elemPruebaPrev"
                                         >
-                                            {prueba.short}
+                                            {prueba.shortName}
                                         </div>
                                     );
                                 })}
