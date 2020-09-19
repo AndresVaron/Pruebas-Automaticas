@@ -1,55 +1,41 @@
-#!/usr/bin/env node
 const MongoClient = require('mongodb').MongoClient;
-require('dotenv').config();
-const MongoConnection = require('../utils/MongoConnection');
-
-/**
- * Module dependencies.
- */
-
-const app = require('../app');
+const MongoConnection = require('./utils/MongoConnection');
+const app = require('./app');
 const debug = require('debug')('pruebas-automaticas:server');
 const http = require('http');
-
+const mongoUrl = process.env.MONGO_URL;
 /**
  * Get port from environment and store in Express.
  */
-
 const port = normalizePort(process.env.PORT || '3001');
 app.set('port', port);
 
 /**
  * Create HTTP server.
  */
-
 const server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
  */
 
-console.log('MONGO_URL');
-console.log(process.env.MONGO_URL);
-
 MongoClient.connect(
-    process.env.MONGO_URL,
+    mongoUrl,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         promiseLibrary: Promise,
     },
     (err, db) => {
-        console.log(db);
         if (err) {
             console.log(`Error conectándose a la base de datos. ${err.stack}`);
         } else {
-            console.log('Se ha conectado a la base  de datos exitosamente');
+            console.log(`Se ha conectado a la base de datos "${mongoUrl}" exitosamente`);
+            MongoConnection.setInstance(db);
+            server.listen(port);
+            server.on('error', onError);
+            server.on('listening', onListening);
         }
-
-        MongoConnection.setInstance(db);
-        server.listen(port);
-        server.on('error', onError);
-        server.on('listening', onListening);
     }
 );
 
