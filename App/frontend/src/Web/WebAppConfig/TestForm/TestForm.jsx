@@ -1,15 +1,27 @@
 import React, { useState } from 'react';
 import Modal from '../../../Modal/Modal';
 import Loading from '../../../Loading/Loading';
+import FileUploader from '../../../FileUploader/FileUploader';
+import axiosInstance from '../../../AxiosAPI';
 
-const TestForm = ({ autId, setShowModal }) => {
+const TestForm = ({ autId, setShowModal, web, reloadData }) => {
 
     const [loading, setLoading] = useState(false);
     const [form, setForm] = useState({ name: '', shortName: '', version: '', url: '' });
 
     const handleChange = (event) => { setForm({ ...form, [event.target.name]: event.target.value }); };
-
-    const handleSubmit = event => { event.preventDefault(); setLoading(true); console.log(form) };
+    const defineValue = (name, value) => { setForm({ ...form, [name]: value }); };
+    const handleSubmit = event => {
+        event.preventDefault();
+        setLoading(true);
+        axiosInstance.post(`/tests/${autId}`, form).then(data => {
+            console.log(data);
+            reloadData();
+        }).catch(err => {
+            console.log(err);
+            setLoading(false);
+        });
+    };
 
     return (
         <Modal setShowModal={setShowModal} loading={loading}>
@@ -27,7 +39,11 @@ const TestForm = ({ autId, setShowModal }) => {
                     <label className="mb-0 mr-3 font-weight-bold">Versión:</label>
                     <input name="version" value={form.version} disabled={loading} onChange={handleChange} className="createInput" type="text" maxLength={15} required />
                 </div>
-                <div className="text-right mt-2">
+                <div className="mt-3">
+                    <label className="mb-2 font-weight-bold">Carga el archivo de la prueba:</label>
+                    <FileUploader loadingSubmit={loading || !form.shortName} currentFileName={''} emitValue={defineValue} formName="url" filePath={`${web ? 'web' : 'mobile'}/tests/${autId}`} uploadedFileName={new Date().getTime()} acceptedFiles={'application/zip'}></FileUploader>
+                </div>
+                <div className="text-right mt-4">
                     {!loading && <button className="btn-confirm">Confirmar</button>}
                     {loading && <Loading />}
                 </div>

@@ -16,12 +16,12 @@ function PruebaDisponible(props) {
             <div
                 ref={drag}
                 className="pruebaDisponibleWebConfig"
-                onClick={() => {}}
+                onClick={() => { }}
                 style={{
                     opacity: isDragging ? 0.5 : 1,
                 }}
             >
-                {props.prueba.short}
+                {props.prueba.shortName}
             </div>
         </React.Fragment>
     );

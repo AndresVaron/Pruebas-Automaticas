@@ -44,6 +44,7 @@ function WebAppConfig(props) {
     const [showTestForm, setShowTestForm] = useState(false);
 
     const loadTests = () => {
+        setShowTestForm(false);
         setPruebasDisponibles(undefined);
         axiosInstance.get(`/tests/${autId}`).then(resp => {
             setPruebasDisponibles(resp.data);
@@ -328,7 +329,7 @@ function WebAppConfig(props) {
                             </button>
                         </div>
                     </div>
-                    {showTestForm && <TestForm autId={autId} setShowModal={setShowTestForm} />}
+                    {showTestForm && <TestForm autId={autId} reloadData={loadTests} setShowModal={setShowTestForm} web={true} />}
                 </DndProvider>
             );
         }
