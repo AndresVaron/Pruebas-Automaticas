@@ -3,10 +3,12 @@
     "version": "0.0.0",
     "private": true,
     "scripts": {
-        "start": "node ./bin/www"
+        "start": "node index.js",
+        "start:dev": "nodemon index.js"
     },
     "dependencies": {
         "acorn": "^7.0.0",
+        "aws-sdk": "^2.756.0",
         "connect-busboy": "0.0.2",
         "cookie-parser": "~1.4.4",
         "debug": "~2.6.9",

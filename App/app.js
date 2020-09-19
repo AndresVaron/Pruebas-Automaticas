@@ -1,3 +1,4 @@
+require('dotenv').config();
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -8,7 +9,6 @@ const formData = require('express-form-data');
 const os = require('os');
 const indexRouter = require('./routes/index');
 const app = express();
-
 app.use(
     logger(
         '[:date[clf]] - ":method :url HTTP/:http-version" - :status :res[content-length] ":referrer" ":user-agent" - :remote-addr :remote-user \n'
