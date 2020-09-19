@@ -1,7 +1,7 @@
 const { findTestById, updateTest } = require('../persistence/TestsPersistence');
 const { insertVersion } = require('../persistence/VersionsPersistence');
 
-const postVersion = async (autId, { url, version }) => {
+const postVersion = async (autId, { url, version, type }) => {
     let errJson = { errMsg: '', errCode: 500, };
     let err = false;
     if (!url || !version) {
@@ -21,7 +21,7 @@ const postVersion = async (autId, { url, version }) => {
         if (!test) {
             throw { errMsg: 'No existe una prueba con el id ingresado' };
         } else {
-            const newVersion = { test: test._id, creationDate: new Date(), version, url };
+            const newVersion = { test: test._id, creationDate: new Date(), version, url, type: type || 'Cypress' };
             const createdVersion = await insertVersion(newVersion);
             await updateTest(test._id, { $push: { versions: createdVersion.ops[0]._id } });
             return createdVersion.ops[0];

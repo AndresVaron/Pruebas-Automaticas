@@ -13,3 +13,17 @@
     border-radius: 20px;
     cursor: pointer;
 }
+
+.testContainer {
+    position: relative;
+}
+
+.versions-icon {
+    position: absolute;
+    right: -6px;
+    top: -6px;
+}
+
+.versions-icon button.btn {
+    border-radius: 1rem;
+}

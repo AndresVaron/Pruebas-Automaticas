@@ -31,7 +31,7 @@
     padding: 0px 20px;
 }
 
-.modalContenChildren h1:first-child {
+.modalContenChildren .content-title {
     margin-bottom: 16px;
     font-size: 24px;
 }
