@@ -4,43 +4,50 @@ import Loading from '../../../Loading/Loading';
 import FileUploader from '../../../FileUploader/FileUploader';
 import axiosInstance from '../../../AxiosAPI';
 
-const TestForm = ({ autId, setShowModal, web, reloadData }) => {
-
+const VersionsManager = ({ test: { _id, versions, aut }, reloadData, setShowModal, web }) => {
     const [loading, setLoading] = useState(false);
-    const [form, setForm] = useState({ name: '', shortName: '', version: '', url: '' });
+    const [form, setForm] = useState({ version: '', url: '' });
 
     const handleChange = (event) => { setForm({ ...form, [event.target.name]: event.target.value }); };
     const defineValue = (name, value) => { setForm({ ...form, [name]: value }); };
     const handleSubmit = event => {
         event.preventDefault();
         setLoading(true);
-        axiosInstance.post(`/tests/${autId}`, form).then(data => {
+        axiosInstance.post(`/versions/${_id}`, form).then(data => {
             reloadData();
         }).catch(err => {
             console.log(err);
             setLoading(false);
         });
     };
+    const getFormattedDate = (dateString) => {
+        const currentDate = new Date(dateString);
+        return currentDate.toLocaleDateString() + ' ' + currentDate.toLocaleTimeString();
+    };
 
     return (
         <Modal setShowModal={setShowModal} loading={loading}>
-            <h1 className="content-title">Crear prueba</h1>
+            <h1 className="content-title">Versiones actuales</h1>
+            {versions.map(version =>
+                <div className="row d-flex align-items-center">
+                    <div className="col-5">
+                        <a className="font-weight-bold" href={version.url} target="_blank">{version.version}</a>
+                    </div>
+                    <div className="col-7 text-right">
+                        <p className="small mb-0 font-weight-bold"><em className="fas fa-calendar text-info"></em>&nbsp;{getFormattedDate(version.creationDate)}</p>
+                    </div>
+                </div>
+            )}
+            <hr />
+            <h1 className="content-title">Crear versión</h1>
             <form onSubmit={handleSubmit}>
-                <div className="d-flex align-items-center">
-                    <label className="mb-0 mr-3 font-weight-bold">Nombre:</label>
-                    <input name="name" value={form.name} disabled={loading} onChange={handleChange} className="createInput" type="text" required maxLength={50} />
-                </div>
-                <div className="d-flex align-items-center mt-3">
-                    <label className="mb-0 mr-3 font-weight-bold">Alias:</label>
-                    <input name="shortName" value={form.shortName} disabled={loading} onChange={handleChange} className="createInput" type="text" maxLength={4} required />
-                </div>
                 <div className="d-flex align-items-center mt-3">
                     <label className="mb-0 mr-3 font-weight-bold">Versión:</label>
                     <input name="version" value={form.version} disabled={loading} onChange={handleChange} className="createInput" type="text" maxLength={15} required />
                 </div>
                 <div className="mt-3">
                     <label className="mb-2 font-weight-bold">Carga el archivo de la prueba:</label>
-                    <FileUploader loadingSubmit={loading || !form.shortName} currentFileName={''} emitValue={defineValue} formName="url" filePath={`${web ? 'web' : 'mobile'}/tests/${autId}`} uploadedFileName={new Date().getTime()} acceptedFiles={'application/zip'}></FileUploader>
+                    <FileUploader loadingSubmit={loading || !form.version} currentFileName={''} emitValue={defineValue} formName="url" filePath={`${web ? 'web' : 'mobile'}/${aut}/tests`} uploadedFileName={new Date().getTime()} acceptedFiles={'application/zip'}></FileUploader>
                 </div>
                 <div className="text-right mt-4">
                     {!loading && <button className="btn-confirm">Crear</button>}
@@ -51,4 +58,4 @@ const TestForm = ({ autId, setShowModal, web, reloadData }) => {
     )
 };
 
-export default TestForm;
+export default VersionsManager;

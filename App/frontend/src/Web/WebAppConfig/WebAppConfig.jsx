@@ -13,6 +13,7 @@ import { HTML5Backend } from 'react-dnd-html5-backend';
 import EmptySlot from './EmptySlot/EmptySlot.jsx';
 import axiosInstance from '../../AxiosAPI';
 import TestForm from './TestForm/TestForm';
+import VersionManager from './VersionManager/VersionManager';
 
 export const ItemTypes = {
     PRUEBA: 'prueba',
@@ -42,9 +43,19 @@ function WebAppConfig(props) {
     const [width, setWidth] = useState(0);
     const [height, setHeight] = useState(0);
     const [showTestForm, setShowTestForm] = useState(false);
+    const [currentTest, setCurrentTest] = useState(null);
+
+    const showVersionManager = (testToShow) => {
+        if (testToShow) {
+            setCurrentTest(testToShow);
+        } else {
+            setCurrentTest(null);
+        }
+    };
 
     const loadTests = () => {
         setShowTestForm(false);
+        setCurrentTest(null);
         setPruebasDisponibles(undefined);
         axiosInstance.get(`/tests/${autId}`).then(resp => {
             setPruebasDisponibles(resp.data);
@@ -117,7 +128,7 @@ function WebAppConfig(props) {
         return pruebasDisponibles.map((prueba, index) => {
             return (
                 <div key={index} className="containerPruebasDispWebConf">
-                    <PruebaDisponible prueba={prueba} />
+                    <PruebaDisponible prueba={prueba} showVersionManager={showVersionManager} />
                 </div>
             );
         });
@@ -248,7 +259,6 @@ function WebAppConfig(props) {
         } else {
             return (
                 <DndProvider backend={HTML5Backend}>
-                    {(showTestForm) && <div className="curtain"></div>}
                     <div className="WebConfigSideColumn">
                         <div className="contLblPruebasDisponiblesWebConfi">
                             <div className="lblPruebasWebConfig">Pruebas:</div>
@@ -330,6 +340,7 @@ function WebAppConfig(props) {
                         </div>
                     </div>
                     {showTestForm && <TestForm autId={autId} reloadData={loadTests} setShowModal={setShowTestForm} web={true} />}
+                    {currentTest && <VersionManager test={currentTest} setShowModal={showVersionManager} reloadData={loadTests} />}
                 </DndProvider>
             );
         }
