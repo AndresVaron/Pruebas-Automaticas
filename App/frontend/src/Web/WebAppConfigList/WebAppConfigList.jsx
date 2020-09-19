@@ -227,7 +227,7 @@ function WebAppConfigList(props) {
                     </div>
                 </div>
                 <div className="lblsubTitleWebApp">
-                    Selecciona la configuracion que desas usar:
+                    Selecciona la configuración que desas usar:
                 </div>
                 <div className="containerAppsWeb">{renderList()}</div>
                 <div className="containerAppsWeb containerAppsWebCenter">

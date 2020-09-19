@@ -12,6 +12,7 @@ import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import EmptySlot from './EmptySlot/EmptySlot.jsx';
 import axiosInstance from '../../AxiosAPI';
+import TestForm from './TestForm/TestForm';
 
 export const ItemTypes = {
     PRUEBA: 'prueba',
@@ -31,6 +32,7 @@ const PRUEBAS = [
 ];
 
 function WebAppConfig(props) {
+    const autId = props.match.params.id_app;
     const [config, setConfig] = useState(undefined);
     const [pruebasActuales, setPruebasActuales] = useState(undefined);
     const [pruebasDisponibles, setPruebasDisponibles] = useState(undefined);
@@ -39,27 +41,37 @@ function WebAppConfig(props) {
     const [showDelete, setShowDelete] = useState(false);
     const [width, setWidth] = useState(0);
     const [height, setHeight] = useState(0);
+    const [showTestForm, setShowTestForm] = useState(false);
+
+    const loadTests = () => {
+        setPruebasDisponibles(undefined);
+        axiosInstance.get(`/tests/${autId}`).then(resp => {
+            setPruebasDisponibles(resp.data);
+        }).catch(err => {
+            setPruebasDisponibles([]);
+        });
+    };
 
     useEffect(() => {
         if (
             props.match.params.id_config !== undefined &&
-            props.match.params.id_app !== undefined &&
+            autId !== undefined &&
             props.match.params.id_version !== undefined
         ) {
             axiosInstance
                 .get(
                     '/web/' +
-                        props.match.params.id_app +
-                        '/versiones/' +
-                        props.match.params.id_version +
-                        '/configs/' +
-                        props.match.params.id_config
+                    autId +
+                    '/versiones/' +
+                    props.match.params.id_version +
+                    '/configs/' +
+                    props.match.params.id_config
                 )
                 .then((resp) => {
                     setConfig(resp.data);
                     setNombre(resp.data.nombre);
                     setPruebasActuales(resp.data.pruebas);
-                    setPruebasDisponibles(PRUEBAS);
+                    loadTests();
                 })
                 .catch((err) => {
                     console.error(err);
@@ -178,18 +190,18 @@ function WebAppConfig(props) {
                 .map((e, i) =>
                     i < columnas.length - 1
                         ? [
-                              e,
-                              <div
-                                  key={'columnaArrowConfigWeb' + i}
-                                  className="columnaArrowConfigWeb"
-                              >
-                                  <img
-                                      alt=""
-                                      src={RightArrowIcon}
-                                      className="arrowConfigWeb"
-                                  />
-                              </div>,
-                          ]
+                            e,
+                            <div
+                                key={'columnaArrowConfigWeb' + i}
+                                className="columnaArrowConfigWeb"
+                            >
+                                <img
+                                    alt=""
+                                    src={RightArrowIcon}
+                                    className="arrowConfigWeb"
+                                />
+                            </div>,
+                        ]
                         : [e]
                 )
                 .reduce((a, b) => a.concat(b));
@@ -235,6 +247,7 @@ function WebAppConfig(props) {
         } else {
             return (
                 <DndProvider backend={HTML5Backend}>
+                    {(showTestForm) && <div className="curtain"></div>}
                     <div className="WebConfigSideColumn">
                         <div className="contLblPruebasDisponiblesWebConfi">
                             <div className="lblPruebasWebConfig">Pruebas:</div>
@@ -244,7 +257,7 @@ function WebAppConfig(props) {
                             <div className="containerPruebasDispWebConf">
                                 <div
                                     className="botonCrearOtraPruebaWebConfig"
-                                    onClick={() => {}}
+                                    onClick={() => setShowTestForm(true)}
                                 >
                                     <img src={AddIcon} alt="" />
                                 </div>
@@ -290,11 +303,11 @@ function WebAppConfig(props) {
                                     axiosInstance
                                         .put(
                                             '/web/' +
-                                                props.match.params.id_app +
-                                                '/versiones/' +
-                                                props.match.params.id_version +
-                                                '/configs/' +
-                                                props.match.params.id_config,
+                                            props.match.params.id_app +
+                                            '/versiones/' +
+                                            props.match.params.id_version +
+                                            '/configs/' +
+                                            props.match.params.id_config,
                                             {
                                                 nombre: nombre,
                                                 pruebas: pruebasActuales.map(
@@ -305,7 +318,7 @@ function WebAppConfig(props) {
                                                 ),
                                             }
                                         )
-                                        .then(() => {})
+                                        .then(() => { })
                                         .catch((err) => {
                                             console.error(err);
                                         });
@@ -315,6 +328,7 @@ function WebAppConfig(props) {
                             </button>
                         </div>
                     </div>
+                    {showTestForm && <TestForm autId={autId} setShowModal={setShowTestForm} />}
                 </DndProvider>
             );
         }
