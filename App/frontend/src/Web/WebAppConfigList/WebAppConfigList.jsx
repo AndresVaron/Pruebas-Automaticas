@@ -10,6 +10,7 @@ function WebAppConfigList(props) {
     const [app, setApp] = useState(null);
     const [configs, setConfigs] = useState([]);
     const [showDeleteConf, setShowDeleteConf] = useState(undefined);
+
     useEffect(() => {
         if (
             props.match.params.id_app !== undefined &&
@@ -18,19 +19,19 @@ function WebAppConfigList(props) {
             axiosInstance
                 .get(
                     '/web/' +
-                        props.match.params.id_app +
-                        '/versiones/' +
-                        props.match.params.id_version
+                    props.match.params.id_app +
+                    '/versiones/' +
+                    props.match.params.id_version
                 )
                 .then((resp) => {
                     setApp(resp.data);
                     axiosInstance
                         .get(
                             '/web/' +
-                                props.match.params.id_app +
-                                '/versiones/' +
-                                props.match.params.id_version +
-                                '/configs'
+                            props.match.params.id_app +
+                            '/versiones/' +
+                            props.match.params.id_version +
+                            '/configs'
                         )
                         .then((resp) => {
                             const conf = resp.data;
@@ -46,6 +47,12 @@ function WebAppConfigList(props) {
                                             nombre: 'End to End',
                                             short: 'HT',
                                             _id: 'gasdas',
+                                            versiones: [
+                                                {
+                                                    url: 'adsasd',
+                                                    version: '1.1.1',
+                                                },
+                                            ],
                                         },
                                     ],
                                     [
@@ -131,7 +138,7 @@ function WebAppConfigList(props) {
 
     if (app !== null) {
         return (
-            <div>
+            <div className="containerListMain">
                 {showDeleteConf && <div className="curtain"></div>}
                 {showDeleteConf && (
                     <div className="modalCreateWebAppVersionCont">
@@ -141,7 +148,7 @@ function WebAppConfigList(props) {
                                 src={closeIcon}
                                 className="closeButtonModal"
                                 onClick={() => {
-                                    setShowDeleteConf(false);
+                                    setShowDeleteConf(undefined);
                                 }}
                             />
                             <div className="createContainer">
@@ -156,6 +163,46 @@ function WebAppConfigList(props) {
                                         className="bntCancelarWebAppList"
                                         onClick={() => {
                                             //Borar la conf en showDeleteConf
+
+                                            axiosInstance
+                                                .delete(
+                                                    '/web/' +
+                                                    props.match.params
+                                                        .id_app +
+                                                    '/versiones/' +
+                                                    props.match.params
+                                                        .id_version +
+                                                    '/configs/' +
+                                                    showDeleteConf._id
+                                                )
+                                                .then(() => {
+                                                    setShowDeleteConf(
+                                                        undefined
+                                                    );
+                                                    axiosInstance
+                                                        .get(
+                                                            '/web/' +
+                                                            props.match
+                                                                .params
+                                                                .id_app +
+                                                            '/versiones/' +
+                                                            props.match
+                                                                .params
+                                                                .id_version +
+                                                            '/configs'
+                                                        )
+                                                        .then((resp) => {
+                                                            setConfigs(
+                                                                resp.data
+                                                            );
+                                                        })
+                                                        .catch((err) => {
+                                                            console.error(err);
+                                                        });
+                                                })
+                                                .catch((err) => {
+                                                    console.error(err);
+                                                });
                                         }}
                                     >
                                         Borrar
@@ -187,13 +234,20 @@ function WebAppConfigList(props) {
                     <div
                         className="botonCrearOtraAppWeb"
                         onClick={() => {
-                            props.history.push(
-                                '/web/' +
-                                    app._id +
-                                    '/' +
-                                    app.version._id +
-                                    '/config'
-                            );
+                            axiosInstance
+                                .post(
+                                    '/web/' +
+                                    props.match.params.id_app +
+                                    '/versiones/' +
+                                    props.match.params.id_version +
+                                    '/configs'
+                                )
+                                .then((resp) => {
+                                    props.history.push(`/web/${app._id}/versions/${app.version._id}/configs/resp.data._id`);
+                                })
+                                .catch((err) => {
+                                    console.error(err);
+                                });
                         }}
                     >
                         <img src={AddIcon} alt="" />

@@ -11,20 +11,17 @@ import PruebaActual from './PruebaActual/PruebaActual';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import EmptySlot from './EmptySlot/EmptySlot.jsx';
+import axiosInstance from '../../AxiosAPI';
 
 export const ItemTypes = {
     PRUEBA: 'prueba',
 };
 
-const CONFIG = {
-    nombre: 'Habitica E2E + HT',
-    pruebas: [],
-};
 const PRUEBAS = [
     {
         nombre: 'End to End',
-        short: 'E2EA',
-        _id: '1234',
+        short: 'E2E',
+        _id: '5f5f76b979c83c60f468d67f',
     },
     {
         nombre: 'End to End',
@@ -44,21 +41,29 @@ function WebAppConfig(props) {
     const [height, setHeight] = useState(0);
 
     useEffect(() => {
-        if (props.match.params.id_config === undefined) {
-            setConfig({
-                nombre: 'Configuración',
-                pruebas: [],
-            });
-            setNombre('Configuración');
-            setPruebasActuales([]);
-            setPruebasDisponibles(PRUEBAS);
-        } else {
-            const resp = CONFIG;
-            //Le hago fetch al back y cargo lo que tenga que cargar.
-            setConfig(resp);
-            setPruebasActuales([]);
-            setPruebasDisponibles(PRUEBAS);
-            setNombre(resp.nombre);
+        if (
+            props.match.params.id_config !== undefined &&
+            props.match.params.id_app !== undefined &&
+            props.match.params.id_version !== undefined
+        ) {
+            axiosInstance
+                .get(
+                    '/web/' +
+                        props.match.params.id_app +
+                        '/versiones/' +
+                        props.match.params.id_version +
+                        '/configs/' +
+                        props.match.params.id_config
+                )
+                .then((resp) => {
+                    setConfig(resp.data);
+                    setNombre(resp.data.nombre);
+                    setPruebasActuales(resp.data.pruebas);
+                    setPruebasDisponibles(PRUEBAS);
+                })
+                .catch((err) => {
+                    console.error(err);
+                });
         }
     }, []);
 
@@ -281,7 +286,30 @@ function WebAppConfig(props) {
                             </button>
                             <button
                                 className="bntConfirmarWebAppList btnGuardarConfWeb"
-                                onClick={() => {}}
+                                onClick={() => {
+                                    axiosInstance
+                                        .put(
+                                            '/web/' +
+                                                props.match.params.id_app +
+                                                '/versiones/' +
+                                                props.match.params.id_version +
+                                                '/configs/' +
+                                                props.match.params.id_config,
+                                            {
+                                                nombre: nombre,
+                                                pruebas: pruebasActuales.map(
+                                                    (prueba) =>
+                                                        prueba.map(
+                                                            (prueb) => prueb._id
+                                                        )
+                                                ),
+                                            }
+                                        )
+                                        .then(() => {})
+                                        .catch((err) => {
+                                            console.error(err);
+                                        });
+                                }}
                             >
                                 Guardar
                             </button>
