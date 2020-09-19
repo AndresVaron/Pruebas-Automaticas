@@ -3,3 +3,4 @@ npm-debug.log
 tst/*
 logos/*
 package-lock.json
+.env

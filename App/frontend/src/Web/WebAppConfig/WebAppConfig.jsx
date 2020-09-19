@@ -355,6 +355,7 @@ function WebAppConfig(props) {
                                             setPruebasActuales(config.pruebas);
                                             //Todo Calcular Pruebas Actuales
                                             setShowDelete(false);
+                                            setEditingName(false);
                                         }}
                                     >
                                         Deshacer

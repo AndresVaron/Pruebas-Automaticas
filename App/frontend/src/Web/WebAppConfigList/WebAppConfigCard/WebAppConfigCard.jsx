@@ -16,7 +16,7 @@ function WebAppCard(props) {
                                     marginLeft: index === 0 ? 'auto' : 0,
                                     marginRight:
                                         index ===
-                                            props.config.pruebas.length - 1
+                                        props.config.pruebas.length - 1
                                             ? 'auto'
                                             : 0,
                                 }}
@@ -37,7 +37,7 @@ function WebAppCard(props) {
                                     alt=""
                                     src={RightArrowIcon}
                                     className="arrowColPruebaPrev"
-                                    onClick={() => { }}
+                                    onClick={() => {}}
                                 />
                             )}
                         </React.Fragment>
@@ -52,7 +52,7 @@ function WebAppCard(props) {
             <div className="webAppTitleRow">
                 <div className="lblNombreWebApp">{props.config.nombre}</div>
                 <div className="lblFechaWebApp">
-                    Creada: {props.config.fechaCreacion}
+                    Creada: {props.config.fechaCreacion.substring(0, 10)}
                 </div>
             </div>
             <div className="webAppInfoRow">
@@ -76,13 +76,17 @@ function WebAppCard(props) {
                     </button>
                     <button
                         className="bntModificarWebAppList"
-                        onClick={() => { props.history.push(`/web/${props.app._id}/versions/${props.app.version._id}/configs/${props.config._id}`) }}
+                        onClick={() => {
+                            props.history.push(
+                                `/web/${props.app._id}/versions/${props.app.version._id}/configs/${props.config._id}`
+                            );
+                        }}
                     >
                         Modificar
                     </button>
                     <button
                         className="bntConfirmarWebAppList"
-                        onClick={() => { }}
+                        onClick={() => {}}
                     >
                         Ejecutar
                     </button>
