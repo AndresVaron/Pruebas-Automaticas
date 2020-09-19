@@ -16,7 +16,7 @@ function WebAppCard(props) {
                                     marginLeft: index === 0 ? 'auto' : 0,
                                     marginRight:
                                         index ===
-                                        props.config.pruebas.length - 1
+                                            props.config.pruebas.length - 1
                                             ? 'auto'
                                             : 0,
                                 }}
@@ -27,7 +27,7 @@ function WebAppCard(props) {
                                             key={prueba._id}
                                             className="elemPruebaPrev"
                                         >
-                                            {prueba.short}
+                                            {prueba.shortName}
                                         </div>
                                     );
                                 })}
@@ -37,7 +37,7 @@ function WebAppCard(props) {
                                     alt=""
                                     src={RightArrowIcon}
                                     className="arrowColPruebaPrev"
-                                    onClick={() => {}}
+                                    onClick={() => { }}
                                 />
                             )}
                         </React.Fragment>
@@ -76,22 +76,13 @@ function WebAppCard(props) {
                     </button>
                     <button
                         className="bntModificarWebAppList"
-                        onClick={() => {
-                            props.history.push(
-                                '/web/' +
-                                    props.app._id +
-                                    '/' +
-                                    props.app.version._id +
-                                    '/config/' +
-                                    props.config._id
-                            );
-                        }}
+                        onClick={() => { props.history.push(`/web/${props.app._id}/versions/${props.app.version._id}/configs/${props.config._id}`) }}
                     >
                         Modificar
                     </button>
                     <button
                         className="bntConfirmarWebAppList"
-                        onClick={() => {}}
+                        onClick={() => { }}
                     >
                         Ejecutar
                     </button>

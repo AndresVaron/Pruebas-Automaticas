@@ -4,99 +4,124 @@ import './WebAppConfigList.css';
 import AddIcon from '../../Media/Icons/addIcon.svg';
 import closeIcon from '../../Media/Icons/close.svg';
 import WebAppConfigCard from './WebAppConfigCard/WebAppConfigCard.jsx';
+import axiosInstance from '../../AxiosAPI.js';
 
 function WebAppConfigList(props) {
     const [app, setApp] = useState(null);
     const [configs, setConfigs] = useState([]);
     const [showDeleteConf, setShowDeleteConf] = useState(undefined);
+
     useEffect(() => {
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        setApp({
-            _id: 'abcd',
-            nombre: 'Habitica',
-            fechaCreacion: '17/08/27',
-            numEjecuciones: '10',
-            numPruebas: '5',
-            numConfiguraciones: '3',
-            version: {
-                _id: '12345',
-                version: '1.1.1',
-                url: 'https://habitica.com',
-            },
-        });
-        setConfigs([
-            {
-                _id: '654321',
-                nombre: 'Habitica E2E + HT',
-                fechaCreacion: '17/08/27',
-                numEjecuciones: '10',
-                numPruebas: '5',
-                pruebas: [
-                    [
-                        {
-                            nombre: 'End to End',
-                            short: 'HT',
-                            _id: 'gasdas',
-                        },
-                    ],
-                    [
-                        {
-                            nombre: 'End to End',
-                            short: 'MT',
-                            _id: 'gasdas',
-                        },
-                        {
-                            nombre: 'End to End',
-                            short: 'IT',
-                            _id: 'gasdas',
-                        },
-                        {
-                            nombre: 'End to End',
-                            short: 'MT',
-                            _id: 'gasdas',
-                        },
-                        {
-                            nombre: 'End to End',
-                            short: 'IT',
-                            _id: 'gasdas',
-                        },
-                    ],
-                    [
-                        {
-                            nombre: 'End to End',
-                            short: 'E2E',
-                            _id: 'gasdas',
-                        },
-                    ],
-                    [
-                        {
-                            nombre: 'End to End',
-                            short: 'BT',
-                            _id: 'gasdas',
-                        },
-                    ],
-                    [
-                        {
-                            nombre: 'End to End',
-                            short: 'ATE',
-                            _id: 'gasdas',
-                        },
-                        {
-                            nombre: 'End to End',
-                            short: 'ATBC',
-                            _id: 'gasdas',
-                        },
-                    ],
-                    [
-                        {
-                            nombre: 'End to End',
-                            short: 'E2E',
-                            _id: 'gasdas',
-                        },
-                    ],
-                ],
-            },
-        ]);
+        if (
+            props.match.params.id_app !== undefined &&
+            props.match.params.id_version !== undefined
+        ) {
+            axiosInstance
+                .get(
+                    '/web/' +
+                    props.match.params.id_app +
+                    '/versiones/' +
+                    props.match.params.id_version
+                )
+                .then((resp) => {
+                    setApp(resp.data);
+                    axiosInstance
+                        .get(
+                            '/web/' +
+                            props.match.params.id_app +
+                            '/versiones/' +
+                            props.match.params.id_version +
+                            '/configs'
+                        )
+                        .then((resp) => {
+                            const conf = resp.data;
+                            conf.push({
+                                _id: '654321',
+                                nombre: 'Habitica E2E + HT',
+                                fechaCreacion: '17/08/27',
+                                numEjecuciones: '10',
+                                numPruebas: '5',
+                                pruebas: [
+                                    [
+                                        {
+                                            nombre: 'End to End',
+                                            short: 'HT',
+                                            _id: 'gasdas',
+                                            versiones: [
+                                                {
+                                                    url: 'adsasd',
+                                                    version: '1.1.1',
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                    [
+                                        {
+                                            nombre: 'End to End',
+                                            short: 'MT',
+                                            _id: 'gasdas',
+                                        },
+                                        {
+                                            nombre: 'End to End',
+                                            short: 'IT',
+                                            _id: 'gasdas',
+                                        },
+                                        {
+                                            nombre: 'End to End',
+                                            short: 'MT',
+                                            _id: 'gasdas',
+                                        },
+                                        {
+                                            nombre: 'End to End',
+                                            short: 'IT',
+                                            _id: 'gasdas',
+                                        },
+                                    ],
+                                    [
+                                        {
+                                            nombre: 'End to End',
+                                            short: 'E2E',
+                                            _id: 'gasdas',
+                                        },
+                                    ],
+                                    [
+                                        {
+                                            nombre: 'End to End',
+                                            short: 'BT',
+                                            _id: 'gasdas',
+                                        },
+                                    ],
+                                    [
+                                        {
+                                            nombre: 'End to End',
+                                            short: 'ATE',
+                                            _id: 'gasdas',
+                                        },
+                                        {
+                                            nombre: 'End to End',
+                                            short: 'ATBC',
+                                            _id: 'gasdas',
+                                        },
+                                    ],
+                                    [
+                                        {
+                                            nombre: 'End to End',
+                                            short: 'E2E',
+                                            _id: 'gasdas',
+                                        },
+                                    ],
+                                ],
+                            });
+                            setConfigs(conf);
+                        })
+                        .catch((err) => {
+                            console.error(err);
+                        });
+                })
+                .catch((err) => {
+                    console.error(err);
+                });
+        }
     }, []);
 
     const renderList = () => {
@@ -113,7 +138,7 @@ function WebAppConfigList(props) {
 
     if (app !== null) {
         return (
-            <div>
+            <div className="containerListMain">
                 {showDeleteConf && <div className="curtain"></div>}
                 {showDeleteConf && (
                     <div className="modalCreateWebAppVersionCont">
@@ -123,7 +148,7 @@ function WebAppConfigList(props) {
                                 src={closeIcon}
                                 className="closeButtonModal"
                                 onClick={() => {
-                                    setShowDeleteConf(false);
+                                    setShowDeleteConf(undefined);
                                 }}
                             />
                             <div className="createContainer">
@@ -138,6 +163,46 @@ function WebAppConfigList(props) {
                                         className="bntCancelarWebAppList"
                                         onClick={() => {
                                             //Borar la conf en showDeleteConf
+
+                                            axiosInstance
+                                                .delete(
+                                                    '/web/' +
+                                                    props.match.params
+                                                        .id_app +
+                                                    '/versiones/' +
+                                                    props.match.params
+                                                        .id_version +
+                                                    '/configs/' +
+                                                    showDeleteConf._id
+                                                )
+                                                .then(() => {
+                                                    setShowDeleteConf(
+                                                        undefined
+                                                    );
+                                                    axiosInstance
+                                                        .get(
+                                                            '/web/' +
+                                                            props.match
+                                                                .params
+                                                                .id_app +
+                                                            '/versiones/' +
+                                                            props.match
+                                                                .params
+                                                                .id_version +
+                                                            '/configs'
+                                                        )
+                                                        .then((resp) => {
+                                                            setConfigs(
+                                                                resp.data
+                                                            );
+                                                        })
+                                                        .catch((err) => {
+                                                            console.error(err);
+                                                        });
+                                                })
+                                                .catch((err) => {
+                                                    console.error(err);
+                                                });
                                         }}
                                     >
                                         Borrar
@@ -162,20 +227,28 @@ function WebAppConfigList(props) {
                     </div>
                 </div>
                 <div className="lblsubTitleWebApp">
-                    Selecciona la configuracion que desas usar:
+                    Selecciona la configuración que desas usar:
                 </div>
                 <div className="containerAppsWeb">{renderList()}</div>
                 <div className="containerAppsWeb containerAppsWebCenter">
                     <div
                         className="botonCrearOtraAppWeb"
                         onClick={() => {
-                            props.history.push(
-                                '/web/' +
-                                    app._id +
-                                    '/' +
-                                    app.version._id +
-                                    '/config'
-                            );
+                            axiosInstance
+                                .post(
+                                    '/web/' +
+                                    props.match.params.id_app +
+                                    '/versiones/' +
+                                    props.match.params.id_version +
+                                    '/configs'
+                                )
+                                .then((resp) => {
+                                    console.log(resp);
+                                    props.history.push(`/web/${app._id}/versions/${app.version._id}/configs/${resp.data._id}`);
+                                })
+                                .catch((err) => {
+                                    console.error(err);
+                                });
                         }}
                     >
                         <img src={AddIcon} alt="" />

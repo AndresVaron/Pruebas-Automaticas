@@ -24,7 +24,7 @@ function PruebaActual(props) {
                         <img src={DeleteIcon} alt="" />
                     </div>
                 )}
-                {props.prueba.short}
+                {props.prueba.shortName}
             </div>
         </React.Fragment>
     );

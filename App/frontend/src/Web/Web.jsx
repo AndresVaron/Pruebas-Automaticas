@@ -54,7 +54,7 @@ function Web() {
     const handleCreateAppVersion = () => {
         if (createVersionUrl !== '' && createVersionVersion !== '') {
             axiosInstance
-                .post('/web/' + showCreateVersion._id + '/versions', {
+                .post('/web/' + showCreateVersion._id + '/versiones', {
                     version: createVersionVersion,
                     url: createVersionUrl,
                 })
@@ -125,7 +125,7 @@ function Web() {
     };
 
     return (
-        <div>
+        <div className="containerListMain">
             {(showCreateVersion || showCreateApp || showDeleteApp) && (
                 <div className="curtain"></div>
             )}

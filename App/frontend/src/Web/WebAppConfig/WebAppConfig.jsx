@@ -11,20 +11,19 @@ import PruebaActual from './PruebaActual/PruebaActual';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import EmptySlot from './EmptySlot/EmptySlot.jsx';
+import axiosInstance from '../../AxiosAPI';
+import TestForm from './TestForm/TestForm';
+import VersionManager from './VersionManager/VersionManager';
 
 export const ItemTypes = {
     PRUEBA: 'prueba',
 };
 
-const CONFIG = {
-    nombre: 'Habitica E2E + HT',
-    pruebas: [],
-};
 const PRUEBAS = [
     {
         nombre: 'End to End',
-        short: 'E2EA',
-        _id: '1234',
+        short: 'E2E',
+        _id: '5f5f76b979c83c60f468d67f',
     },
     {
         nombre: 'End to End',
@@ -34,6 +33,7 @@ const PRUEBAS = [
 ];
 
 function WebAppConfig(props) {
+    const autId = props.match.params.id_app;
     const [config, setConfig] = useState(undefined);
     const [pruebasActuales, setPruebasActuales] = useState(undefined);
     const [pruebasDisponibles, setPruebasDisponibles] = useState(undefined);
@@ -42,23 +42,52 @@ function WebAppConfig(props) {
     const [showDelete, setShowDelete] = useState(false);
     const [width, setWidth] = useState(0);
     const [height, setHeight] = useState(0);
+    const [showTestForm, setShowTestForm] = useState(false);
+    const [currentTest, setCurrentTest] = useState(null);
+
+    const showVersionManager = (testToShow) => {
+        if (testToShow) {
+            setCurrentTest(testToShow);
+        } else {
+            setCurrentTest(null);
+        }
+    };
+
+    const loadTests = () => {
+        setShowTestForm(false);
+        setCurrentTest(null);
+        setPruebasDisponibles(undefined);
+        axiosInstance.get(`/tests/${autId}`).then(resp => {
+            setPruebasDisponibles(resp.data);
+        }).catch(err => {
+            setPruebasDisponibles([]);
+        });
+    };
 
     useEffect(() => {
-        if (props.match.params.id_config === undefined) {
-            setConfig({
-                nombre: 'Configuración',
-                pruebas: [],
-            });
-            setNombre('Configuración');
-            setPruebasActuales([]);
-            setPruebasDisponibles(PRUEBAS);
-        } else {
-            const resp = CONFIG;
-            //Le hago fetch al back y cargo lo que tenga que cargar.
-            setConfig(resp);
-            setPruebasActuales([]);
-            setPruebasDisponibles(PRUEBAS);
-            setNombre(resp.nombre);
+        if (
+            props.match.params.id_config !== undefined &&
+            autId !== undefined &&
+            props.match.params.id_version !== undefined
+        ) {
+            axiosInstance
+                .get(
+                    '/web/' +
+                    autId +
+                    '/versiones/' +
+                    props.match.params.id_version +
+                    '/configs/' +
+                    props.match.params.id_config
+                )
+                .then((resp) => {
+                    setConfig(resp.data);
+                    setNombre(resp.data.nombre);
+                    setPruebasActuales(resp.data.pruebas);
+                    loadTests();
+                })
+                .catch((err) => {
+                    console.error(err);
+                });
         }
     }, []);
 
@@ -99,7 +128,7 @@ function WebAppConfig(props) {
         return pruebasDisponibles.map((prueba, index) => {
             return (
                 <div key={index} className="containerPruebasDispWebConf">
-                    <PruebaDisponible prueba={prueba} />
+                    <PruebaDisponible prueba={prueba} showVersionManager={showVersionManager} />
                 </div>
             );
         });
@@ -173,18 +202,18 @@ function WebAppConfig(props) {
                 .map((e, i) =>
                     i < columnas.length - 1
                         ? [
-                              e,
-                              <div
-                                  key={'columnaArrowConfigWeb' + i}
-                                  className="columnaArrowConfigWeb"
-                              >
-                                  <img
-                                      alt=""
-                                      src={RightArrowIcon}
-                                      className="arrowConfigWeb"
-                                  />
-                              </div>,
-                          ]
+                            e,
+                            <div
+                                key={'columnaArrowConfigWeb' + i}
+                                className="columnaArrowConfigWeb"
+                            >
+                                <img
+                                    alt=""
+                                    src={RightArrowIcon}
+                                    className="arrowConfigWeb"
+                                />
+                            </div>,
+                        ]
                         : [e]
                 )
                 .reduce((a, b) => a.concat(b));
@@ -239,7 +268,7 @@ function WebAppConfig(props) {
                             <div className="containerPruebasDispWebConf">
                                 <div
                                     className="botonCrearOtraPruebaWebConfig"
-                                    onClick={() => {}}
+                                    onClick={() => setShowTestForm(true)}
                                 >
                                     <img src={AddIcon} alt="" />
                                 </div>
@@ -281,12 +310,37 @@ function WebAppConfig(props) {
                             </button>
                             <button
                                 className="bntConfirmarWebAppList btnGuardarConfWeb"
-                                onClick={() => {}}
+                                onClick={() => {
+                                    axiosInstance
+                                        .put(
+                                            '/web/' +
+                                            props.match.params.id_app +
+                                            '/versiones/' +
+                                            props.match.params.id_version +
+                                            '/configs/' +
+                                            props.match.params.id_config,
+                                            {
+                                                nombre: nombre,
+                                                pruebas: pruebasActuales.map(
+                                                    (prueba) =>
+                                                        prueba.map(
+                                                            (prueb) => prueb._id
+                                                        )
+                                                ),
+                                            }
+                                        )
+                                        .then(() => { })
+                                        .catch((err) => {
+                                            console.error(err);
+                                        });
+                                }}
                             >
                                 Guardar
                             </button>
                         </div>
                     </div>
+                    {showTestForm && <TestForm autId={autId} reloadData={loadTests} setShowModal={setShowTestForm} web={true} />}
+                    {currentTest && <VersionManager test={currentTest} setShowModal={showVersionManager} reloadData={loadTests} />}
                 </DndProvider>
             );
         }

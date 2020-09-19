@@ -22,7 +22,7 @@ function App() {
                         text: error.response.data,
                         type: 'error',
                         timeout: 5000,
-                        callback: function () {},
+                        callback: function () { },
                     });
                 }
                 return Promise.reject(error);
@@ -40,11 +40,11 @@ function App() {
                 <Switch>
                     <Route exact path="/" render={() => <Inicio />} />
                     <Route
-                        path="/web/:id_app/:id_version/config/:id_config"
+                        path="/web/:id_app/versions/:id_version/configs/:id_config"
                         render={() => <WebAppConfig />}
                     />
                     <Route
-                        path="/web/:id_app/:id_version"
+                        path="/web/:id_app/versions/:id_version"
                         render={() => <WebAppConfigList />}
                     />
                     <Route exact path="/web" render={() => <Web />} />

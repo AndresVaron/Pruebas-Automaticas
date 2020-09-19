@@ -1,3 +1,4 @@
+require('dotenv').config();
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -7,26 +8,20 @@ const busboy = require('connect-busboy');
 const formData = require('express-form-data');
 const os = require('os');
 const indexRouter = require('./routes/index');
+const fileUpload = require('express-fileupload');
 const app = express();
-
 app.use(
     logger(
         '[:date[clf]] - ":method :url HTTP/:http-version" - :status :res[content-length] ":referrer" ":user-agent" - :remote-addr :remote-user \n'
     )
 );
-app.use(express.json());
+app.use(express.json({ limit: '50mb' }));
+app.use(fileUpload({
+    createParentPath: true,
+    responseOnLimit: 'El tamaño del archivo es superior al permitido'
+}));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(busboy());
-app.use(
-    formData.parse({
-        uploadDir: os.tmpdir(),
-        autoClean: true,
-    })
-);
-app.use(formData.format());
-app.use(formData.stream());
-app.use(formData.union());
 app.use('/api/', indexRouter);
 app.use(express.static(path.join(__dirname, 'frontend/build')));
 
