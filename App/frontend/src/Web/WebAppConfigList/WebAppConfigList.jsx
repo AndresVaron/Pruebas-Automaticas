@@ -243,7 +243,8 @@ function WebAppConfigList(props) {
                                     '/configs'
                                 )
                                 .then((resp) => {
-                                    props.history.push(`/web/${app._id}/versions/${app.version._id}/configs/resp.data._id`);
+                                    console.log(resp);
+                                    props.history.push(`/web/${app._id}/versions/${app.version._id}/configs/${resp.data._id}`);
                                 })
                                 .catch((err) => {
                                     console.error(err);
