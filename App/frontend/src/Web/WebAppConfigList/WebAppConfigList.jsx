@@ -227,7 +227,7 @@ function WebAppConfigList(props) {
                     </div>
                 </div>
                 <div className="lblsubTitleWebApp">
-                    Selecciona la configuracion que desas usar:
+                    Selecciona la configuración que desas usar:
                 </div>
                 <div className="containerAppsWeb">{renderList()}</div>
                 <div className="containerAppsWeb containerAppsWebCenter">
@@ -243,6 +243,7 @@ function WebAppConfigList(props) {
                                         '/configs'
                                 )
                                 .then((resp) => {
+                                    console.log(resp);
                                     props.history.push(
                                         `/web/${app._id}/versions/${app.version._id}/configs/${resp.data._id}`
                                     );

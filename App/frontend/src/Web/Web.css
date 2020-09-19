@@ -47,6 +47,7 @@
     width: 500px;
     z-index: 3;
 }
+
 .modalCreateWebApp {
     border-radius: 20px;
     background-color: white;
@@ -73,6 +74,7 @@
 .createContainer {
     padding: 20px;
 }
+
 .createContainer h1 {
     margin-bottom: 16px;
     font-size: 24px;
@@ -85,30 +87,26 @@
 .rowGuardarCrearVersionApp,
 .rowUrlCrearVersionApp,
 .rowVersionCrearVersionApp {
-    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
-    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
-    display: -ms-flexbox; /* TWEENER - IE 10 */
-    display: -webkit-flex; /* NEW - Chrome */
-    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
     flex-wrap: wrap;
     align-items: center;
     margin-top: 10px;
 }
+
 .lblCrearVersionApp {
     margin-left: 5px;
     font-size: 20px;
     height: 100%;
     width: 80px;
-}
-
-.createInput {
-    padding: 2px 8px !important;
-    border: solid 2px #989898 !important;
-    border-radius: 5px !important;
-}
-.createInput:focus {
-    outline: 0 !important;
-    box-shadow: 0 0 0 0.15rem rgba(0, 123, 255, 0.25);
 }
 
 .contWebAppCard {
