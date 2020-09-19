@@ -35,3 +35,9 @@
 .modalDeleteConfig {
     height: 180px;
 }
+
+.containerListMain {
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+}

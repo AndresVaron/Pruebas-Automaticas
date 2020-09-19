@@ -125,7 +125,7 @@ function Web() {
     };
 
     return (
-        <div>
+        <div className="containerListMain">
             {(showCreateVersion || showCreateApp || showDeleteApp) && (
                 <div className="curtain"></div>
             )}

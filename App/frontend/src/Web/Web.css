@@ -135,6 +135,7 @@
     border-radius: 10px;
     cursor: pointer;
     background-color: transparent;
+    margin-bottom: 30px;
 }
 
 .botonCrearOtraAppWeb:hover {
