@@ -43,7 +43,7 @@
     -webkit-box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.5);
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.5);
-    height: 200px;
+    /* height: 200px; */
     width: 500px;
     z-index: 3;
 }

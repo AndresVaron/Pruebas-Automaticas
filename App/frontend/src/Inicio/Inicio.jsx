@@ -13,7 +13,7 @@ function Inicio(props) {
                     <div
                         className="btnProbarMovilInicio btnInicio"
                         onClick={() => {
-                            props.history.push('/movil');
+                            props.history.push('/mobile');
                         }}
                     >
                         <div className="contenedorBtnInicio">
@@ -22,7 +22,7 @@ function Inicio(props) {
                                 className="movilInicioIcon"
                                 src={mobileIcon}
                             />
-                            <div className="lblBtnInicio">App Movil</div>
+                            <div className="lblBtnInicio">Móvil</div>
                         </div>
                     </div>
                     <div
@@ -37,12 +37,12 @@ function Inicio(props) {
                                 className="webInicioIcon"
                                 src={webIcon}
                             />
-                            <div className="lblBtnInicio">App Web</div>
+                            <div className="lblBtnInicio">Web</div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="containerBtnHistorico">
+            {/* <div className="containerBtnHistorico">
                 <div
                     className="btnHistorico"
                     onClick={() => {
@@ -51,7 +51,7 @@ function Inicio(props) {
                 >
                     Ver Historico
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 }

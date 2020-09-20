@@ -40,10 +40,8 @@ const PostUploadFile = async (req, res, next) => {
             return res.status(400).json({ message: 'No se seleccionó ningún archivo' });
         }
 
-        console.log(fileToUpload.mimetype);
-
-        if (fileToUpload.mimetype !== 'application/zip' && fileToUpload.mimetype !== 'application/x-zip-compressed') {
-            return res.status(400).json({ message: 'El formato del archivo no es válido' });
+        if (!'application/zip application/x-zip-compressed application/vnd.android.package-archive'.includes(fileToUpload.mimetype)) {
+            return res.status(400).json({ message: 'El formato del archivo no es válido: ' + fileToUpload.mimetype });
         }
 
         const fileToUploadName = `${filePath}/${fileName || new Date().getTime()}${path.extname(fileToUpload.name)}`;

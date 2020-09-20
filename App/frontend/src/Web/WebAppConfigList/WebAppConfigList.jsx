@@ -216,6 +216,7 @@ function WebAppConfigList(props) {
                     <div className="lblTitleWebAppConfig">
                         {app.nombre + ' v' + app.version.version}
                     </div>
+
                     <div
                         className="lblTitleWebAppConfigUrl"
                         onClick={() => {
@@ -223,7 +224,7 @@ function WebAppConfigList(props) {
                             win.focus();
                         }}
                     >
-                        {app.version.url}
+                        {app.mobile ? <button className="btn btn-info shadow-none"><em className="fas fa-file-download" />&nbsp;Descargar apk</button> : app.version.url}
                     </div>
                 </div>
                 <div className="lblsubTitleWebApp">
