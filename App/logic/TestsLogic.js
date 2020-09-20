@@ -26,9 +26,9 @@ const postTest = async (id, { name, shortName, url, version, type }) => {
             if (existingTests.length > 0) {
                 throw { errMsg: 'Ya existen pruebas con el alias ingresado' };
             } else {
-                const newTest = { name, shortName: shortName.toUpperCase(), creationDate: new Date(), aut: aut[0]._id, versions: [] };
+                const newTest = { name, shortName: shortName.toUpperCase(), creationDate: new Date(), aut: aut[0]._id, versions: [], type: type || 'Cypress' };
                 const createdTest = await insertTest(newTest);
-                const createdVersion = await insertVersion({ test: createdTest.ops[0]._id, creationDate: new Date(), version, url: url || '', type: type || 'Cypress' });
+                const createdVersion = await insertVersion({ test: createdTest.ops[0]._id, creationDate: new Date(), version, url: url || '' });
                 await updateTest(createdTest.ops[0]._id, { $set: { versions: [createdVersion.ops[0]._id] } });
                 return createdTest.ops[0];
             }
