@@ -82,7 +82,7 @@ function WebAppConfig(props) {
                                             realVersion = prueba.versions.find(
                                                 (ver) => ver._id === version
                                             );
-                                            return realVersion !== null;
+                                            return realVersion !== undefined;
                                         }
                                     );
                                     return {

@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import './WebAppConfigCard.css';
 import RightArrowIcon from '../../../Media/Icons/right-arrow.svg';
-
+import axiosInstance from '../../../AxiosAPI.js';
 function WebAppCard(props) {
     const renderPipeLinePrev = () => {
         return (
@@ -86,7 +86,43 @@ function WebAppCard(props) {
                     </button>
                     <button
                         className="bntConfirmarWebAppList"
-                        onClick={() => {}}
+                        onClick={() => {
+                            const queries = new URLSearchParams(
+                                window.location.search
+                            );
+                            if (
+                                queries.has('mobile') &&
+                                queries.get('mobile')
+                            ) {
+                                axiosInstance
+                                    .post(
+                                        '/mobile/' +
+                                            props.app._id +
+                                            '/versiones/' +
+                                            props.app.version._id +
+                                            '/configs/' +
+                                            props.config._id
+                                    )
+                                    .then(() => {})
+                                    .catch((err) => {
+                                        console.error(err);
+                                    });
+                            } else {
+                                axiosInstance
+                                    .post(
+                                        '/web/' +
+                                            props.app._id +
+                                            '/versiones/' +
+                                            props.app.version._id +
+                                            '/configs/' +
+                                            props.config._id
+                                    )
+                                    .then(() => {})
+                                    .catch((err) => {
+                                        console.error(err);
+                                    });
+                            }
+                        }}
                     >
                         Ejecutar
                     </button>

@@ -323,6 +323,42 @@ const calcSteps = async (id_version, isParallel, index, jndex, endCommands) => {
     return pipeline;
 };
 
+module.exports.execWebAppConfig = async (id) => {
+    try {
+        const response = await WebAppConfigPersistence.fetchWebAppVersionConfig(
+            id
+        );
+        if (response === null) {
+            const errJson = {
+                errMsg: 'No existe una configuracion con este id',
+                errCode: 400,
+            };
+            errJson.error = new Error();
+            throw errJson;
+        } else {
+            const config = {
+                auth: {
+                    username: 'admin',
+                    password: '11b004d566e08c56110575b2d65393db5d',
+                },
+            };
+            axios.post(
+                'http://localhost:8080/job/' + id + '/build',
+                {},
+                config
+            );
+            return true;
+        }
+    } catch (err) {
+        const errJson = {
+            error: new Error(),
+            errMsg: err.toString(),
+            errCode: 500,
+        };
+        throw errJson;
+    }
+};
+
 /* 
 Método encargado de borrar una config de una web app 
 Retorna error 404 si la web app no existe o 500 si hay un error de base de datos.
