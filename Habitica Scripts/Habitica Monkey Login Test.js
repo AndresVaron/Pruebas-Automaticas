@@ -88,7 +88,7 @@ function randomEvent(monkeysLeft) {
     };
 
     function main(monkeysLeft) {
-        switch (getRandomInt(1, 4)) {
+        switch (getRandomInt(1, 3)) {
             case 1:
                 linkEvent();
                 break;
