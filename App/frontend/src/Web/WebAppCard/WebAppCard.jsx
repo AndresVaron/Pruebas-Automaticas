@@ -51,21 +51,26 @@ function WebAppCard(props) {
                         />
                     </div>
                     {currentVersion && (
-                        <div className="lblVersionListAppWeb">Url:</div>
-                    )}
-                    {currentVersion && (
-                        <div
-                            className="lblUrlListAppWeb"
-                            onClick={() => {
-                                const win = window.open(
-                                    currentVersion.value.url,
-                                    '_blank'
-                                );
-                                win.focus();
-                            }}
-                        >
-                            {currentVersion.value.url}
-                        </div>
+                        <>
+                            {props.mobile && <a href={currentVersion.value.url} target="_blank" className="btn btn-info ml-2 btn-sm shadow-none"><em className="fas fa-download" /></a>}
+                            {!props.mobile &&
+                                <>
+                                    <div className="lblVersionListAppWeb">Url:</div>
+                                    <div
+                                        className="lblUrlListAppWeb"
+                                        onClick={() => {
+                                            const win = window.open(
+                                                currentVersion.value.url,
+                                                '_blank'
+                                            );
+                                            win.focus();
+                                        }}
+                                    >
+                                        {currentVersion.value.url}
+                                    </div>
+                                </>
+                            }
+                        </>
                     )}
                     <div className="crearVersionBtnListAppCont">
                         <button
