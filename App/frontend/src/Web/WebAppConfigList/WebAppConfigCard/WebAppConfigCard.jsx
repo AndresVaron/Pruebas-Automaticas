@@ -92,7 +92,7 @@ function WebAppCard(props) {
                             );
                             if (
                                 queries.has('mobile') &&
-                                queries.get('mobile')
+                                queries.get('mobile') === 'true'
                             ) {
                                 axiosInstance
                                     .post(
