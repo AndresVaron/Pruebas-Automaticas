@@ -6,7 +6,7 @@ const { convertObjectId, convertListOfObjectId } = require('../utils/MongoFuncti
 const postTest = async (id, { name, shortName, url, version, type }) => {
     let errJson = { errMsg: '', errCode: 500, };
     let err = false;
-    if (!name || !shortName || !url || !version) {
+    if (!name || !shortName || !version) {
         err = true;
         errJson.errMsg += 'Por favor verifica la información ingresada';
     }
@@ -28,7 +28,7 @@ const postTest = async (id, { name, shortName, url, version, type }) => {
             } else {
                 const newTest = { name, shortName: shortName.toUpperCase(), creationDate: new Date(), aut: aut[0]._id, versions: [] };
                 const createdTest = await insertTest(newTest);
-                const createdVersion = await insertVersion({ test: createdTest.ops[0]._id, creationDate: new Date(), version, url, type: type || 'Cypress' });
+                const createdVersion = await insertVersion({ test: createdTest.ops[0]._id, creationDate: new Date(), version, url: url || '', type: type || 'Cypress' });
                 await updateTest(createdTest.ops[0]._id, { $set: { versions: [createdVersion.ops[0]._id] } });
                 return createdTest.ops[0];
             }
