@@ -34,85 +34,7 @@ function WebAppConfigList(props) {
                                 '/configs'
                         )
                         .then((resp) => {
-                            const conf = resp.data;
-                            conf.push({
-                                _id: '654321',
-                                nombre: 'Habitica E2E + HT',
-                                fechaCreacion: '17/08/27',
-                                numEjecuciones: '10',
-                                numPruebas: '5',
-                                pruebas: [
-                                    [
-                                        {
-                                            nombre: 'End to End',
-                                            shortName: 'HT',
-                                            _id: 'gasdas',
-                                            versiones: [
-                                                {
-                                                    url: 'adsasd',
-                                                    version: '1.1.1',
-                                                },
-                                            ],
-                                        },
-                                    ],
-                                    [
-                                        {
-                                            nombre: 'End to End',
-                                            shortName: 'MT',
-                                            _id: 'gasdas',
-                                        },
-                                        {
-                                            nombre: 'End to End',
-                                            shortName: 'IT',
-                                            _id: 'gasdas',
-                                        },
-                                        {
-                                            nombre: 'End to End',
-                                            shortName: 'MT',
-                                            _id: 'gasdas',
-                                        },
-                                        {
-                                            nombre: 'End to End',
-                                            shortName: 'IT',
-                                            _id: 'gasdas',
-                                        },
-                                    ],
-                                    [
-                                        {
-                                            nombre: 'End to End',
-                                            shortName: 'E2E',
-                                            _id: 'gasdas',
-                                        },
-                                    ],
-                                    [
-                                        {
-                                            nombre: 'End to End',
-                                            shortName: 'BT',
-                                            _id: 'gasdas',
-                                        },
-                                    ],
-                                    [
-                                        {
-                                            nombre: 'End to End',
-                                            shortName: 'ATE',
-                                            _id: 'gasdas',
-                                        },
-                                        {
-                                            nombre: 'End to End',
-                                            shortName: 'ATBC',
-                                            _id: 'gasdas',
-                                        },
-                                    ],
-                                    [
-                                        {
-                                            nombre: 'End to End',
-                                            shortName: 'E2E',
-                                            _id: 'gasdas',
-                                        },
-                                    ],
-                                ],
-                            });
-                            setConfigs(conf);
+                            setConfigs(resp.data);
                         })
                         .catch((err) => {
                             console.error(err);
@@ -224,7 +146,14 @@ function WebAppConfigList(props) {
                             win.focus();
                         }}
                     >
-                        {app.mobile ? <button className="btn btn-info shadow-none"><em className="fas fa-file-download" />&nbsp;Descargar apk</button> : app.version.url}
+                        {app.mobile ? (
+                            <button className="btn btn-info shadow-none">
+                                <em className="fas fa-file-download" />
+                                &nbsp;Descargar apk
+                            </button>
+                        ) : (
+                            app.version.url
+                        )}
                     </div>
                 </div>
                 <div className="lblsubTitleWebApp">

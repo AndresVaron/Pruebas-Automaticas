@@ -170,9 +170,11 @@ module.exports.updateWebAppVersionConfig = async (id, config) => {
     //Hacer el put.
     let updateResponse;
     try {
-        let pipeline = `pipeline {
+        let pipeline = `def buildId = '${id}-' + BUILD_NUMBER
+pipeline {
     agent any
     stages {\n`;
+        const endCommands = [];
         if (config.pruebas.length > 0) {
             for (let i = 0; i < config.pruebas.length; i++) {
                 const isParallel = config.pruebas[i].length > 1;
@@ -185,7 +187,8 @@ module.exports.updateWebAppVersionConfig = async (id, config) => {
                         config.pruebas[i][j],
                         isParallel,
                         i + 1,
-                        j + 1
+                        j + 1,
+                        endCommands
                     );
                     config.pruebas[i][j] = MongoFunctions.convertObjectId(
                         config.pruebas[i][j]
@@ -203,9 +206,14 @@ module.exports.updateWebAppVersionConfig = async (id, config) => {
                 }
             }`;
         }
-        pipeline += `    }
-}`;
-
+        pipeline += '    }\n';
+        pipeline += `    post {
+        always {\n`;
+        for (let i = 0; i < endCommands.length; i++) {
+            pipeline += endCommands[i] + '\n';
+        }
+        pipeline += '            junit "**/results/*.xml"\n';
+        pipeline += '            cleanWs()\n       }\n    }\n}';
         //Crear un job de Jenkins
         const xmlBodyStr = `<?xml version='1.1' encoding='UTF-8'?>
             <flow-definition plugin="workflow-job@2.40">
@@ -238,19 +246,20 @@ module.exports.updateWebAppVersionConfig = async (id, config) => {
                 password: '11b004d566e08c56110575b2d65393db5d',
             },
         };
-
-        axios.post(
-            'http://localhost:8080/job/' + id + '/config.xml',
-            xmlBodyStr,
-            configuration
-        );
-
+        axios
+            .post(
+                'http://localhost:8080/job/' + id + '/config.xml',
+                xmlBodyStr,
+                configuration
+            )
+            .catch((err) => {
+                console.error(err);
+            });
         updateResponse = await WebAppConfigPersistence.updateWebAppConfig(
             id,
             config
         );
     } catch (err) {
-        console.log(err);
         if (err.errCode) {
             throw err;
         }
@@ -271,7 +280,7 @@ module.exports.updateWebAppVersionConfig = async (id, config) => {
     return 'Se actualizó la configuracion';
 };
 
-const calcSteps = async (id_version, isParallel, index, jndex) => {
+const calcSteps = async (id_version, isParallel, index, jndex, endCommands) => {
     const version = await VersionPersistence.fetchVersion(id_version);
     const prueba = await TestPersistence.findTestById(version.test);
     if (version === null || prueba === null) {
@@ -284,14 +293,30 @@ const calcSteps = async (id_version, isParallel, index, jndex) => {
     }
     console.log(version);
     console.log(prueba);
+    const ver = '${buildId}-' + index + '-' + jndex;
     const parallel = isParallel ? '        ' : '';
     let pipeline = `${parallel}        stage('${
         (isParallel ? index + '-' + jndex + '-' : index + '-') +
-        prueba.shortName
+        prueba.shortName +
+        '-v' +
+        version.version
     }'){
     ${parallel}        steps{\n`;
-    if (true) {
-        pipeline += `               ${parallel}sh "echo CYPRESS"\n`;
+    if (prueba.type === 'Cypress') {
+        pipeline += `               ${parallel}sh "wget -O ${ver}-files.zip ${version.url}"\n`;
+        pipeline += `               ${parallel}sh "mkdir -p ${ver}-cypress/cypress/integration"\n`;
+        pipeline += `               ${parallel}sh "unzip ${ver}-files.zip -d ./${ver}-cypress/cypress/integration"\n`;
+        pipeline += `               ${parallel}sh "echo '{\\n    \\"reporter\\": \\"junit\\",\\n    \\"reporterOptions\\": {\\n        \\"mochaFile\\": \\"results/${ver}.xml\\",\\n        \\"video\\": false\\n    }\\n}' > ./${ver}-cypress/cypress.json"\n`;
+        pipeline += `               ${parallel}sh "docker create --ipc=host -w /home/cypress --name ${ver} cypress/included:5.0.0"\n`;
+        pipeline += `               ${parallel}sh "docker cp ./${ver}-cypress/. ${ver}:/home/cypress"\n`;
+        pipeline += `               ${parallel}sh "docker start -a ${ver} || echo 'Failed Tests' &amp;&amp; docker cp ${ver}:/home/cypress/results/ ./results/ "\n`;
+        pipeline += `               ${parallel}sh "ls"\n`;
+        endCommands.push(
+            `            sh "docker stop ${ver} || echo 'Not Found'"`
+        );
+        endCommands.push(
+            `            sh "docker container rm ${ver}|| echo 'Not Found'"`
+        );
     }
     pipeline += `${parallel}            }
     ${parallel}    }\n`;
