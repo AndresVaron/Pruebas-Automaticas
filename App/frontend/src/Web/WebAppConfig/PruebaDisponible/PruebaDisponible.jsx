@@ -4,7 +4,7 @@ import './PruebaDisponible.css';
 import { useDrag } from 'react-dnd';
 import Select from 'react-select';
 
-function PruebaDisponible({ prueba, showVersionManager }) {
+function PruebaDisponible({ prueba, showVersionManager, mobile }) {
     const [version, setVersion] = useState(
         prueba.versions.length > 0
             ? prueba.versions[prueba.versions.length - 1]
@@ -75,14 +75,16 @@ function PruebaDisponible({ prueba, showVersionManager }) {
         <>
             <React.Fragment>
                 <div className="testContainer">
-                    <div className="versions-icon">
-                        <button
-                            className="btn btn-info btn-sm shadow-none"
-                            onClick={() => showVersionManager(prueba)}
-                        >
-                            <em className="fas fa-sm fa-pen text-white" />
-                        </button>
-                    </div>
+                    {!mobile && (
+                        <div className="versions-icon">
+                            <button
+                                className="btn btn-info btn-sm shadow-none"
+                                onClick={() => showVersionManager(prueba)}
+                            >
+                                <em className="fas fa-sm fa-pen text-white" />
+                            </button>
+                        </div>
+                    )}
                     <div
                         ref={drag}
                         className="pruebaDisponibleWebConfig"

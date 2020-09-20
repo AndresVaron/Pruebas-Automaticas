@@ -144,6 +144,7 @@ function WebAppConfig(props) {
                 <div key={index} className="containerPruebasDispWebConf">
                     <PruebaDisponible
                         prueba={prueba}
+                        mobile={config.mobile}
                         showVersionManager={showVersionManager}
                     />
                 </div>
@@ -278,14 +279,16 @@ function WebAppConfig(props) {
                         </div>
                         <div className="containerPruebasDispWebConfig">
                             {renderPruebas()}
-                            <div className="containerPruebasDispWebConf">
-                                <div
-                                    className="botonCrearOtraPruebaWebConfig"
-                                    onClick={() => setShowTestForm(true)}
-                                >
-                                    <img src={AddIcon} alt="" />
+                            {!config.mobile && (
+                                <div className="containerPruebasDispWebConf">
+                                    <div
+                                        className="botonCrearOtraPruebaWebConfig"
+                                        onClick={() => setShowTestForm(true)}
+                                    >
+                                        <img src={AddIcon} alt="" />
+                                    </div>
                                 </div>
-                            </div>
+                            )}
                         </div>
                     </div>
                     <div className="WebConfigPipeLineContainer">
