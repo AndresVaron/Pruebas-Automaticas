@@ -4,11 +4,12 @@ const MongoFunctions = require('../utils/MongoFunctions');
 Retorna la lista completa de webapps
 */
 
-module.exports.fetchWebApps = async () => {
+module.exports.fetchWebApps = async (mobile = false) => {
     const dbconn = MongoConnection.getInstance();
     return await dbconn
         .collection('webapps')
         .aggregate([
+            { $match: { mobile: mobile } },
             {
                 $lookup: {
                     from: 'webappversions',

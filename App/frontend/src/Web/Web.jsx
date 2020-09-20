@@ -5,10 +5,10 @@ import './Web.css';
 import WebAppCard from './WebAppCard/WebAppCard.jsx';
 import closeIcon from '../Media/Icons/close.svg';
 import AddIcon from '../Media/Icons/addIcon.svg';
+import FileUploader from '../FileUploader/FileUploader.jsx';
 
-function Web() {
+function Web({ mobile }) {
     const [apps, setApps] = useState([]);
-
     const [showCreateVersion, setShowCreateVersion] = useState(undefined);
     const [showDeleteApp, setShowDeleteApp] = useState(undefined);
     const [showCreateApp, setShowCreateApp] = useState(false);
@@ -17,8 +17,7 @@ function Web() {
     const [createAppNombre, setCreateAppNombre] = useState('');
 
     useEffect(() => {
-        axiosInstance
-            .get('/web')
+        axiosInstance.get(`/web?mobile=${mobile ? 'true' : 'false'}`)
             .then((resp) => {
                 setApps(resp.data);
             })
@@ -31,14 +30,14 @@ function Web() {
     const handleCreateApp = () => {
         if (createAppNombre !== '') {
             axiosInstance
-                .post('/web', {
+                .post(`/web?mobile=${mobile ? 'true' : 'false'}`, {
                     nombre: createAppNombre,
                 })
                 .then(() => {
                     setCreateAppNombre('');
                     setShowCreateApp(false);
                     axiosInstance
-                        .get('/web')
+                        .get(`/web?mobile=${mobile ? 'true' : 'false'}`)
                         .then((resp) => {
                             setApps(resp.data);
                         })
@@ -62,7 +61,7 @@ function Web() {
                     setCreateVersionUrl('');
                     setCreateVersionVersion('');
                     axiosInstance
-                        .get('/web')
+                        .get(`/web?mobile=${mobile ? 'true' : 'false'}`)
                         .then((resp) => {
                             setApps(resp.data);
                             setShowCreateVersion(undefined);
@@ -83,7 +82,7 @@ function Web() {
             .then(() => {
                 setShowDeleteApp(undefined);
                 axiosInstance
-                    .get('/web')
+                    .get(`/web?mobile=${mobile ? 'true' : 'false'}`)
                     .then((resp) => {
                         setApps(resp.data);
                         setShowCreateVersion(undefined);
@@ -104,6 +103,7 @@ function Web() {
                     app={app}
                     setShowCreateVersion={setShowCreateVersion}
                     setShowDeleteApp={setShowDeleteApp}
+                    mobile={mobile}
                 />
             </div>
         ));
@@ -156,18 +156,26 @@ function Web() {
                                     }}
                                 />
                             </div>
-                            <div className="rowUrlCrearVersionApp">
-                                <div className="lblCrearVersionApp">Url:</div>
-                                <input
-                                    className="createInput"
-                                    placeholder="Url"
-                                    value={createVersionUrl}
-                                    type="text"
-                                    onChange={(e) => {
-                                        setCreateVersionUrl(e.target.value);
-                                    }}
-                                />
-                            </div>
+                            {mobile &&
+                                <div className="mt-3">
+                                    <label className="mb-2 font-weight-bold">Carga el .apk</label>
+                                    <FileUploader currentFileName={''} emitValue={(name, value) => setCreateVersionUrl(value)} formName="url" filePath={`${mobile ? 'mobile' : 'web'}/tests/${showCreateVersion?._id}`} uploadedFileName={new Date().getTime()} acceptedFiles={'application/vnd.android.package-archive'}></FileUploader>
+                                </div>
+                            }
+                            {!mobile &&
+                                <div className="rowUrlCrearVersionApp">
+                                    <div className="lblCrearVersionApp">Url:</div>
+                                    <input
+                                        className="createInput"
+                                        placeholder="Url"
+                                        value={createVersionUrl}
+                                        type="text"
+                                        onChange={(e) => {
+                                            setCreateVersionUrl(e.target.value);
+                                        }}
+                                    />
+                                </div>
+                            }
                             <div className="rowGuardarCrearVersionApp">
                                 <button
                                     className="bntConfirmarWebAppList guardarCrearVersionApp"
@@ -264,7 +272,7 @@ function Web() {
                 </div>
             )}
             <div className="lblTitleWebApp">
-                Selecciona la pagina web que deseas probar:
+                Selecciona la aplicación {mobile ? 'móvil' : 'web'} que deseas probar:
             </div>
             <div className="containerAppsWeb">{renderList()}</div>
             <div className="containerAppsWeb containerAppsWebCenter">
