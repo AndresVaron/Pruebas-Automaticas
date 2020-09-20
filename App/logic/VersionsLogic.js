@@ -21,7 +21,7 @@ const postVersion = async (autId, { url, version, type }) => {
         if (!test) {
             throw { errMsg: 'No existe una prueba con el id ingresado' };
         } else {
-            const newVersion = { test: test._id, creationDate: new Date(), version, url, type: type || 'Cypress' };
+            const newVersion = { test: test._id, creationDate: new Date(), version, url };
             const createdVersion = await insertVersion(newVersion);
             await updateTest(test._id, { $push: { versions: createdVersion.ops[0]._id } });
             return createdVersion.ops[0];
