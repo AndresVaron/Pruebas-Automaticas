@@ -30,3 +30,13 @@
     margin-top: 20px;
     margin-left: 20px;
 }
+
+.pruebaActualWebConfig {
+    position: relative;
+}
+.pruebaActualWebConfig label {
+    position: absolute;
+    bottom: 0px;
+    font-size: 18px;
+    margin: 0px;
+}

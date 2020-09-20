@@ -45,7 +45,7 @@ function WebAppConfigList(props) {
                                     [
                                         {
                                             nombre: 'End to End',
-                                            short: 'HT',
+                                            shortName: 'HT',
                                             _id: 'gasdas',
                                             versiones: [
                                                 {
@@ -58,55 +58,55 @@ function WebAppConfigList(props) {
                                     [
                                         {
                                             nombre: 'End to End',
-                                            short: 'MT',
+                                            shortName: 'MT',
                                             _id: 'gasdas',
                                         },
                                         {
                                             nombre: 'End to End',
-                                            short: 'IT',
+                                            shortName: 'IT',
                                             _id: 'gasdas',
                                         },
                                         {
                                             nombre: 'End to End',
-                                            short: 'MT',
+                                            shortName: 'MT',
                                             _id: 'gasdas',
                                         },
                                         {
                                             nombre: 'End to End',
-                                            short: 'IT',
-                                            _id: 'gasdas',
-                                        },
-                                    ],
-                                    [
-                                        {
-                                            nombre: 'End to End',
-                                            short: 'E2E',
+                                            shortName: 'IT',
                                             _id: 'gasdas',
                                         },
                                     ],
                                     [
                                         {
                                             nombre: 'End to End',
-                                            short: 'BT',
+                                            shortName: 'E2E',
                                             _id: 'gasdas',
                                         },
                                     ],
                                     [
                                         {
                                             nombre: 'End to End',
-                                            short: 'ATE',
-                                            _id: 'gasdas',
-                                        },
-                                        {
-                                            nombre: 'End to End',
-                                            short: 'ATBC',
+                                            shortName: 'BT',
                                             _id: 'gasdas',
                                         },
                                     ],
                                     [
                                         {
                                             nombre: 'End to End',
-                                            short: 'E2E',
+                                            shortName: 'ATE',
+                                            _id: 'gasdas',
+                                        },
+                                        {
+                                            nombre: 'End to End',
+                                            shortName: 'ATBC',
+                                            _id: 'gasdas',
+                                        },
+                                    ],
+                                    [
+                                        {
+                                            nombre: 'End to End',
+                                            shortName: 'E2E',
                                             _id: 'gasdas',
                                         },
                                     ],
@@ -243,7 +243,6 @@ function WebAppConfigList(props) {
                                         '/configs'
                                 )
                                 .then((resp) => {
-                                    console.log(resp);
                                     props.history.push(
                                         `/web/${app._id}/versions/${app.version._id}/configs/${resp.data._id}`
                                     );

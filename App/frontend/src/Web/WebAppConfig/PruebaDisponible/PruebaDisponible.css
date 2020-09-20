@@ -14,6 +14,10 @@
     cursor: pointer;
 }
 
+.pruebaDisponibleWebConfig label {
+    cursor: pointer;
+    margin-bottom: 5px;
+}
 .testContainer {
     position: relative;
 }
@@ -26,4 +30,13 @@
 
 .versions-icon button.btn {
     border-radius: 1rem;
+}
+.selectWebAppVersionDisponible {
+    font-size: 20px;
+    min-width: 80px;
+}
+
+.containerSelectTestVersion {
+    position: absolute;
+    bottom: 0;
 }

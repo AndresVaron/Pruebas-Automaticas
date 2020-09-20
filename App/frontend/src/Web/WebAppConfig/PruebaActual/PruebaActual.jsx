@@ -24,7 +24,8 @@ function PruebaActual(props) {
                         <img src={DeleteIcon} alt="" />
                     </div>
                 )}
-                {props.prueba.shortName}
+                {props.prueba.prueba.shortName}
+                <label>{props.prueba.version.version}</label>
             </div>
         </React.Fragment>
     );

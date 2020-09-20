@@ -236,31 +236,3 @@ module.exports.fetchWebAppVersion = async (idApp, id) => {
         throw errJson;
     }
 };
-
-/*
-Método encargado de obtener todas las apps web
-*/
-module.exports.fetchWebAppVersionConfigs = async (id) => {
-    try {
-        const configs = await WebAppPersistence.fetchWebAppVersionConfigs(id);
-        for (const config of configs) {
-            for (let j = 0; j < config.pruebas.length; j++) {
-                for (let i = 0; i < config.pruebas[j].length; i++) {
-                    config.pruebas[j][
-                        i
-                    ] = await WebAppPersistence.fetchWebAppPrueba(
-                        config.pruebas[j][i]
-                    );
-                }
-            }
-        }
-        return configs;
-    } catch (err) {
-        const errJson = {
-            error: new Error(),
-            errMsg: err.toString(),
-            errCode: 500,
-        };
-        throw errJson;
-    }
-};

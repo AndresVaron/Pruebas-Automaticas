@@ -19,19 +19,6 @@ export const ItemTypes = {
     PRUEBA: 'prueba',
 };
 
-const PRUEBAS = [
-    {
-        nombre: 'End to End',
-        short: 'E2E',
-        _id: '5f5f76b979c83c60f468d67f',
-    },
-    {
-        nombre: 'End to End',
-        short: 'E3E',
-        _id: '1235',
-    },
-];
-
 function WebAppConfig(props) {
     const autId = props.match.params.id_app;
     const [config, setConfig] = useState(undefined);
@@ -56,12 +43,14 @@ function WebAppConfig(props) {
     const loadTests = () => {
         setShowTestForm(false);
         setCurrentTest(null);
-        setPruebasDisponibles(undefined);
-        axiosInstance.get(`/tests/${autId}`).then(resp => {
-            setPruebasDisponibles(resp.data);
-        }).catch(err => {
-            setPruebasDisponibles([]);
-        });
+        axiosInstance
+            .get(`/tests/${autId}`)
+            .then((resp) => {
+                setPruebasDisponibles(resp.data);
+            })
+            .catch(() => {
+                setPruebasDisponibles([]);
+            });
     };
 
     useEffect(() => {
@@ -73,11 +62,11 @@ function WebAppConfig(props) {
             axiosInstance
                 .get(
                     '/web/' +
-                    autId +
-                    '/versiones/' +
-                    props.match.params.id_version +
-                    '/configs/' +
-                    props.match.params.id_config
+                        autId +
+                        '/versiones/' +
+                        props.match.params.id_version +
+                        '/configs/' +
+                        props.match.params.id_config
                 )
                 .then((resp) => {
                     setConfig(resp.data);
@@ -128,7 +117,10 @@ function WebAppConfig(props) {
         return pruebasDisponibles.map((prueba, index) => {
             return (
                 <div key={index} className="containerPruebasDispWebConf">
-                    <PruebaDisponible prueba={prueba} showVersionManager={showVersionManager} />
+                    <PruebaDisponible
+                        prueba={prueba}
+                        showVersionManager={showVersionManager}
+                    />
                 </div>
             );
         });
@@ -151,7 +143,7 @@ function WebAppConfig(props) {
                 const filas = columna.map((prueba, index2) => {
                     return (
                         <div
-                            key={'pruebaActual' + prueba._id + index2}
+                            key={'pruebaActual' + prueba.version._id + index2}
                             className="pruebaActualWebConfigContainer"
                         >
                             <PruebaActual
@@ -179,7 +171,6 @@ function WebAppConfig(props) {
                                 const pruebas = [...pruebasActuales];
                                 pruebas[index].unshift(prueba);
                                 setPruebasActuales(pruebas);
-                                //TODO Quitar prueba de Disponibles
                             }}
                         />
                         {filas}
@@ -191,7 +182,6 @@ function WebAppConfig(props) {
                                 const pruebas = [...pruebasActuales];
                                 pruebas[index].push(prueba);
                                 setPruebasActuales(pruebas);
-                                //TODO Quitar prueba de Disponibles
                             }}
                         />
                     </div>
@@ -202,18 +192,18 @@ function WebAppConfig(props) {
                 .map((e, i) =>
                     i < columnas.length - 1
                         ? [
-                            e,
-                            <div
-                                key={'columnaArrowConfigWeb' + i}
-                                className="columnaArrowConfigWeb"
-                            >
-                                <img
-                                    alt=""
-                                    src={RightArrowIcon}
-                                    className="arrowConfigWeb"
-                                />
-                            </div>,
-                        ]
+                              e,
+                              <div
+                                  key={'columnaArrowConfigWeb' + i}
+                                  className="columnaArrowConfigWeb"
+                              >
+                                  <img
+                                      alt=""
+                                      src={RightArrowIcon}
+                                      className="arrowConfigWeb"
+                                  />
+                              </div>,
+                          ]
                         : [e]
                 )
                 .reduce((a, b) => a.concat(b));
@@ -232,7 +222,6 @@ function WebAppConfig(props) {
                         const pruebas = [...pruebasActuales];
                         pruebas.unshift([prueba]);
                         setPruebasActuales(pruebas);
-                        //TODO Quitar prueba de Disponibles
                     }}
                 />
             );
@@ -245,7 +234,6 @@ function WebAppConfig(props) {
                         const pruebas = [...pruebasActuales];
                         pruebas.push([prueba]);
                         setPruebasActuales(pruebas);
-                        //TODO Quitar prueba de Disponibles
                     }}
                 />
             );
@@ -314,22 +302,24 @@ function WebAppConfig(props) {
                                     axiosInstance
                                         .put(
                                             '/web/' +
-                                            props.match.params.id_app +
-                                            '/versiones/' +
-                                            props.match.params.id_version +
-                                            '/configs/' +
-                                            props.match.params.id_config,
+                                                props.match.params.id_app +
+                                                '/versiones/' +
+                                                props.match.params.id_version +
+                                                '/configs/' +
+                                                props.match.params.id_config,
                                             {
                                                 nombre: nombre,
                                                 pruebas: pruebasActuales.map(
                                                     (prueba) =>
                                                         prueba.map(
-                                                            (prueb) => prueb._id
+                                                            (prueb) =>
+                                                                prueb.version
+                                                                    ._id
                                                         )
                                                 ),
                                             }
                                         )
-                                        .then(() => { })
+                                        .then(() => {})
                                         .catch((err) => {
                                             console.error(err);
                                         });
@@ -339,8 +329,21 @@ function WebAppConfig(props) {
                             </button>
                         </div>
                     </div>
-                    {showTestForm && <TestForm autId={autId} reloadData={loadTests} setShowModal={setShowTestForm} web={true} />}
-                    {currentTest && <VersionManager test={currentTest} setShowModal={showVersionManager} reloadData={loadTests} />}
+                    {showTestForm && (
+                        <TestForm
+                            autId={autId}
+                            reloadData={loadTests}
+                            setShowModal={setShowTestForm}
+                            web={true}
+                        />
+                    )}
+                    {currentTest && (
+                        <VersionManager
+                            test={currentTest}
+                            setShowModal={showVersionManager}
+                            reloadData={loadTests}
+                        />
+                    )}
                 </DndProvider>
             );
         }
