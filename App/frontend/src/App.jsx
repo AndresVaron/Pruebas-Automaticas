@@ -48,6 +48,7 @@ function App() {
                         render={() => <WebAppConfigList />}
                     />
                     <Route exact path="/web" render={() => <Web />} />
+                    <Route exact path="/mobile" render={() => <Web mobile={true} />} />
                     <Route path="*" exact render={() => <div>Not Found</div>} />
                 </Switch>
             </div>

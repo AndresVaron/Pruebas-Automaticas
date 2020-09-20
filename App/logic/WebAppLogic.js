@@ -4,9 +4,11 @@ const MongoFunctions = require('../utils/MongoFunctions');
 /* 
 Método encargado de obtener todas las apps web
 */
-module.exports.fetchWebApps = async () => {
+module.exports.fetchWebApps = async (mobile) => {
+    console.log(mobile);
+
     try {
-        return await WebAppPersistence.fetchWebApps();
+        return await WebAppPersistence.fetchWebApps(mobile);
     } catch (err) {
         const errJson = {
             error: new Error(),
@@ -130,7 +132,7 @@ module.exports.postWebAppVersion = async (version) => {
 Método encargado de validar reglas del negocio para persistir una web app. 
 Retorna error 400 si alguna de las reglas de negocio no se cumple o 500 si hay un error de base de datos.
 */
-module.exports.postWebApp = async (webApp) => {
+module.exports.postWebApp = async (webApp, mobile) => {
     const errJson = {
         errMsg: '',
         errCode: 500,
@@ -157,6 +159,7 @@ module.exports.postWebApp = async (webApp) => {
     try {
         const finalWebApp = {};
         finalWebApp.nombre = webApp.nombre;
+        finalWebApp.mobile = mobile;
         const today = new Date(Date.now());
         finalWebApp.fechaCreacion = new Date(
             Date.now() - today.getTimezoneOffset() * 60 * 1000

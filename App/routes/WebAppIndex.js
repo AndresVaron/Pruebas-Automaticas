@@ -6,7 +6,7 @@ const WebAppLogic = require('../logic/WebAppLogic');
 Retorna las apps web
 */
 router.get('/', (req, res) => {
-    WebAppLogic.fetchWebApps()
+    WebAppLogic.fetchWebApps(Boolean(req.query.mobile == 'true'))
         .then((data) => res.send(data))
         .catch((err) => res.status(err.errCode).send(err.errMsg));
 });
@@ -31,7 +31,7 @@ Método POST encargado de crear una app web
 router.post('/', (req, res) => {
     const webApp = {};
     webApp.nombre = req.body.nombre;
-    WebAppLogic.postWebApp(webApp)
+    WebAppLogic.postWebApp(webApp, Boolean(req.query.mobile == 'true'))
         .then((data) => res.status(201).send(data))
         .catch((err) => {
             res.status(err.errCode).send(err.errMsg);
