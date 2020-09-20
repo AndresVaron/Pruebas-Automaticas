@@ -101,13 +101,3 @@ module.exports.fetchWebAppVersionConfigs = async (id) => {
         ])
         .toArray();
 };
-
-/*
-Retorna de la bd la pregunta con el id dado.
-*/
-module.exports.fetchWebAppPrueba = async (id) => {
-    const dbconn = MongoConnection.getInstance();
-    return await dbconn
-        .collection('webappspruebas')
-        .findOne({ _id: MongoFunctions.convertObjectId(id) });
-};

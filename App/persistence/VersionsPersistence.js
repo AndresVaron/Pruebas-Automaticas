@@ -1,4 +1,5 @@
 const MongoConnection = require('../utils/MongoConnection');
+const MongoFunctions = require('../utils/MongoFunctions');
 const collection = 'versions';
 
 const insertVersion = async (newVersion) => {
@@ -11,4 +12,11 @@ const findVersions = async (query) => {
     return await dbconn.collection(collection).find(query).toArray();
 };
 
-module.exports = { insertVersion, findVersions };
+const fetchVersion = async (id) => {
+    const dbconn = MongoConnection.getInstance();
+    return await dbconn
+        .collection(collection)
+        .findOne({ _id: MongoFunctions.convertObjectId(id) });
+};
+
+module.exports = { insertVersion, findVersions, fetchVersion };

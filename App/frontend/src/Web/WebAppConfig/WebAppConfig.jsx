@@ -60,22 +60,47 @@ function WebAppConfig(props) {
             props.match.params.id_version !== undefined
         ) {
             axiosInstance
-                .get(
-                    '/web/' +
-                        autId +
-                        '/versiones/' +
-                        props.match.params.id_version +
-                        '/configs/' +
-                        props.match.params.id_config
-                )
+                .get(`/tests/${autId}`)
                 .then((resp) => {
-                    setConfig(resp.data);
-                    setNombre(resp.data.nombre);
-                    setPruebasActuales(resp.data.pruebas);
-                    loadTests();
+                    const pruebasDisp = resp.data;
+                    setPruebasDisponibles(pruebasDisp);
+                    axiosInstance
+                        .get(
+                            '/web/' +
+                                autId +
+                                '/versiones/' +
+                                props.match.params.id_version +
+                                '/configs/' +
+                                props.match.params.id_config
+                        )
+                        .then((resp) => {
+                            resp.data.pruebas = resp.data.pruebas.map((vers) =>
+                                vers.map((version) => {
+                                    let realVersion;
+                                    const prueba = pruebasDisp.find(
+                                        (prueba) => {
+                                            realVersion = prueba.versions.find(
+                                                (ver) => ver._id === version
+                                            );
+                                            return realVersion !== null;
+                                        }
+                                    );
+                                    return {
+                                        version: realVersion,
+                                        prueba: prueba,
+                                    };
+                                })
+                            );
+                            setConfig(resp.data);
+                            setNombre(resp.data.nombre);
+                            setPruebasActuales(resp.data.pruebas);
+                        })
+                        .catch((err) => {
+                            console.error(err);
+                        });
                 })
-                .catch((err) => {
-                    console.error(err);
+                .catch(() => {
+                    setPruebasDisponibles([]);
                 });
         }
     }, []);

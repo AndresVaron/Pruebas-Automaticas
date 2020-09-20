@@ -1,8 +1,9 @@
 const WebAppConfigPersistence = require('../persistence/WebAppConfigPersistence');
 const WebAppPersistence = require('../persistence/WebAppPersistence');
+const TestPersistence = require('../persistence/TestsPersistence');
+const VersionPersistence = require('../persistence/VersionsPersistence');
 const MongoFunctions = require('../utils/MongoFunctions');
 const axios = require('axios');
-const { response } = require('express');
 
 /*
 Método encargado de obtener todas las apps web
@@ -13,11 +14,15 @@ module.exports.fetchWebAppVersionConfigs = async (id) => {
         for (const config of configs) {
             for (let j = 0; j < config.pruebas.length; j++) {
                 for (let i = 0; i < config.pruebas[j].length; i++) {
-                    config.pruebas[j][
-                        i
-                    ] = await WebAppPersistence.fetchWebAppPrueba(
+                    //Mandar el elemento completo
+                    const version = await VersionPersistence.fetchVersion(
                         config.pruebas[j][i]
                     );
+                    if (version !== null) {
+                        config.pruebas[j][
+                            i
+                        ] = await TestPersistence.findTestById(version.test);
+                    }
                 }
             }
         }
@@ -123,16 +128,6 @@ module.exports.getWebAppVersionConfig = async (
                 errJson.error = new Error();
                 throw errJson;
             }
-            for (let j = 0; j < response.pruebas.length; j++) {
-                for (let i = 0; i < response.pruebas[j].length; i++) {
-                    //TODO
-                    response.pruebas[j][
-                        i
-                    ] = await WebAppPersistence.fetchWebAppPrueba(
-                        response.pruebas[j][i]
-                    );
-                }
-            }
             return response;
         }
     } catch (err) {
@@ -176,24 +171,29 @@ module.exports.updateWebAppVersionConfig = async (id, config) => {
     let updateResponse;
     try {
         let pipeline = `pipeline {
-                            agent any
-                            stages {
-                        `;
+    agent any
+    stages {\n`;
         if (config.pruebas.length > 0) {
             for (let i = 0; i < config.pruebas.length; i++) {
-                if (config.pruebas[i].length > 1) {
-                    pipeline += ` stage('${[i]}') {  
-                        parallel {`;
+                const isParallel = config.pruebas[i].length > 1;
+                if (isParallel) {
+                    pipeline += `        stage('${[i + 1]}') {  
+            parallel {\n`;
                 }
                 for (let j = 0; j < config.pruebas[i].length; j++) {
-                    pipeline += await calcSteps(config.pruebas[i][j]);
+                    pipeline += await calcSteps(
+                        config.pruebas[i][j],
+                        isParallel,
+                        i + 1,
+                        j + 1
+                    );
                     config.pruebas[i][j] = MongoFunctions.convertObjectId(
                         config.pruebas[i][j]
                     );
                 }
-                if (config.pruebas[i].length > 1) {
-                    pipeline += `}
-                        }`;
+                if (isParallel) {
+                    pipeline += `            }
+        }\n`;
                 }
             }
         } else {
@@ -204,7 +204,7 @@ module.exports.updateWebAppVersionConfig = async (id, config) => {
             }`;
         }
         pipeline += `    }
-                    }`;
+}`;
 
         //Crear un job de Jenkins
         const xmlBodyStr = `<?xml version='1.1' encoding='UTF-8'?>
@@ -224,8 +224,8 @@ module.exports.updateWebAppVersionConfig = async (id, config) => {
                     <hudson.plugins.jira.JiraProjectProperty plugin="jira@3.1.1"/>
                 </properties>
                 <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.83">
-                    <script>UPDATE</script>
-                    <sandbox>${pipeline}</sandbox>
+                    <script>${pipeline}</script>
+                    <sandbox>true</sandbox>
                 </definition>
                 <triggers/>
                 <disabled>false</disabled>
@@ -271,9 +271,10 @@ module.exports.updateWebAppVersionConfig = async (id, config) => {
     return 'Se actualizó la configuracion';
 };
 
-const calcSteps = async (prueba) => {
-    const test = await WebAppPersistence.fetchWebAppTest(prueba);
-    if (prueba === null) {
+const calcSteps = async (id_version, isParallel, index, jndex) => {
+    const version = await VersionPersistence.fetchVersion(id_version);
+    const prueba = await TestPersistence.findTestById(version.test);
+    if (version === null || prueba === null) {
         const errJson = {
             errMsg: 'Las pruebas no son validas',
             errCode: 400,
@@ -281,11 +282,19 @@ const calcSteps = async (prueba) => {
         errJson.error = new Error();
         throw errJson;
     }
-    let pipeline = `stage('${[tipo]}'){
-        steps{ `;
-
-    pipeline += `}
-             }`;
+    console.log(version);
+    console.log(prueba);
+    const parallel = isParallel ? '        ' : '';
+    let pipeline = `${parallel}        stage('${
+        (isParallel ? index + '-' + jndex + '-' : index + '-') +
+        prueba.shortName
+    }'){
+    ${parallel}        steps{\n`;
+    if (true) {
+        pipeline += `               ${parallel}sh "echo CYPRESS"\n`;
+    }
+    pipeline += `${parallel}            }
+    ${parallel}    }\n`;
     return pipeline;
 };
 
