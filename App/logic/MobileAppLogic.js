@@ -8,7 +8,7 @@ module.exports.execMobileAppConfig = async (id_config) => {
     console.log(id_config);
     try {
         //Se ejecuta el comando en consola
-        const { stdout, stderr } = await exec('echo Hola Mundo');
+        const { stdout, stderr } = await exec('sh ~/Documents/Monkey_Wiki.sh');
         console.log('stdout:', stdout);
         if (stderr !== '') {
             console.log('stderr:', stderr);
