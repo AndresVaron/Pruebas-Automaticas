@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs');
 const S3 = require('aws-sdk/clients/s3');
 const mime = require('mime-types');
 const accessKeyId = process.env.ACCESS_KEY;
@@ -23,13 +24,40 @@ const uploadFile = (file, fileKey) => {
     });
 };
 
+const downloadFile = (fileKey, fileDirectory, filePath) => {
+    return new Promise((resolve, reject) => {
+        const params = {
+            Bucket: bucketName,
+            Key: fileKey
+        };
+        console.log('Downloading file from S3 with key: ' + fileKey);
+        try {
+
+            fs.mkdir(fileDirectory, { recursive: true }, (err) => {
+                if (err) {
+                    return reject(err);
+                };
+                const file = fs.createWriteStream(fileDirectory + '/' + filePath);
+                const s3Stream = s3.getObject(params).createReadStream();
+                s3Stream.on('error', function (err) {
+                    return reject(err);
+                });
+                s3Stream.pipe(file).on('error', (err) => {
+                    if (err) {
+                        return reject(err);
+                    }
+                }).on('close', () => {
+                    resolve(`${filePath} has been downloaded`);
+                });
+            });
+        } catch (error) {
+            reject(error);
+        }
+    });
+};
+
 const PostUploadFile = async (req, res, next) => {
     try {
-        console.log(req.body);
-        console.log(req.files);
-        console.log(accessKeyId);
-        console.log(secretAccessKey);
-        console.log(bucketName);
         let { filePath, fileName } = JSON.parse(req.body.data);
 
         if (!filePath || filePath.includes('..')) {
@@ -58,4 +86,4 @@ const PostUploadFile = async (req, res, next) => {
     }
 }
 
-module.exports = { PostUploadFile };
+module.exports = { PostUploadFile, downloadFile };

@@ -19,7 +19,8 @@ function Web({ location }) {
     const [createAppPackageName, setCreateAppPackageName] = useState('');
 
     useEffect(() => {
-        axiosInstance.get(`/web?mobile=${mobile ? 'true' : 'false'}`)
+        axiosInstance
+            .get(`/web?mobile=${mobile ? 'true' : 'false'}`)
             .then((resp) => {
                 setApps(resp.data);
             })
@@ -30,10 +31,9 @@ function Web({ location }) {
     }, []);
 
     const handleCreateApp = () => {
-
-        if (createAppNombre !== '' && (mobile && createAppPackageName !== '')) {
+        if (createAppNombre !== '' && mobile && createAppPackageName !== '') {
             const newApp = {
-                nombre: createAppNombre
+                nombre: createAppNombre,
             };
             if (mobile) {
                 newApp.package = createAppPackageName;
@@ -65,7 +65,10 @@ function Web({ location }) {
                 url: createVersionUrl,
             };
             axiosInstance
-                .post('/web/' + showCreateVersion._id + '/versiones', newVersion)
+                .post(
+                    '/web/' + showCreateVersion._id + '/versiones',
+                    newVersion
+                )
                 .then(() => {
                     setCreateVersionUrl('');
                     setCreateVersionVersion('');
@@ -162,25 +165,46 @@ function Web({ location }) {
                                         value={createVersionVersion}
                                         type="text"
                                         onChange={(e) => {
-                                            setCreateVersionVersion(e.target.value);
+                                            setCreateVersionVersion(
+                                                e.target.value
+                                            );
                                         }}
                                         required
                                     />
                                 </div>
                             </div>
-                            {mobile &&
+                            {mobile && (
                                 <>
                                     <div className="d-flex align-items-center">
                                         <div className="mt-3">
-                                            <label className="mb-2 font-weight-bold">Carga el .apk</label>
-                                            <FileUploader currentFileName={''} emitValue={(name, value) => setCreateVersionUrl(value)} formName="url" filePath={`${mobile ? 'mobile' : 'web'}/tests/${showCreateVersion?._id}`} uploadedFileName={new Date().getTime()} acceptedFiles={'application/vnd.android.package-archive'}></FileUploader>
+                                            <label className="mb-2 font-weight-bold">
+                                                Carga el .apk
+                                            </label>
+                                            <FileUploader
+                                                currentFileName={''}
+                                                emitValue={(name, value) =>
+                                                    setCreateVersionUrl(value)
+                                                }
+                                                formName="url"
+                                                filePath={`${
+                                                    mobile ? 'mobile' : 'web'
+                                                }/versions/${
+                                                    showCreateVersion?._id
+                                                }`}
+                                                uploadedFileName={new Date().getTime()}
+                                                acceptedFiles={
+                                                    'application/vnd.android.package-archive'
+                                                }
+                                            ></FileUploader>
                                         </div>
                                     </div>
                                 </>
-                            }
-                            {!mobile &&
+                            )}
+                            {!mobile && (
                                 <div className="rowUrlCrearVersionApp">
-                                    <div className="lblCrearVersionApp">Url:</div>
+                                    <div className="lblCrearVersionApp">
+                                        Url:
+                                    </div>
                                     <input
                                         className="createInput"
                                         placeholder="Url"
@@ -191,7 +215,7 @@ function Web({ location }) {
                                         }}
                                     />
                                 </div>
-                            }
+                            )}
                             <div className="rowGuardarCrearVersionApp">
                                 <button
                                     className="bntConfirmarWebAppList guardarCrearVersionApp"
@@ -272,7 +296,7 @@ function Web({ location }) {
                                     required
                                 />
                             </div>
-                            {mobile &&
+                            {mobile && (
                                 <div className="d-flex align-items-center mt-3">
                                     <label className="mb-0 mr-3 font-weight-bold lblTest">
                                         Paquete:
@@ -282,12 +306,14 @@ function Web({ location }) {
                                         value={createAppPackageName}
                                         type="text"
                                         onChange={(e) => {
-                                            setCreateAppPackageName(e.target.value);
+                                            setCreateAppPackageName(
+                                                e.target.value
+                                            );
                                         }}
                                         required
                                     />
                                 </div>
-                            }
+                            )}
                             <div className="rowGuardarCrearVersionApp">
                                 <button
                                     className="bntConfirmarWebAppList guardarCrearVersionApp"
@@ -305,7 +331,8 @@ function Web({ location }) {
                 </div>
             )}
             <div className="lblTitleWebApp">
-                Selecciona la aplicación {mobile ? 'móvil' : 'web'} que deseas probar:
+                Selecciona la aplicación {mobile ? 'móvil' : 'web'} que deseas
+                probar:
             </div>
             <div className="containerAppsWeb">{renderList()}</div>
             <div className="containerAppsWeb containerAppsWebCenter">
