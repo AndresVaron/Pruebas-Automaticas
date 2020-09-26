@@ -47,7 +47,7 @@ const postTest = async (id, { name, shortName, url, version, type }) => {
                     creationDate: new Date(),
                     aut: aut[0]._id,
                     versions: [],
-                    type: aut[0].mobile ? MobileMonkey : type,
+                    type: aut[0].mobile ? 'MobileMonkey' : type,
                     mobile: aut[0].mobile
                 };
                 const createdTest = await insertTest(newTest);
