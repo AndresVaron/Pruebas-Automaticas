@@ -24,6 +24,7 @@ function WebAppConfigList(props) {
                         props.match.params.id_version
                 )
                 .then((resp) => {
+                    console.log(resp.data);
                     setApp(resp.data);
                     axiosInstance
                         .get(
@@ -34,6 +35,7 @@ function WebAppConfigList(props) {
                                 '/configs'
                         )
                         .then((resp) => {
+                            console.log(resp.data);
                             setConfigs(resp.data);
                         })
                         .catch((err) => {
