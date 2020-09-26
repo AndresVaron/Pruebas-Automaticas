@@ -1,39 +1,31 @@
-const util = require('util');
-const exec = util.promisify(require('child_process').exec);
-const path = require('path');
 const WebAppConfigPersistence = require('../persistence/WebAppConfigPersistence');
 const VersionsPersistence = require('../persistence/VersionsPersistence');
-
+const { fetchWebAppVersion } = require('../persistence/AppVersionsPersistence');
+const WebAppPersistence = require('../persistence/WebAppPersistence');
+const executeMobileMonkey = require('../utils/ExecuteMobileMonkey');
 /*
 Método encargado de obtener todas las apps web
 */
-module.exports.execMobileAppConfig = async (id) => {
-    try {
-        const response = await WebAppConfigPersistence.fetchWebAppVersionConfig(id);
-        console.log(response);
-        if (response === null) {
-            const errJson = {
-                errMsg: 'No existe una configuracion con este id',
-                errCode: 400,
-            };
-            errJson.error = new Error();
-            throw errJson;
-        } else {
-            //Se ejecuta el comando en consola
-            const currentVersion = await VersionsPersistence.fetchVersion(response.pruebas[0][0]);
-            const { stdout, stderr } = await exec('sh ~/Documents/Monkey_Wiki.sh');
-            console.log('stdout:', stdout);
-            if (stderr !== '') {
-                console.log('stderr:', stderr);
-            }
+module.exports.execMobileAppConfig = async (id, res) => {
+    const appVersionConfig = await WebAppConfigPersistence.fetchWebAppVersionConfig(id);
+    if (appVersionConfig === null) {
+        return res.status(400).send('No existe una configuracion con este id');
+    } else {
+        //Se ejecuta el comando en consola
+        const currentVersion = await VersionsPersistence.fetchVersion(appVersionConfig.pruebas[0][0]);
+        if (!currentVersion) {
+            errorJson.errMsg = 'No se encontró la versión de la prueba a ejecutar';
+            throw errorJson;
         }
-
-    } catch (err) {
-        const errJson = {
-            error: new Error(),
-            errMsg: err.toString(),
-            errCode: 500,
-        };
-        throw errJson;
+        const appVersion = await fetchWebAppVersion(appVersionConfig.id_version);
+        if (!appVersion) {
+            return res.status(400).send('No se encontró la versión de la aplicación a probar');
+        }
+        const currentApp = await WebAppPersistence.fetchApp(appVersion.id_app);
+        if (!currentApp) {
+            return res.status(400).send('No se encontró la aplicación a probar');
+        }
+        res.send(true);
+        executeMobileMonkey(appVersionConfig, currentVersion, appVersion, currentApp);
     }
 };

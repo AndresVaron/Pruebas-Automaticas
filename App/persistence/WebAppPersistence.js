@@ -1,5 +1,14 @@
 const MongoConnection = require('../utils/MongoConnection');
 const MongoFunctions = require('../utils/MongoFunctions');
+const collection = 'webapps';
+
+module.exports.fetchApp = async (id) => {
+    const dbconn = MongoConnection.getInstance();
+    return await dbconn
+        .collection(collection)
+        .findOne({ _id: MongoFunctions.convertObjectId(id) });
+};
+
 /*
 Retorna la lista completa de webapps
 */
