@@ -3,8 +3,9 @@ import Modal from '../../../Modal/Modal';
 import Loading from '../../../Loading/Loading';
 import FileUploader from '../../../FileUploader/FileUploader';
 import axiosInstance from '../../../AxiosAPI';
+import Select from 'react-select';
 
-const TestForm = ({ autId, setShowModal, web, reloadData }) => {
+function TestForm({ autId, setShowModal, web, reloadData }) {
     const [loading, setLoading] = useState(false);
     const [form, setForm] = useState({
         name: '',
@@ -13,6 +14,7 @@ const TestForm = ({ autId, setShowModal, web, reloadData }) => {
         url: '',
     });
 
+    const [type, setType] = useState();
     const handleChange = (event) => {
         setForm({ ...form, [event.target.name]: event.target.value });
     };
@@ -22,9 +24,10 @@ const TestForm = ({ autId, setShowModal, web, reloadData }) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         setLoading(true);
+        form.type = type;
         axiosInstance
             .post(`/tests/${autId}`, form)
-            .then((data) => {
+            .then(() => {
                 reloadData();
             })
             .catch((err) => {
@@ -82,6 +85,37 @@ const TestForm = ({ autId, setShowModal, web, reloadData }) => {
                         required
                     />
                 </div>
+                <div className="d-flex align-items-center mt-3">
+                    <label className="mb-0 mr-3 font-weight-bold lblTest">
+                        Tipo:
+                    </label>
+                    <Select
+                        name="type"
+                        onChange={(inputValue) => {
+                            setType(inputValue.value);
+                        }}
+                        options={[
+                            {
+                                label: 'Cypress',
+                                value: 'Cypress',
+                            },
+                            {
+                                label: 'Cucumber',
+                                value: 'Cucumber',
+                            },
+                        ]}
+                        placeholder="Seleccionar"
+                        className="selectWebAppTestType"
+                        theme={(theme) => ({
+                            ...theme,
+                            colors: {
+                                ...theme.colors,
+                                primary25: 'rgba(29, 47, 111, 0.25)',
+                                primary: '#989898',
+                            },
+                        })}
+                    />
+                </div>
                 <div className="mt-3">
                     <label className="mb-2 font-weight-bold">
                         Carga el archivo de la prueba:
@@ -103,6 +137,6 @@ const TestForm = ({ autId, setShowModal, web, reloadData }) => {
             </form>
         </Modal>
     );
-};
+}
 
 export default TestForm;

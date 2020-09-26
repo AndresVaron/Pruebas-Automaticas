@@ -212,7 +212,6 @@ pipeline {
         for (let i = 0; i < endCommands.length; i++) {
             pipeline += endCommands[i] + '\n';
         }
-        pipeline += '            junit "**/results/*.xml"\n';
         pipeline += '            cleanWs()\n       }\n    }\n}';
         //Crear un job de Jenkins
         const xmlBodyStr = `<?xml version='1.1' encoding='UTF-8'?>
@@ -291,8 +290,6 @@ const calcSteps = async (id_version, isParallel, index, jndex, endCommands) => {
         errJson.error = new Error();
         throw errJson;
     }
-    console.log(version);
-    console.log(prueba);
     const ver = '${buildId}-' + index + '-' + jndex;
     const parallel = isParallel ? '        ' : '';
     let pipeline = `${parallel}        stage('${
@@ -310,12 +307,28 @@ const calcSteps = async (id_version, isParallel, index, jndex, endCommands) => {
         pipeline += `               ${parallel}sh "docker create --ipc=host -w /home/cypress --name ${ver} cypress/included:5.0.0"\n`;
         pipeline += `               ${parallel}sh "docker cp ./${ver}-cypress/. ${ver}:/home/cypress"\n`;
         pipeline += `               ${parallel}sh "docker start -a ${ver} || echo 'Failed Tests' &amp;&amp; docker cp ${ver}:/home/cypress/results/ ./results/ "\n`;
-        pipeline += `               ${parallel}sh "ls"\n`;
         endCommands.push(
             `            sh "docker stop ${ver} || echo 'Not Found'"`
         );
         endCommands.push(
             `            sh "docker container rm ${ver}|| echo 'Not Found'"`
+        );
+        if (endCommands.find((c) => c.includes('junit')) === undefined) {
+            endCommands.push('            junit "**/results/*.xml"');
+        }
+    } else if (prueba.type === 'Cucumber') {
+        pipeline += `               ${parallel}sh "wget -O ${ver}-files.zip ${version.url}"\n`;
+        pipeline += `               ${parallel}sh "mkdir -p ${ver}-cucumber"\n`;
+        pipeline += `               ${parallel}sh "unzip ${ver}-files.zip -d ./${ver}-cucumber"\n`;
+        pipeline += `               ${parallel}sh "echo 'FROM node:lts' >> ./${ver}-cucumber/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'WORKDIR /home/cucumber' >>  ./${ver}-cucumber/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'COPY . /home/cucumber' >> ./${ver}-cucumber/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'RUN npm install --loglevel verbose' >> ./${ver}-cucumber/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "ls"\n`;
+        pipeline += `               ${parallel}sh "docker build -t ${ver} ./${ver}-cucumber/"\n`;
+        pipeline += `               ${parallel}sh "docker run  --rm --name ${ver} ${ver} npm test|| echo 'Failed Tests'"\n`;
+        endCommands.push(
+            `            sh "docker stop ${ver} || echo 'Not Found'"`
         );
     }
     pipeline += `${parallel}            }

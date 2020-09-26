@@ -147,3 +147,7 @@
     margin-left: 15px;
     margin-top: -10px;
 }
+.selectWebAppTestType {
+    width: 200px;
+    z-index: 20;
+}
