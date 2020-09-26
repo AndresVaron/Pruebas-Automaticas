@@ -31,7 +31,10 @@ function Web({ location }) {
     }, []);
 
     const handleCreateApp = () => {
-        if (createAppNombre !== '' && mobile && createAppPackageName !== '') {
+        if (
+            createAppNombre !== '' &&
+            (!mobile || (mobile && createAppPackageName !== ''))
+        ) {
             const newApp = {
                 nombre: createAppNombre,
             };

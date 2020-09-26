@@ -8,9 +8,9 @@ function WebAppCard(props) {
     const [currentVersion, setCurrentVersion] = useState(
         props.app.versiones.length > 0
             ? {
-                label: props.app.versiones[0].version,
-                value: props.app.versiones[0],
-            }
+                  label: props.app.versiones[0].version,
+                  value: props.app.versiones[0],
+              }
             : null
     );
 
@@ -27,9 +27,9 @@ function WebAppCard(props) {
                             defaultValue={
                                 props.app.versiones.length > 0
                                     ? {
-                                        label: props.app.versiones[0].version,
-                                        value: props.app.versiones[0].url,
-                                    }
+                                          label: props.app.versiones[0].version,
+                                          value: props.app.versiones[0].url,
+                                      }
                                     : null
                             }
                             options={props.app.versiones.map((version) => {
@@ -108,7 +108,11 @@ function WebAppCard(props) {
                         className="bntConfirmarWebAppList"
                         onClick={() => {
                             if (currentVersion) {
-                                props.history.push(`/${props.mobile ? 'mobile' : 'web'}/${props.app._id}/versions/${currentVersion.value._id}`);
+                                props.history.push(
+                                    `/${props.mobile ? 'mobile' : 'web'}/${
+                                        props.app._id
+                                    }/versions/${currentVersion.value._id}`
+                                );
                             }
                         }}
                     >
@@ -122,7 +126,10 @@ function WebAppCard(props) {
     return (
         <div className="cardWebAppList">
             <div className="webAppTitleRow">
-                <div className="lblNombreWebApp">{props.app.nombre}</div>
+                <div className="lblNombreWebApp">
+                    {props.app.nombre}
+                    {props.app.package && <span> ({props.app.package})</span>}
+                </div>
                 <div className="lblFechaWebApp">
                     Creada: {props.app.fechaCreacion.substring(0, 10)}
                 </div>
