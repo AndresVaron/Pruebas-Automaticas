@@ -19,19 +19,19 @@ function WebAppConfigList(props) {
             axiosInstance
                 .get(
                     '/web/' +
-                        props.match.params.id_app +
-                        '/versiones/' +
-                        props.match.params.id_version
+                    props.match.params.id_app +
+                    '/versiones/' +
+                    props.match.params.id_version
                 )
                 .then((resp) => {
                     setApp(resp.data);
                     axiosInstance
                         .get(
                             '/web/' +
-                                props.match.params.id_app +
-                                '/versiones/' +
-                                props.match.params.id_version +
-                                '/configs'
+                            props.match.params.id_app +
+                            '/versiones/' +
+                            props.match.params.id_version +
+                            '/configs'
                         )
                         .then((resp) => {
                             setConfigs(resp.data);
@@ -89,13 +89,13 @@ function WebAppConfigList(props) {
                                             axiosInstance
                                                 .delete(
                                                     '/web/' +
-                                                        props.match.params
-                                                            .id_app +
-                                                        '/versiones/' +
-                                                        props.match.params
-                                                            .id_version +
-                                                        '/configs/' +
-                                                        showDeleteConf._id
+                                                    props.match.params
+                                                        .id_app +
+                                                    '/versiones/' +
+                                                    props.match.params
+                                                        .id_version +
+                                                    '/configs/' +
+                                                    showDeleteConf._id
                                                 )
                                                 .then(() => {
                                                     setShowDeleteConf(
@@ -104,14 +104,14 @@ function WebAppConfigList(props) {
                                                     axiosInstance
                                                         .get(
                                                             '/web/' +
-                                                                props.match
-                                                                    .params
-                                                                    .id_app +
-                                                                '/versiones/' +
-                                                                props.match
-                                                                    .params
-                                                                    .id_version +
-                                                                '/configs'
+                                                            props.match
+                                                                .params
+                                                                .id_app +
+                                                            '/versiones/' +
+                                                            props.match
+                                                                .params
+                                                                .id_version +
+                                                            '/configs'
                                                         )
                                                         .then((resp) => {
                                                             setConfigs(
@@ -152,8 +152,8 @@ function WebAppConfigList(props) {
                                 &nbsp;Descargar apk
                             </button>
                         ) : (
-                            app.version.url
-                        )}
+                                app.version.url
+                            )}
                     </div>
                 </div>
                 <div className="lblsubTitleWebApp">
@@ -167,14 +167,14 @@ function WebAppConfigList(props) {
                             axiosInstance
                                 .post(
                                     '/web/' +
-                                        props.match.params.id_app +
-                                        '/versiones/' +
-                                        props.match.params.id_version +
-                                        '/configs'
+                                    props.match.params.id_app +
+                                    '/versiones/' +
+                                    props.match.params.id_version +
+                                    '/configs'
                                 )
                                 .then((resp) => {
                                     props.history.push(
-                                        `/web/${app._id}/versions/${app.version._id}/configs/${resp.data._id}`
+                                        `/${app.mobile ? 'mobile' : 'web'}/${app._id}/versions/${app.version._id}/configs/${resp.data._id}`
                                     );
                                 })
                                 .catch((err) => {

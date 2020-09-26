@@ -4,6 +4,9 @@ import './WebAppConfigCard.css';
 import RightArrowIcon from '../../../Media/Icons/right-arrow.svg';
 import axiosInstance from '../../../AxiosAPI.js';
 function WebAppCard(props) {
+
+    console.log(props);
+
     const renderPipeLinePrev = () => {
         return (
             <div className="containerPipeLineConfPrev">
@@ -16,7 +19,7 @@ function WebAppCard(props) {
                                     marginLeft: index === 0 ? 'auto' : 0,
                                     marginRight:
                                         index ===
-                                        props.config.pruebas.length - 1
+                                            props.config.pruebas.length - 1
                                             ? 'auto'
                                             : 0,
                                 }}
@@ -37,7 +40,7 @@ function WebAppCard(props) {
                                     alt=""
                                     src={RightArrowIcon}
                                     className="arrowColPruebaPrev"
-                                    onClick={() => {}}
+                                    onClick={() => { }}
                                 />
                             )}
                         </React.Fragment>
@@ -78,7 +81,7 @@ function WebAppCard(props) {
                         className="bntModificarWebAppList"
                         onClick={() => {
                             props.history.push(
-                                `/web/${props.app._id}/versions/${props.app.version._id}/configs/${props.config._id}`
+                                `/${props.app.mobile ? 'mobile' : 'web'}/${props.app._id}/versions/${props.app.version._id}/configs/${props.config._id}`
                             );
                         }}
                     >
@@ -87,23 +90,17 @@ function WebAppCard(props) {
                     <button
                         className="bntConfirmarWebAppList"
                         onClick={() => {
-                            const queries = new URLSearchParams(
-                                window.location.search
-                            );
-                            if (
-                                queries.has('mobile') &&
-                                queries.get('mobile') === 'true'
-                            ) {
+                            if (props.app.mobile) {
                                 axiosInstance
                                     .post(
                                         '/mobile/' +
-                                            props.app._id +
-                                            '/versiones/' +
-                                            props.app.version._id +
-                                            '/configs/' +
-                                            props.config._id
+                                        props.app._id +
+                                        '/versiones/' +
+                                        props.app.version._id +
+                                        '/configs/' +
+                                        props.config._id
                                     )
-                                    .then(() => {})
+                                    .then(() => { })
                                     .catch((err) => {
                                         console.error(err);
                                     });
@@ -111,13 +108,13 @@ function WebAppCard(props) {
                                 axiosInstance
                                     .post(
                                         '/web/' +
-                                            props.app._id +
-                                            '/versiones/' +
-                                            props.app.version._id +
-                                            '/configs/' +
-                                            props.config._id
+                                        props.app._id +
+                                        '/versiones/' +
+                                        props.app.version._id +
+                                        '/configs/' +
+                                        props.config._id
                                     )
-                                    .then(() => {})
+                                    .then(() => { })
                                     .catch((err) => {
                                         console.error(err);
                                     });

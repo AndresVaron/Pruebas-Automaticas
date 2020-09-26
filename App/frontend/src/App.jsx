@@ -40,15 +40,15 @@ function App() {
                 <Switch>
                     <Route exact path="/" render={() => <Inicio />} />
                     <Route
-                        path="/web/:id_app/versions/:id_version/configs/:id_config"
+                        path="/(web|mobile)/:id_app/versions/:id_version/configs/:id_config"
                         render={() => <WebAppConfig />}
                     />
                     <Route
-                        path="/web/:id_app/versions/:id_version"
+                        path="/(web|mobile)/:id_app/versions/:id_version"
                         render={() => <WebAppConfigList />}
                     />
-                    <Route exact path="/web" render={() => <Web />} />
-                    <Route exact path="/mobile" render={() => <Web mobile={true} />} />
+                    <Route exact path="/(web|mobile)/" render={() => <Web />} />
+                    {/* <Route exact path="/mobile" render={() => <Web mobile={true} />} /> */}
                     <Route path="*" exact render={() => <div>Not Found</div>} />
                 </Switch>
             </div>

@@ -7,7 +7,8 @@ import closeIcon from '../Media/Icons/close.svg';
 import AddIcon from '../Media/Icons/addIcon.svg';
 import FileUploader from '../FileUploader/FileUploader.jsx';
 
-function Web({ mobile }) {
+function Web({ location }) {
+    const mobile = location.pathname.includes('mobile');
     const [apps, setApps] = useState([]);
     const [showCreateVersion, setShowCreateVersion] = useState(undefined);
     const [showDeleteApp, setShowDeleteApp] = useState(undefined);
