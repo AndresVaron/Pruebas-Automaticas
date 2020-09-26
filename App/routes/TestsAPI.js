@@ -13,7 +13,7 @@ router.post('/:aut', (req, res) => {
     postTest(aut, newTest).then(data => {
         res.status(201).send(data);
     }).catch(err => {
-        res.status(err.errCode || 400).send({ error: err.errMsg });
+        res.status(err.errCode || 400).send(err.errMsg);
     });
 });
 
@@ -25,7 +25,7 @@ router.get('/:aut', (req, res) => {
     getTests(aut).then(data => {
         res.status(200).send(data);
     }).catch(err => {
-        res.status(err.errCode || 400).send({ error: err.errMsg });
+        res.status(err.errCode || 400).send(err.errMsg);
     });
 });
 

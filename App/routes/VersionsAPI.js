@@ -11,7 +11,7 @@ router.post('/:test', (req, res) => {
     postVersion(test, newVersion).then(data => {
         res.status(201).send(data);
     }).catch(err => {
-        res.status(err.errCode || 400).send({ error: err.errMsg });
+        res.status(err.errCode || 400).send(err.errMsg);
     });
 });
 

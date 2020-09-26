@@ -5,7 +5,6 @@ const exec = util.promisify(require('child_process').exec);
 Método encargado de obtener todas las apps web
 */
 module.exports.execMobileAppConfig = async (id_config) => {
-    console.log(id_config);
     try {
         //Se ejecuta el comando en consola
         const { stdout, stderr } = await exec('sh ~/Documents/Monkey_Wiki.sh');

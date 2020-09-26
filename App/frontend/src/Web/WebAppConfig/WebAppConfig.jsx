@@ -20,6 +20,7 @@ export const ItemTypes = {
 };
 
 function WebAppConfig(props) {
+    const web = props.location.pathname.includes('web');
     const autId = props.match.params.id_app;
     const [config, setConfig] = useState(undefined);
     const [pruebasActuales, setPruebasActuales] = useState(undefined);
@@ -67,11 +68,11 @@ function WebAppConfig(props) {
                     axiosInstance
                         .get(
                             '/web/' +
-                                autId +
-                                '/versiones/' +
-                                props.match.params.id_version +
-                                '/configs/' +
-                                props.match.params.id_config
+                            autId +
+                            '/versiones/' +
+                            props.match.params.id_version +
+                            '/configs/' +
+                            props.match.params.id_config
                         )
                         .then((resp) => {
                             resp.data.pruebas = resp.data.pruebas.map((vers) =>
@@ -218,18 +219,18 @@ function WebAppConfig(props) {
                 .map((e, i) =>
                     i < columnas.length - 1
                         ? [
-                              e,
-                              <div
-                                  key={'columnaArrowConfigWeb' + i}
-                                  className="columnaArrowConfigWeb"
-                              >
-                                  <img
-                                      alt=""
-                                      src={RightArrowIcon}
-                                      className="arrowConfigWeb"
-                                  />
-                              </div>,
-                          ]
+                            e,
+                            <div
+                                key={'columnaArrowConfigWeb' + i}
+                                className="columnaArrowConfigWeb"
+                            >
+                                <img
+                                    alt=""
+                                    src={RightArrowIcon}
+                                    className="arrowConfigWeb"
+                                />
+                            </div>,
+                        ]
                         : [e]
                 )
                 .reduce((a, b) => a.concat(b));
@@ -327,14 +328,18 @@ function WebAppConfig(props) {
                             <button
                                 className="bntConfirmarWebAppList btnGuardarConfWeb"
                                 onClick={() => {
+                                    if (!web && (pruebasActuales.length > 1 || (pruebasActuales.length === 1 && pruebasActuales[0].length > 1))) {
+                                        alert('Solo puedes definir un evento para pruebas de aplicaciones móviles');
+                                        return;
+                                    }
                                     axiosInstance
                                         .put(
                                             '/web/' +
-                                                props.match.params.id_app +
-                                                '/versiones/' +
-                                                props.match.params.id_version +
-                                                '/configs/' +
-                                                props.match.params.id_config,
+                                            props.match.params.id_app +
+                                            '/versiones/' +
+                                            props.match.params.id_version +
+                                            '/configs/' +
+                                            props.match.params.id_config,
                                             {
                                                 nombre: nombre,
                                                 pruebas: pruebasActuales.map(
@@ -347,7 +352,9 @@ function WebAppConfig(props) {
                                                 ),
                                             }
                                         )
-                                        .then(() => {})
+                                        .then(() => {
+                                            alert('La configuración fue guardada de forma exitosa');
+                                        })
                                         .catch((err) => {
                                             console.error(err);
                                         });
@@ -362,7 +369,7 @@ function WebAppConfig(props) {
                             autId={autId}
                             reloadData={loadTests}
                             setShowModal={setShowTestForm}
-                            web={true}
+                            web={web}
                         />
                     )}
                     {currentTest && (
@@ -370,6 +377,7 @@ function WebAppConfig(props) {
                             test={currentTest}
                             setShowModal={showVersionManager}
                             reloadData={loadTests}
+                            web={web}
                         />
                     )}
                 </DndProvider>

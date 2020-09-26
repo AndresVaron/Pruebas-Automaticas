@@ -100,7 +100,9 @@ function WebAppCard(props) {
                                         '/configs/' +
                                         props.config._id
                                     )
-                                    .then(() => { })
+                                    .then(() => {
+                                        alert('Prueba enviada a ejecución de forma exitosa');
+                                    })
                                     .catch((err) => {
                                         console.error(err);
                                     });
@@ -114,7 +116,9 @@ function WebAppCard(props) {
                                         '/configs/' +
                                         props.config._id
                                     )
-                                    .then(() => { })
+                                    .then(() => {
+                                        alert('Prueba enviada a ejecución de forma exitosa');
+                                    })
                                     .catch((err) => {
                                         console.error(err);
                                     });

@@ -30,14 +30,16 @@ const postTest = async (id, { name, shortName, url, version, type }) => {
     try {
         const aut = await WebAppPersistence.fetchWebApp(id);
         if (aut.length === 0) {
-            throw { errMsg: 'No existe un AUT con el id ingresado' };
+            errJson.errMsg = 'No existe un AUT con el id ingresado';
+            throw errJson;
         } else {
             const existingTests = await findTests({
                 aut: convertObjectId(id),
                 shortName: shortName.toUpperCase(),
             });
             if (existingTests.length > 0) {
-                throw { errMsg: 'Ya existen pruebas con el alias ingresado' };
+                errJson.errMsg = 'Ya existen pruebas con el alias ingresado';
+                throw errJson;
             } else {
                 const newTest = {
                     name,
@@ -45,15 +47,20 @@ const postTest = async (id, { name, shortName, url, version, type }) => {
                     creationDate: new Date(),
                     aut: aut[0]._id,
                     versions: [],
-                    type: type,
+                    type: aut[0].mobile ? MobileMonkey : type,
+                    mobile: aut[0].mobile
                 };
                 const createdTest = await insertTest(newTest);
-                const createdVersion = await insertVersion({
+                const newVersion = {
                     test: createdTest.ops[0]._id,
                     creationDate: new Date(),
                     version,
                     url: url || '',
-                });
+                };
+                if (aut[0].mobile) {
+                    newVersion['events'] = Number(version);
+                }
+                const createdVersion = await insertVersion(newVersion);
                 await updateTest(createdTest.ops[0]._id, {
                     $set: { versions: [createdVersion.ops[0]._id] },
                 });
@@ -61,6 +68,7 @@ const postTest = async (id, { name, shortName, url, version, type }) => {
             }
         }
     } catch (error) {
+        console.log(error);
         errJson = { error: new Error(), errMsg: err.toString(), errCode: 500 };
         throw errJson;
     }
