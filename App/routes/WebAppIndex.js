@@ -30,8 +30,7 @@ router.delete('/:id', (req, res) => {
 Método POST encargado de crear una app web
 */
 router.post('/', (req, res) => {
-    const webApp = {};
-    webApp.nombre = req.body.nombre;
+    const webApp = req.body;
     WebAppLogic.postWebApp(webApp, Boolean(req.query.mobile == 'true'))
         .then((data) => res.status(201).send(data))
         .catch((err) => {
@@ -43,9 +42,7 @@ router.post('/', (req, res) => {
 Método POST encargado de crearle una version a una app web
 */
 router.post('/:id/versiones', (req, res) => {
-    const version = {};
-    version.version = req.body.version;
-    version.url = req.body.url;
+    const version = req.body;
     version.id_app = req.params.id;
     WebAppLogic.postWebAppVersion(version)
         .then((data) => res.status(201).send(data))

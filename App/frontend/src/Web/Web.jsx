@@ -16,6 +16,7 @@ function Web({ location }) {
     const [createVersionVersion, setCreateVersionVersion] = useState('');
     const [createVersionUrl, setCreateVersionUrl] = useState('');
     const [createAppNombre, setCreateAppNombre] = useState('');
+    const [createAppPackageName, setCreateAppPackageName] = useState('');
 
     useEffect(() => {
         axiosInstance.get(`/web?mobile=${mobile ? 'true' : 'false'}`)
@@ -29,13 +30,19 @@ function Web({ location }) {
     }, []);
 
     const handleCreateApp = () => {
-        if (createAppNombre !== '') {
+
+        if (createAppNombre !== '' && (mobile && createAppPackageName !== '')) {
+            const newApp = {
+                nombre: createAppNombre
+            };
+            if (mobile) {
+                newApp.package = createAppPackageName;
+            }
             axiosInstance
-                .post(`/web?mobile=${mobile ? 'true' : 'false'}`, {
-                    nombre: createAppNombre,
-                })
+                .post(`/web?mobile=${mobile ? 'true' : 'false'}`, newApp)
                 .then(() => {
                     setCreateAppNombre('');
+                    setCreateAppPackageName('');
                     setShowCreateApp(false);
                     axiosInstance
                         .get(`/web?mobile=${mobile ? 'true' : 'false'}`)
@@ -53,11 +60,12 @@ function Web({ location }) {
     };
     const handleCreateAppVersion = () => {
         if (createVersionUrl !== '' && createVersionVersion !== '') {
+            const newVersion = {
+                version: createVersionVersion,
+                url: createVersionUrl,
+            };
             axiosInstance
-                .post('/web/' + showCreateVersion._id + '/versiones', {
-                    version: createVersionVersion,
-                    url: createVersionUrl,
-                })
+                .post('/web/' + showCreateVersion._id + '/versiones', newVersion)
                 .then(() => {
                     setCreateVersionUrl('');
                     setCreateVersionVersion('');
@@ -144,24 +152,31 @@ function Web({ location }) {
                         <div className="createContainer">
                             <h1>Agregar Version</h1>
                             <div className="rowVersionCrearVersionApp">
-                                <div className="lblCrearVersionApp">
-                                    Version:
+                                <div className="d-flex align-items-center mt-3">
+                                    <label className="mb-0 mr-3 font-weight-bold lblTest">
+                                        Version:
+                                    </label>
+                                    <input
+                                        className="createInput"
+                                        placeholder={calcVersionPlaceHolder()}
+                                        value={createVersionVersion}
+                                        type="text"
+                                        onChange={(e) => {
+                                            setCreateVersionVersion(e.target.value);
+                                        }}
+                                        required
+                                    />
                                 </div>
-                                <input
-                                    className="createInput"
-                                    placeholder={calcVersionPlaceHolder()}
-                                    value={createVersionVersion}
-                                    type="text"
-                                    onChange={(e) => {
-                                        setCreateVersionVersion(e.target.value);
-                                    }}
-                                />
                             </div>
                             {mobile &&
-                                <div className="mt-3">
-                                    <label className="mb-2 font-weight-bold">Carga el .apk</label>
-                                    <FileUploader currentFileName={''} emitValue={(name, value) => setCreateVersionUrl(value)} formName="url" filePath={`${mobile ? 'mobile' : 'web'}/tests/${showCreateVersion?._id}`} uploadedFileName={new Date().getTime()} acceptedFiles={'application/vnd.android.package-archive'}></FileUploader>
-                                </div>
+                                <>
+                                    <div className="d-flex align-items-center">
+                                        <div className="mt-3">
+                                            <label className="mb-2 font-weight-bold">Carga el .apk</label>
+                                            <FileUploader currentFileName={''} emitValue={(name, value) => setCreateVersionUrl(value)} formName="url" filePath={`${mobile ? 'mobile' : 'web'}/tests/${showCreateVersion?._id}`} uploadedFileName={new Date().getTime()} acceptedFiles={'application/vnd.android.package-archive'}></FileUploader>
+                                        </div>
+                                    </div>
+                                </>
                             }
                             {!mobile &&
                                 <div className="rowUrlCrearVersionApp">
@@ -242,10 +257,10 @@ function Web({ location }) {
                         />
                         <div className="createContainer">
                             <h1>Agregar App</h1>
-                            <div className="rowVersionCrearVersionApp">
-                                <div className="lblCrearVersionApp">
+                            <div className="d-flex align-items-center mt-3">
+                                <label className="mb-0 mr-3 font-weight-bold lblTest">
                                     Nombre:
-                                </div>
+                                </label>
                                 <input
                                     className="createInput"
                                     placeholder={'Nombre'}
@@ -254,8 +269,25 @@ function Web({ location }) {
                                     onChange={(e) => {
                                         setCreateAppNombre(e.target.value);
                                     }}
+                                    required
                                 />
                             </div>
+                            {mobile &&
+                                <div className="d-flex align-items-center mt-3">
+                                    <label className="mb-0 mr-3 font-weight-bold lblTest">
+                                        Paquete:
+                                    </label>
+                                    <input
+                                        className="createInput"
+                                        value={createAppPackageName}
+                                        type="text"
+                                        onChange={(e) => {
+                                            setCreateAppPackageName(e.target.value);
+                                        }}
+                                        required
+                                    />
+                                </div>
+                            }
                             <div className="rowGuardarCrearVersionApp">
                                 <button
                                     className="bntConfirmarWebAppList guardarCrearVersionApp"

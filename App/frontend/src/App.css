@@ -14,6 +14,7 @@
     align-items: center;
 }
 
+
 .modalContent {
     border-radius: 20px;
     background-color: white;
@@ -64,4 +65,8 @@
 
 .btn-confirm:focus {
     outline: 0 !important;
+}
+
+.lblTest {
+    width: 65px;
 }

@@ -159,6 +159,9 @@ module.exports.postWebApp = async (webApp, mobile) => {
         const finalWebApp = {};
         finalWebApp.nombre = webApp.nombre;
         finalWebApp.mobile = mobile;
+        if (mobile) {
+            finalWebApp.package = webApp.package;
+        }
         const today = new Date(Date.now());
         finalWebApp.fechaCreacion = new Date(
             Date.now() - today.getTimezoneOffset() * 60 * 1000
