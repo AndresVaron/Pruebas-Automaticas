@@ -19,7 +19,9 @@
         "express-form-data": "^2.0.12",
         "http-errors": "~1.6.3",
         "mongodb": "^3.5.6",
-        "morgan": "~1.9.1"
+        "morgan": "~1.9.1",
+        "resemblejs": "^3.2.5",
+        "webdriverio": "^6.6.6"
     },
     "devDependencies": {
         "eslint": "^7.7.0"

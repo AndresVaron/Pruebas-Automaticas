@@ -47,7 +47,7 @@ const postTest = async (id, { name, shortName, url, version, type }) => {
                     creationDate: new Date(),
                     aut: aut[0]._id,
                     versions: [],
-                    type: aut[0].mobile ? 'MobileMonkey' : type,
+                    type: type,
                     mobile: aut[0].mobile
                 };
                 const createdTest = await insertTest(newTest);
@@ -57,7 +57,7 @@ const postTest = async (id, { name, shortName, url, version, type }) => {
                     version,
                     url: url || '',
                 };
-                if (aut[0].mobile) {
+                if (type === 'MobileMonkey') {
                     newVersion['events'] = Number(version);
                 }
                 const createdVersion = await insertVersion(newVersion);
@@ -74,9 +74,9 @@ const postTest = async (id, { name, shortName, url, version, type }) => {
     }
 };
 
-const getTests = async (id, populate = true) => {
+const getTests = async (id, populate = true, query = {}) => {
     try {
-        const tests = await findTests({ aut: convertObjectId(id) });
+        const tests = await findTests({ aut: convertObjectId(id), ...query });
         if (populate) {
             const versionsPromises = [];
             tests.forEach((test) => {

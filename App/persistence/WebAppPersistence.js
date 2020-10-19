@@ -13,12 +13,16 @@ module.exports.fetchApp = async (id) => {
 Retorna la lista completa de webapps
 */
 
-module.exports.fetchWebApps = async (mobile = false) => {
+module.exports.fetchWebApps = async (mobile = false, id = null) => {
     const dbconn = MongoConnection.getInstance();
+    const query = { mobile: mobile };
+    if (id) {
+        query['_id'] = MongoFunctions.convertObjectId(id);
+    }
     return await dbconn
         .collection('webapps')
         .aggregate([
-            { $match: { mobile: mobile } },
+            { $match: query },
             {
                 $lookup: {
                     from: 'webappversions',

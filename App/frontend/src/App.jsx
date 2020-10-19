@@ -9,6 +9,7 @@ import Inicio from './Inicio/Inicio.jsx';
 import Web from './Web/Web.jsx';
 import WebAppConfigList from './Web/WebAppConfigList/WebAppConfigList.jsx';
 import WebAppConfig from './Web/WebAppConfig/WebAppConfig.jsx';
+import VRT from './VRT/VRT.jsx';
 
 function App() {
     useEffect(() => {
@@ -22,7 +23,7 @@ function App() {
                         text: error.response.data,
                         type: 'error',
                         timeout: 5000,
-                        callback: function () { },
+                        callback: function () {},
                     });
                 }
                 return Promise.reject(error);
@@ -47,8 +48,11 @@ function App() {
                         path="/(web|mobile)/:id_app/versions/:id_version"
                         render={() => <WebAppConfigList />}
                     />
+                    <Route
+                        path="/vrt/(web|mobile)/:aut"
+                        render={() => <VRT />}
+                    ></Route>
                     <Route exact path="/(web|mobile)/" render={() => <Web />} />
-                    {/* <Route exact path="/mobile" render={() => <Web mobile={true} />} /> */}
                     <Route path="*" exact render={() => <div>Not Found</div>} />
                 </Switch>
             </div>

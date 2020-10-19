@@ -12,7 +12,7 @@ function TestForm({ autId, setShowModal, web, reloadData }) {
         shortName: '',
         version: '',
         url: '',
-        numberOfEvents: ''
+        numberOfEvents: '',
     });
 
     const [type, setType] = useState();
@@ -26,7 +26,7 @@ function TestForm({ autId, setShowModal, web, reloadData }) {
         event.preventDefault();
         setLoading(true);
         form.type = type;
-        if (!web) {
+        if (type === 'MobileMonkey') {
             form.version = form.numberOfEvents;
         }
         axiosInstance
@@ -74,71 +74,92 @@ function TestForm({ autId, setShowModal, web, reloadData }) {
                         required
                     />
                 </div>
-                {web &&
-                    <>
-                        <div className="d-flex align-items-center mt-3">
-                            <label className="mb-0 mr-3 font-weight-bold lblTest">
-                                Versión:
-                            </label>
-                            <input
-                                name="version"
-                                value={form.version}
-                                disabled={loading}
-                                onChange={handleChange}
-                                className="createInput"
-                                type="text"
-                                maxLength={15}
-                                required
-                            />
-                        </div>
-                        <div className="d-flex align-items-center mt-3">
-                            <label className="mb-0 mr-3 font-weight-bold lblTest">
-                                Tipo:
-                            </label>
-                            <Select
-                                name="type"
-                                onChange={(inputValue) => {
-                                    setType(inputValue.value);
-                                }}
-                                options={[
-                                    {
-                                        label: 'Cypress',
-                                        value: 'Cypress',
-                                    },
-                                    {
-                                        label: 'Cucumber',
-                                        value: 'Cucumber',
-                                    },
-                                ]}
-                                placeholder="Seleccionar"
-                                className="selectWebAppTestType"
-                                theme={(theme) => ({
-                                    ...theme,
-                                    colors: {
-                                        ...theme.colors,
-                                        primary25: 'rgba(29, 47, 111, 0.25)',
-                                        primary: '#989898',
-                                    },
-                                })}
-                            />
-                        </div>
-                        <div className="mt-3">
-                            <label className="mb-2 font-weight-bold">
-                                Carga el archivo de la prueba:
-                            </label>
-                            <FileUploader
-                                loadingSubmit={loading || !form.shortName}
-                                currentFileName={''}
-                                emitValue={defineValue}
-                                formName="url"
-                                filePath={`${web ? 'web' : 'mobile'}/tests/${autId}`}
-                                uploadedFileName={new Date().getTime()}
-                                acceptedFiles={'application/zip'}
-                            ></FileUploader>
-                        </div>
-                    </>
-                }
-                {!web &&
+                <div className="d-flex align-items-center mt-3">
+                    <label className="mb-0 mr-3 font-weight-bold lblTest">
+                        Tipo:
+                    </label>
+                    <Select
+                        name="type"
+                        onChange={(inputValue) => {
+                            setType(inputValue.value);
+                        }}
+                        options={
+                            web
+                                ? [
+                                      {
+                                          label: 'Cypress',
+                                          value: 'Cypress',
+                                      },
+                                      {
+                                          label: 'Cucumber',
+                                          value: 'Cucumber',
+                                      },
+                                  ]
+                                : [
+                                      {
+                                          label: 'Random',
+                                          value: 'MobileMonkey',
+                                      },
+                                      {
+                                          label: 'VRT',
+                                          value: 'VRT',
+                                      },
+                                  ]
+                        }
+                        placeholder="Seleccionar"
+                        className="selectWebAppTestType"
+                        theme={(theme) => ({
+                            ...theme,
+                            colors: {
+                                ...theme.colors,
+                                primary25: 'rgba(29, 47, 111, 0.25)',
+                                primary: '#989898',
+                            },
+                        })}
+                    />
+                </div>
+                {web ||
+                    (!web && type && type !== 'MobileMonkey' && (
+                        <>
+                            <div className="d-flex align-items-center mt-3">
+                                <label className="mb-0 mr-3 font-weight-bold lblTest">
+                                    Versión:
+                                </label>
+                                <input
+                                    name="version"
+                                    value={form.version}
+                                    disabled={loading}
+                                    onChange={handleChange}
+                                    className="createInput"
+                                    type="text"
+                                    maxLength={15}
+                                    required
+                                />
+                            </div>
+
+                            <div className="mt-3">
+                                <label className="mb-2 font-weight-bold">
+                                    Carga el archivo de la prueba:
+                                </label>
+                                <FileUploader
+                                    loadingSubmit={loading || !form.shortName}
+                                    currentFileName={''}
+                                    emitValue={defineValue}
+                                    formName="url"
+                                    filePath={`${
+                                        web ? 'web' : 'mobile'
+                                    }/tests/${autId}`}
+                                    uploadedFileName={new Date().getTime()}
+                                    acceptedFiles={
+                                        web
+                                            ? 'application/zip'
+                                            : 'text/javascript'
+                                    }
+                                ></FileUploader>
+                            </div>
+                        </>
+                    ))}
+                {!web && type === 'MobileMonkey' && (
                     <div className="d-flex align-items-center mt-3">
                         <label className="mb-0 mr-3 font-weight-bold lblTest">
                             Eventos:
@@ -154,7 +175,7 @@ function TestForm({ autId, setShowModal, web, reloadData }) {
                             required
                         />
                     </div>
-                }
+                )}
                 <div className="text-right mt-4">
                     {!loading && <button className="btn-confirm">Crear</button>}
                     {loading && <Loading />}

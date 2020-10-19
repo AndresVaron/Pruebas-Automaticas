@@ -3,11 +3,9 @@ const WebAppPersistence = require('../persistence/WebAppPersistence');
 /* 
 Método encargado de obtener todas las apps web
 */
-module.exports.fetchWebApps = async (mobile) => {
-    console.log(mobile);
-
+module.exports.fetchWebApps = async (mobile, id = null) => {
     try {
-        return await WebAppPersistence.fetchWebApps(mobile);
+        return await WebAppPersistence.fetchWebApps(mobile, id);
     } catch (err) {
         const errJson = {
             error: new Error(),

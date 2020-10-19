@@ -11,6 +11,7 @@ const options = { partSize: 10 * 1024 * 1024, queueSize: 2 };
 const uploadFile = (file, fileKey) => {
     return new Promise((resolve, reject) => {
         const mimeType = mime.lookup(fileKey) || 'application/octet-stream';
+        console.log(mimeType);
         const uploadParams = { ACL: 'public-read', Bucket: bucketName, Key: fileKey, Body: file, ContentType: mimeType };
         s3.upload(uploadParams, options).on('http').on('httpUploadProgress', (event) => {
             console.log(`Uploaded ${event.loaded} of ${event.total}`);
@@ -18,7 +19,8 @@ const uploadFile = (file, fileKey) => {
             if (error) {
                 reject({ error, message: 'Se presentó un error cargando el archivo' });
             } else {
-                resolve(true);
+                console.log('Loaded');
+                resolve(`https://${bucketName}.s3.amazonaws.com/${fileKey}`);
             }
         });
     });
@@ -68,7 +70,7 @@ const PostUploadFile = async (req, res, next) => {
             return res.status(400).json({ message: 'No se seleccionó ningún archivo' });
         }
 
-        if (!'application/zip application/x-zip-compressed application/vnd.android.package-archive'.includes(fileToUpload.mimetype)) {
+        if (!'application/zip application/x-zip-compressed application/vnd.android.package-archive text/javascript'.includes(fileToUpload.mimetype)) {
             return res.status(400).json({ message: 'El formato del archivo no es válido: ' + fileToUpload.mimetype });
         }
 
@@ -86,4 +88,4 @@ const PostUploadFile = async (req, res, next) => {
     }
 }
 
-module.exports = { PostUploadFile, downloadFile };
+module.exports = { PostUploadFile, downloadFile, uploadFile };

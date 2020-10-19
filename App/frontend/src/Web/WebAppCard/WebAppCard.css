@@ -111,6 +111,15 @@
     box-shadow: 0 0 0 0.15rem rgb(192, 50, 33, 0.25);
 }
 
+.btnCompararWebAppList {
+    padding: 5px 15px;
+    background-color: #01c5c4;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    margin-right: 10px;
+}
+
 .bntConfirmarWebAppList {
     padding: 5px 15px;
     background-color: #1d2f6f;

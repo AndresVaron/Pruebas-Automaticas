@@ -103,6 +103,20 @@ function WebAppCard(props) {
                     >
                         Borrar
                     </button>
+                    {props.mobile && props.app.versiones.length > 1 && (
+                        <button
+                            className="btnCompararWebAppList"
+                            onClick={() => {
+                                props.history.push(
+                                    `/vrt/${props.mobile ? 'mobile' : 'web'}/${
+                                        props.app._id
+                                    }`
+                                );
+                            }}
+                        >
+                            Comparar (VRT)
+                        </button>
+                    )}
                     <button
                         disabled={!currentVersion}
                         className="bntConfirmarWebAppList"

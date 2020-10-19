@@ -7,7 +7,7 @@ const WebAppConfigLogic = require('../logic/WebAppConfigLogic');
 Retorna las apps web
 */
 router.get('/', (req, res) => {
-    WebAppLogic.fetchWebApps(Boolean(req.query.mobile == 'true'))
+    WebAppLogic.fetchWebApps(Boolean(req.query.mobile == 'true'), req.query.id || null)
         .then((data) => res.send(data))
         .catch((err) => res.status(err.errCode).send(err.errMsg));
 });

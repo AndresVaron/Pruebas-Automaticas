@@ -22,7 +22,7 @@ GET all the tests
 */
 router.get('/:aut', (req, res) => {
     const { aut } = req.params;
-    getTests(aut).then(data => {
+    getTests(aut, true, req.query).then(data => {
         res.status(200).send(data);
     }).catch(err => {
         res.status(err.errCode || 400).send(err.errMsg);
