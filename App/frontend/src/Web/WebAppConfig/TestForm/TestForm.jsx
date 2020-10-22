@@ -40,6 +40,51 @@ function TestForm({ autId, setShowModal, web, reloadData }) {
             });
     };
 
+    const renderVersion = () => {
+        if (web || (!web && type && type !== 'MobileMonkey')) {
+            return (
+                <>
+                    <div className="d-flex align-items-center mt-3">
+                        <label className="mb-0 mr-3 font-weight-bold lblTest">
+                            Versión:
+                        </label>
+                        <input
+                            name="version"
+                            value={form.version}
+                            disabled={loading}
+                            onChange={handleChange}
+                            className="createInput"
+                            type="text"
+                            maxLength={15}
+                            required
+                        />
+                    </div>
+
+                    <div className="mt-3">
+                        <label className="mb-2 font-weight-bold">
+                            Carga el archivo de la prueba:
+                        </label>
+                        <FileUploader
+                            loadingSubmit={loading || !form.shortName}
+                            currentFileName={''}
+                            emitValue={defineValue}
+                            formName="url"
+                            filePath={`${
+                                web ? 'web' : 'mobile'
+                            }/tests/${autId}`}
+                            uploadedFileName={new Date().getTime()}
+                            acceptedFiles={
+                                web ? 'application/zip' : 'text/javascript'
+                            }
+                        ></FileUploader>
+                    </div>
+                </>
+            );
+        } else {
+            return <div></div>;
+        }
+    };
+
     return (
         <Modal setShowModal={setShowModal} loading={loading}>
             <h1 className="content-title">Crear prueba</h1>
@@ -118,47 +163,7 @@ function TestForm({ autId, setShowModal, web, reloadData }) {
                         })}
                     />
                 </div>
-                {web ||
-                    (!web && type && type !== 'MobileMonkey' && (
-                        <>
-                            <div className="d-flex align-items-center mt-3">
-                                <label className="mb-0 mr-3 font-weight-bold lblTest">
-                                    Versión:
-                                </label>
-                                <input
-                                    name="version"
-                                    value={form.version}
-                                    disabled={loading}
-                                    onChange={handleChange}
-                                    className="createInput"
-                                    type="text"
-                                    maxLength={15}
-                                    required
-                                />
-                            </div>
-
-                            <div className="mt-3">
-                                <label className="mb-2 font-weight-bold">
-                                    Carga el archivo de la prueba:
-                                </label>
-                                <FileUploader
-                                    loadingSubmit={loading || !form.shortName}
-                                    currentFileName={''}
-                                    emitValue={defineValue}
-                                    formName="url"
-                                    filePath={`${
-                                        web ? 'web' : 'mobile'
-                                    }/tests/${autId}`}
-                                    uploadedFileName={new Date().getTime()}
-                                    acceptedFiles={
-                                        web
-                                            ? 'application/zip'
-                                            : 'text/javascript'
-                                    }
-                                ></FileUploader>
-                            </div>
-                        </>
-                    ))}
+                {renderVersion()}
                 {!web && type === 'MobileMonkey' && (
                     <div className="d-flex align-items-center mt-3">
                         <label className="mb-0 mr-3 font-weight-bold lblTest">

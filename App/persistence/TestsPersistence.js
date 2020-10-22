@@ -9,12 +9,16 @@ const insertTest = async (newElement) => {
 
 const updateTest = async (_id, updateTestData) => {
     const dbconn = MongoConnection.getInstance();
-    return await dbconn.collection(collection).updateOne({ _id }, updateTestData);
+    return await dbconn
+        .collection(collection)
+        .updateOne({ _id }, updateTestData);
 };
 
 const findTestById = async (id) => {
     const dbconn = MongoConnection.getInstance();
-    return await dbconn.collection(collection).findOne({ _id: convertObjectId(id) });
+    return await dbconn
+        .collection(collection)
+        .findOne({ _id: convertObjectId(id) });
 };
 
 const findTests = async (query) => {
@@ -22,4 +26,20 @@ const findTests = async (query) => {
     return await dbconn.collection(collection).find(query).toArray();
 };
 
-module.exports = { insertTest, updateTest, findTestById, findTests };
+/*
+Elimina de la bd el test con el id dado.
+*/
+const deleteTest = async (id) => {
+    const dbconn = MongoConnection.getInstance();
+    return await dbconn
+        .collection(collection)
+        .deleteOne({ _id: convertObjectId(id) });
+};
+
+module.exports = {
+    insertTest,
+    updateTest,
+    findTestById,
+    findTests,
+    deleteTest,
+};

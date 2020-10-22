@@ -19,4 +19,16 @@ const fetchVersion = async (id) => {
         .findOne({ _id: MongoFunctions.convertObjectId(id) });
 };
 
-module.exports = { insertVersion, findVersions, fetchVersion };
+const deleteTestVersions = async (id) => {
+    const dbconn = MongoConnection.getInstance();
+    return await dbconn.collection(collection).deleteMany({
+        test: MongoFunctions.convertObjectId(id),
+    });
+};
+
+module.exports = {
+    insertVersion,
+    findVersions,
+    fetchVersion,
+    deleteTestVersions,
+};

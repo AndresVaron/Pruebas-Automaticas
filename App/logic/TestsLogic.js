@@ -2,10 +2,12 @@ const {
     insertTest,
     updateTest,
     findTests,
+    deleteTest,
 } = require('../persistence/TestsPersistence');
 const {
     insertVersion,
     findVersions,
+    deleteTestVersions,
 } = require('../persistence/VersionsPersistence');
 const WebAppPersistence = require('../persistence/WebAppPersistence');
 const {
@@ -16,6 +18,9 @@ const {
 const postTest = async (id, { name, shortName, url, version, type }) => {
     let errJson = { errMsg: '', errCode: 500 };
     let err = false;
+    console.log(name);
+    console.log(shortName);
+    console.log(version);
     if (!name || !shortName || !version) {
         err = true;
         errJson.errMsg += 'Por favor verifica la información ingresada';
@@ -48,7 +53,7 @@ const postTest = async (id, { name, shortName, url, version, type }) => {
                     aut: aut[0]._id,
                     versions: [],
                     type: type,
-                    mobile: aut[0].mobile
+                    mobile: aut[0].mobile,
                 };
                 const createdTest = await insertTest(newTest);
                 const newVersion = {
@@ -94,4 +99,21 @@ const getTests = async (id, populate = true, query = {}) => {
     }
 };
 
-module.exports = { postTest, getTests };
+const deleteWebAppTests = async (id) => {
+    try {
+        const tests = await findTests({ aut: convertObjectId(id), ...{} });
+        for (const tst of tests) {
+            await deleteTestVersions(tst._id);
+            await deleteTest(tst._id);
+        }
+    } catch (err) {
+        const errJson = {
+            error: new Error(),
+            errMsg: err.toString(),
+            errCode: 500,
+        };
+        throw errJson;
+    }
+};
+
+module.exports = { postTest, getTests, deleteWebAppTests };

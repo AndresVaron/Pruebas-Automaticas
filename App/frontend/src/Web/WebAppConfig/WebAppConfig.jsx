@@ -360,6 +360,7 @@ function WebAppConfig(props) {
                                             }
                                         )
                                         .then(() => {
+                                            setEditingName(false);
                                             alert(
                                                 'La configuración fue guardada de forma exitosa'
                                             );

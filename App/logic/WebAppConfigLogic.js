@@ -5,6 +5,9 @@ const VersionPersistence = require('../persistence/VersionsPersistence');
 const MongoFunctions = require('../utils/MongoFunctions');
 const axios = require('axios');
 
+const url = process.env.JENKINS_URL || 'http://localhost:8080';
+const key = process.env.JENKINS_KEY || 'admin';
+
 /*
 Método encargado de obtener todas las apps web
 */
@@ -81,13 +84,12 @@ module.exports.postWebAppVersionConfig = async (id_version) => {
             headers: { 'Content-Type': 'text/xml' },
             auth: {
                 username: 'admin',
-                password: '11b004d566e08c56110575b2d65393db5d',
+                password: key,
             },
         };
 
         axios.post(
-            'http://localhost:8080/createItem?name=' +
-                response.ops[0]._id.toString(),
+            url + '/createItem?name=' + response.ops[0]._id.toString(),
             xmlBodyStr,
             config
         );
@@ -242,15 +244,11 @@ pipeline {
             headers: { 'Content-Type': 'text/xml' },
             auth: {
                 username: 'admin',
-                password: '11b004d566e08c56110575b2d65393db5d',
+                password: key,
             },
         };
         axios
-            .post(
-                'http://localhost:8080/job/' + id + '/config.xml',
-                xmlBodyStr,
-                configuration
-            )
+            .post(url + '/job/' + id + '/config.xml', xmlBodyStr, configuration)
             .catch((err) => {
                 console.error(err);
             });
@@ -352,14 +350,10 @@ module.exports.execWebAppConfig = async (id) => {
             const config = {
                 auth: {
                     username: 'admin',
-                    password: '11b004d566e08c56110575b2d65393db5d',
+                    password: key,
                 },
             };
-            axios.post(
-                'http://localhost:8080/job/' + id + '/build',
-                {},
-                config
-            );
+            axios.post(url + '/job/' + id + '/build', {}, config);
             return true;
         }
     } catch (err) {
@@ -381,10 +375,10 @@ module.exports.deleteWebAppConfig = async (id) => {
         const config = {
             auth: {
                 username: 'admin',
-                password: '11b004d566e08c56110575b2d65393db5d',
+                password: key,
             },
         };
-        axios.post('http://localhost:8080/job/' + id + '/doDelete', {}, config);
+        axios.post(url + '/job/' + id + '/doDelete', {}, config);
         const response = await WebAppConfigPersistence.deleteWebAppConfig(id);
         //Se revisa si existia una web app con ese id
         if (response.result.n == 1) {

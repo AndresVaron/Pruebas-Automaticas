@@ -1,4 +1,6 @@
 const WebAppPersistence = require('../persistence/WebAppPersistence');
+const TestsLogic = require('./TestsLogic');
+const WebAppConfigLogic = require('./WebAppConfigLogic');
 
 /* 
 Método encargado de obtener todas las apps web
@@ -182,10 +184,56 @@ Retorna error 404 si la web app no existe o 500 si hay un error de base de datos
 */
 module.exports.deleteWebApp = async (id) => {
     try {
-        const response = await WebAppPersistence.deleteWebApp(id);
+        //Se borran todas las versiones, las configuraciones de cada version
+        const response = await WebAppPersistence.fetchWebApp(id);
+        if (response.length === 0) {
+            const errJson = {
+                errMsg: 'No existe una webapp con este id',
+                errCode: 400,
+            };
+            errJson.error = new Error();
+            throw errJson;
+        }
+        if (response[0].mobile) {
+            console.log('MOBILE!');
+        } else {
+            for (const version of response[0].versiones) {
+                await deleteWebAppVersion(version._id);
+            }
+            await TestsLogic.deleteWebAppTests(id);
+        }
+
+        const delresponse = await WebAppPersistence.deleteWebApp(id);
         //Se revisa si existia una web app con ese id
-        if (response.result.n == 1) {
-            return response;
+        if (delresponse.result.n == 1) {
+            return delresponse;
+        } else {
+            throw Error('Esta web App no existe');
+        }
+    } catch (err) {
+        const errJson = {
+            error: new Error(),
+            errMsg: err.toString(),
+            errCode: 500,
+        };
+        throw errJson;
+    }
+};
+const deleteWebAppVersion = async (idVersion) => {
+    try {
+        const configs = await WebAppPersistence.fetchWebAppVersionConfigs(
+            idVersion
+        );
+
+        for (const config of configs) {
+            await WebAppConfigLogic.deleteWebAppConfig(config._id);
+        }
+        const delresponse = await WebAppPersistence.deleteWebAppVersion(
+            idVersion
+        );
+        //Se revisa si existia una web app con ese id
+        if (delresponse.result.n == 1) {
+            return delresponse;
         } else {
             throw Error('Esta web App no existe');
         }

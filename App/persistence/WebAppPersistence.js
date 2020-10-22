@@ -98,6 +98,15 @@ module.exports.deleteWebApp = async (id) => {
 };
 
 /*
+Elimina de la bd la webapp con el id dado.
+*/
+module.exports.deleteWebAppVersion = async (id) => {
+    id = MongoFunctions.convertObjectId(id);
+    const dbconn = MongoConnection.getInstance();
+    return await dbconn.collection('webappversions').deleteOne({ _id: id });
+};
+
+/*
 Retorna la lista completa de webapps
 */
 
@@ -113,4 +122,11 @@ module.exports.fetchWebAppVersionConfigs = async (id) => {
             },
         ])
         .toArray();
+};
+
+module.exports.deleteWebAppVersionConfigs = async (id) => {
+    const dbconn = MongoConnection.getInstance();
+    return await dbconn.collection('webappsconfigs').deleteMany({
+        id_version: MongoFunctions.convertObjectId(id),
+    });
 };
