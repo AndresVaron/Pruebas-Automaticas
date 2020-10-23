@@ -5,7 +5,7 @@ const WebAppPersistence = require('../persistence/WebAppPersistence');
 const executeMobileMonkey = require('../utils/ExecuteMobileMonkey');
 const executeVRT = require('../utils/ExecuteVRT');
 const { prepareMobileApp, uninstallApp } = require('../utils/PrepareMobileApp');
-
+const { deleteDirectory } = require('../utils/FilesUtils');
 /*
 Método encargado de obtener todas las apps web
 */
@@ -50,5 +50,6 @@ const executeTests = async (appVersionConfig, testsVersions, appVersion, current
                 console.log('VRT finished');
             }
         }
+        deleteDirectory(directory);
     }
 };

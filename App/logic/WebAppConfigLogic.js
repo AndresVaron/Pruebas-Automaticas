@@ -9,6 +9,7 @@ const AppVersionsPersistence = require('../persistence/AppVersionsPersistence');
 const executeVRT = require('../utils/ExecuteVRT');
 const url = process.env.JENKINS_URL || 'http://localhost:8080';
 const key = process.env.JENKINS_KEY || 'admin';
+const { deleteDirectory } = require('../utils/FilesUtils');
 
 /*
 Método encargado de obtener todas las apps web
@@ -501,5 +502,7 @@ const executeVRTTest = async (test, currentApp, appVersion) => {
     const directory = `./cypress/integration/${currentApp}/versions/${appVersion._id}`;
     const packageName = 'index.spec';
     await executeVRT(test, directory, packageName, '', appVersion, false);
+    deleteDirectory(directory);
+    deleteDirectory(directory.replace('integration', 'screenshots'));
     console.log('VRT finished');
 };

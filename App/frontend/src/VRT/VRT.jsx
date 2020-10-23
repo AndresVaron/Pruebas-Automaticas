@@ -237,10 +237,10 @@ const VRT = ({ match, history, location }) => {
                         <div className="col-12 row d-flex align-items-center no-gutters">
                             {vrtComparations.map(
                                 ({ comparationResults, creationDate }) => (
-                                    <div className="col-12">
+                                    <div className="col-12 mb-4">
                                         <details>
-                                            <summary className="text-center">
-                                                Reporte creado a las{' '}
+                                            <summary className="text-center bg-white w-50 mx-auto rounded shadow p-2 no-select">
+                                                Reporte creado a las{' '} 
                                                 {new Date(
                                                     creationDate
                                                 ).toLocaleString()}
