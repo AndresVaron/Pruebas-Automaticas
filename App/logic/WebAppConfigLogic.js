@@ -373,11 +373,15 @@ const calcSteps = async (
         pipeline += `                ${parallel}sh "echo 'COPY ./app.apk /APK/' >> ./${ver}-monkey/Dockerfile"\n`;
         pipeline += `                ${parallel}sh "echo 'ENV DEVICE=\\"${prueba.dispositivo}\\"' >> ./${ver}-monkey/Dockerfile"\n`;
         pipeline += `                ${parallel}sh "docker build -t ${ver} ./${ver}-monkey/"\n`;
-        pipeline += `                ${parallel}sh "docker run --privileged -d -p 6080:6080 --rm --name ${ver} ${ver} || echo 'Failed Tests'"\n`;
+        pipeline += `                ${parallel}sh "docker run --privileged -d -p 90${index}${jndex}:6080 --rm --name ${ver} ${ver} || echo 'Failed Tests'"\n`;
         pipeline += `                ${parallel}sh "docker exec ${ver} adb wait-for-device"\n`;
         //Se espera a que cargue el emulador.
         pipeline += `                ${parallel}sh "#!/bin/sh -e\\n while [ \\"\`docker exec ${ver} adb shell getprop sys.boot_completed | tr -d '\\r' \`\\" != \\"1\\" ] ; do sleep 10; done"\n`;
         pipeline += `                ${parallel}sh "docker exec ${ver} adb install /APK/app.apk"\n`;
+        pipeline += `                ${parallel}sh "docker exec ${ver} mkdir /Results"\n`;
+        pipeline += `                ${parallel}sh "docker exec ${ver} adb shell monkey -p ${currentApp.package} -v ${version.events} > /Results/${ver}-monkey.log"\n`;
+        pipeline += `                ${parallel}sh "mkdir -p ./${ver}-monkey/Results"\n`;
+        pipeline += `                ${parallel}sh "docker cp ${ver}:/Results/ ./${ver}-monkey/Results/"\n`;
         pipeline += `                ${parallel}sh "ls"\n`;
         // endCommands.push(
         //     `            sh "docker stop ${ver} || echo 'Not Found'"`
