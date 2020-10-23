@@ -6,6 +6,7 @@ const MongoFunctions = require('../utils/MongoFunctions');
 const axios = require('axios');
 const AppVersionsPersistence = require('../persistence/AppVersionsPersistence');
 
+const executeVRT = require('../utils/ExecuteVRT');
 const url = process.env.JENKINS_URL || 'http://localhost:8080';
 const key = process.env.JENKINS_KEY || 'admin';
 
@@ -396,14 +397,14 @@ const calcSteps = async (
 
 module.exports.execWebAppConfig = async (id) => {
     try {
+        const errJson = {
+            errMsg: 'No existe una configuracion con este id',
+            errCode: 400,
+        };
         const response = await WebAppConfigPersistence.fetchWebAppVersionConfig(
             id
         );
         if (response === null) {
-            const errJson = {
-                errMsg: 'No existe una configuracion con este id',
-                errCode: 400,
-            };
             errJson.error = new Error();
             throw errJson;
         } else {
@@ -413,10 +414,50 @@ module.exports.execWebAppConfig = async (id) => {
                     password: key,
                 },
             };
-            axios.post(url + '/job/' + id + '/build', {}, config);
+            const testsToMake = response.pruebas.flat();
+            if (testsToMake.length === 0) {
+                errJson.errMsg = 'No hay pruebas a ejecutar';
+                errJson.error = new Error();
+                throw errJson;
+            }
+            const testsVersions = await VersionPersistence.findVersions({
+                _id: { $in: testsToMake },
+            });
+            if (!testsVersions || testsVersions.length !== testsToMake.length) {
+                errJson.errMsg =
+                    'No se encontró la versión de la prueba a ejecutar';
+                errJson.error = new Error();
+                throw errJson;
+            }
+            const testsId = testsVersions.map((test) => test.test);
+            const testsInformation = await TestPersistence.findTests({
+                _id: { $in: testsId },
+            });
+            if (
+                !testsInformation ||
+                testsInformation.length !== testsId.length
+            ) {
+                errJson.errMsg = 'No se encontraron las pruebas a ejecutar';
+                errJson.error = new Error();
+                throw errJson;
+            }
+            const vrtTest = testsInformation.find(
+                (test) => test.type === 'VRT'
+            );
+            if (vrtTest) {
+                const testVersion = testsVersions.find(
+                    (test) => String(test.test) === String(vrtTest._id)
+                );
+                executeVRTTest(testVersion, testsInformation[0].aut, {
+                    _id: response.id_version,
+                    id_app: testsInformation[0].aut,
+                });
+            }
+            // axios.post(url + '/job/' + id + '/build', {}, config);
             return true;
         }
     } catch (err) {
+        console.log(err);
         const errJson = {
             error: new Error(),
             errMsg: err.toString(),
@@ -454,4 +495,11 @@ module.exports.deleteWebAppConfig = async (id) => {
         };
         throw errJson;
     }
+};
+
+const executeVRTTest = async (test, currentApp, appVersion) => {
+    const directory = `./cypress/integration/${currentApp}/versions/${appVersion._id}`;
+    const packageName = 'index.spec';
+    await executeVRT(test, directory, packageName, '', appVersion, false);
+    console.log('VRT finished');
 };

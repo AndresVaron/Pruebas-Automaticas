@@ -35,7 +35,7 @@ module.exports.execMobileAppConfig = async (id, res) => {
 };
 
 const executeTests = async (appVersionConfig, testsVersions, appVersion, currentApp) => {
-    const directory = `../mobileApps/${currentApp._id}/versions/${appVersion._id}`;
+    const directory = `./mobileApps/${currentApp._id}/versions/${appVersion._id}`;
     const packageName = currentApp.package;
     const deviceName = await prepareMobileApp(appVersion, currentApp, directory, packageName);
     if (deviceName) {

@@ -78,7 +78,9 @@ function TestForm({ autId, setShowModal, web, reloadData }) {
                             }/tests/${autId}`}
                             uploadedFileName={new Date().getTime()}
                             acceptedFiles={
-                                web ? 'application/zip' : 'text/javascript'
+                                web && type !== 'VRT'
+                                    ? 'application/zip'
+                                    : 'text/javascript'
                             }
                         ></FileUploader>
                     </div>
