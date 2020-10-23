@@ -94,7 +94,7 @@ const VRT = ({ match, history, location }) => {
                     );
                     setTimeout(() => {
                         loadVrtResults();
-                    }, 80000);
+                    }, 60000);
                 })
                 .catch((err) => {
                     console.log(err);

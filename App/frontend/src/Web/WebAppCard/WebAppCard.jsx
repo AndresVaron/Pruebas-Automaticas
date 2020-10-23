@@ -103,7 +103,7 @@ function WebAppCard(props) {
                     >
                         Borrar
                     </button>
-                    {props.mobile && props.app.versiones.length > 1 && (
+                    {props.app.versiones.length > 1 && (
                         <button
                             className="btnCompararWebAppList"
                             onClick={() => {

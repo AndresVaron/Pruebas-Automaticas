@@ -12,6 +12,7 @@
         "axios": "^0.20.0",
         "connect-busboy": "0.0.2",
         "cookie-parser": "~1.4.4",
+        "cypress": "^5.4.0",
         "debug": "~2.6.9",
         "dotenv": "^8.2.0",
         "express": "~4.16.1",
@@ -21,7 +22,7 @@
         "mongodb": "^3.5.6",
         "morgan": "~1.9.1",
         "resemblejs": "^3.2.5",
-        "webdriverio": "^6.6.6"
+        "webdriverio": "^6.6.7"
     },
     "devDependencies": {
         "eslint": "^7.7.0"

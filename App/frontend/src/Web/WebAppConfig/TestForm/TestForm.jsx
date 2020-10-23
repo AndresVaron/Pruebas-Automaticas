@@ -73,9 +73,7 @@ function TestForm({ autId, setShowModal, web, reloadData }) {
                                 web ? 'web' : 'mobile'
                             }/tests/${autId}`}
                             uploadedFileName={new Date().getTime()}
-                            acceptedFiles={
-                                web ? 'application/zip' : 'text/javascript'
-                            }
+                            acceptedFiles={web && type !== 'VRT' ? 'application/zip' : 'text/javascript'}
                         ></FileUploader>
                     </div>
                 </>
@@ -139,6 +137,10 @@ function TestForm({ autId, setShowModal, web, reloadData }) {
                                           label: 'Cucumber',
                                           value: 'Cucumber',
                                       },
+                                      {
+                                        label: 'VRT',
+                                        value: 'VRT',
+                                    },
                                   ]
                                 : [
                                       {
