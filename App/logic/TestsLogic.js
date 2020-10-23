@@ -15,12 +15,12 @@ const {
     convertListOfObjectId,
 } = require('../utils/MongoFunctions');
 
-const postTest = async (id, { name, shortName, url, version, type }) => {
+const postTest = async (
+    id,
+    { name, shortName, url, version, type, dispositivo }
+) => {
     let errJson = { errMsg: '', errCode: 500 };
     let err = false;
-    console.log(name);
-    console.log(shortName);
-    console.log(version);
     if (!name || !shortName || !version) {
         err = true;
         errJson.errMsg += 'Por favor verifica la información ingresada';
@@ -38,6 +38,10 @@ const postTest = async (id, { name, shortName, url, version, type }) => {
             errJson.errMsg = 'No existe un AUT con el id ingresado';
             throw errJson;
         } else {
+            if (aut[0].mobile && !dispositivo) {
+                errJson.errMsg = 'Por favor verifica la información ingresada';
+                throw errJson;
+            }
             const existingTests = await findTests({
                 aut: convertObjectId(id),
                 shortName: shortName.toUpperCase(),
@@ -55,6 +59,9 @@ const postTest = async (id, { name, shortName, url, version, type }) => {
                     type: type,
                     mobile: aut[0].mobile,
                 };
+                if (newTest.mobile) {
+                    newTest.dispositivo = dispositivo;
+                }
                 const createdTest = await insertTest(newTest);
                 const newVersion = {
                     test: createdTest.ops[0]._id,

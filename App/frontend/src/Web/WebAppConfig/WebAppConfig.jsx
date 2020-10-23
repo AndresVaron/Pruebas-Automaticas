@@ -328,17 +328,6 @@ function WebAppConfig(props) {
                             <button
                                 className="bntConfirmarWebAppList btnGuardarConfWeb"
                                 onClick={() => {
-                                    if (
-                                        !web &&
-                                        (pruebasActuales.length > 2 ||
-                                            (pruebasActuales.length === 2 &&
-                                                pruebasActuales[0].length > 2))
-                                    ) {
-                                        alert(
-                                            'Solo puedes definir un evento para pruebas de aplicaciones móviles'
-                                        );
-                                        return;
-                                    }
                                     axiosInstance
                                         .put(
                                             '/web/' +

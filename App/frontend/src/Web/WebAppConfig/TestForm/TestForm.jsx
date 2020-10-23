@@ -14,7 +14,7 @@ function TestForm({ autId, setShowModal, web, reloadData }) {
         url: '',
         numberOfEvents: '',
     });
-
+    const [dispositivo, setDispositivo] = useState(null);
     const [type, setType] = useState();
     const handleChange = (event) => {
         setForm({ ...form, [event.target.name]: event.target.value });
@@ -29,6 +29,10 @@ function TestForm({ autId, setShowModal, web, reloadData }) {
         if (type === 'MobileMonkey') {
             form.version = form.numberOfEvents;
         }
+        if (dispositivo !== null) {
+            form.dispositivo = dispositivo;
+        }
+
         axiosInstance
             .post(`/tests/${autId}`, form)
             .then(() => {
@@ -84,7 +88,6 @@ function TestForm({ autId, setShowModal, web, reloadData }) {
             return <div></div>;
         }
     };
-
     return (
         <Modal setShowModal={setShowModal} loading={loading}>
             <h1 className="content-title">Crear prueba</h1>
@@ -119,6 +122,75 @@ function TestForm({ autId, setShowModal, web, reloadData }) {
                         required
                     />
                 </div>
+                {!web && (
+                    <div className="d-flex align-items-center mt-3">
+                        <label className="mb-0 mr-3 font-weight-bold lblDispositivo">
+                            Dispositivo:
+                        </label>
+                        <Select
+                            name="dispositivo"
+                            onChange={(inputValue) => {
+                                setDispositivo(inputValue.value);
+                            }}
+                            options={[
+                                {
+                                    label: 'Samsung Galaxy S10',
+                                    value: 'Samsung Galaxy S10',
+                                },
+                                {
+                                    label: 'Samsung Galaxy S9',
+                                    value: 'Samsung Galaxy S9',
+                                },
+                                {
+                                    label: 'Samsung Galaxy S8',
+                                    value: 'Samsung Galaxy S8',
+                                },
+                                {
+                                    label: 'Samsung Galaxy S7 Edge',
+                                    value: 'Samsung Galaxy S7 Edge',
+                                },
+                                {
+                                    label: 'Samsung Galaxy S7',
+                                    value: 'Samsung Galaxy S7',
+                                },
+                                {
+                                    label: 'Samsung Galaxy S6',
+                                    value: 'Samsung Galaxy S6',
+                                },
+                                {
+                                    label: 'Nexus 4',
+                                    value: 'Nexus 4',
+                                },
+                                {
+                                    label: 'Nexus 5',
+                                    value: 'Nexus 5',
+                                },
+                                {
+                                    label: 'Nexus One',
+                                    value: 'Nexus One',
+                                },
+                                {
+                                    label: 'Nexus S',
+                                    value: 'Nexus S',
+                                },
+                                {
+                                    label: 'Nexus 7',
+                                    value: 'Nexus 7',
+                                },
+                            ]}
+                            placeholder="Seleccionar"
+                            className="selectWebAppDeviceType"
+                            theme={(theme) => ({
+                                ...theme,
+                                colors: {
+                                    ...theme.colors,
+                                    primary25: 'rgba(29, 47, 111, 0.25)',
+                                    primary: '#989898',
+                                },
+                            })}
+                        />
+                    </div>
+                )}
                 <div className="d-flex align-items-center mt-3">
                     <label className="mb-0 mr-3 font-weight-bold lblTest">
                         Tipo:
@@ -134,10 +206,6 @@ function TestForm({ autId, setShowModal, web, reloadData }) {
                                       {
                                           label: 'Cypress',
                                           value: 'Cypress',
-                                      },
-                                      {
-                                          label: 'Cucumber',
-                                          value: 'Cucumber',
                                       },
                                   ]
                                 : [

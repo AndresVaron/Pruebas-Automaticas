@@ -4,6 +4,7 @@ const TestPersistence = require('../persistence/TestsPersistence');
 const VersionPersistence = require('../persistence/VersionsPersistence');
 const MongoFunctions = require('../utils/MongoFunctions');
 const axios = require('axios');
+const AppVersionsPersistence = require('../persistence/AppVersionsPersistence');
 
 const url = process.env.JENKINS_URL || 'http://localhost:8080';
 const key = process.env.JENKINS_KEY || 'admin';
@@ -169,6 +170,27 @@ module.exports.updateWebAppVersionConfig = async (id, config) => {
         throw errJson;
     }
 
+    const configur = await WebAppConfigPersistence.fetchWebAppVersionConfig(id);
+    const appVersion = await AppVersionsPersistence.fetchWebAppVersion(
+        configur.id_version
+    );
+    if (!appVersion) {
+        const errJson = {
+            errMsg: 'No se encontró la versión de la aplicación a probar',
+            errCode: 404,
+        };
+        errJson.error = new Error();
+        throw errJson;
+    }
+    const currentApp = await WebAppPersistence.fetchApp(appVersion.id_app);
+    if (!currentApp) {
+        const errJson = {
+            errMsg: 'No se encontró la aplicación a probar',
+            errCode: 404,
+        };
+        errJson.error = new Error();
+        throw errJson;
+    }
     //Hacer el put.
     let updateResponse;
     try {
@@ -176,6 +198,13 @@ module.exports.updateWebAppVersionConfig = async (id, config) => {
 pipeline {
     agent any
     stages {\n`;
+        if (currentApp.mobile) {
+            pipeline += `        stage('Download') {
+            steps{
+                sh "mkdir -p APK"
+                sh "wget -O ./APK/app.apk ${appVersion.url}"
+            }\n        }\n`;
+        }
         const endCommands = [];
         if (config.pruebas.length > 0) {
             for (let i = 0; i < config.pruebas.length; i++) {
@@ -190,7 +219,8 @@ pipeline {
                         isParallel,
                         i + 1,
                         j + 1,
-                        endCommands
+                        endCommands,
+                        currentApp
                     );
                     config.pruebas[i][j] = MongoFunctions.convertObjectId(
                         config.pruebas[i][j]
@@ -214,7 +244,8 @@ pipeline {
         for (let i = 0; i < endCommands.length; i++) {
             pipeline += endCommands[i] + '\n';
         }
-        pipeline += '            cleanWs()\n       }\n    }\n}';
+        pipeline += '            sh "echo hello"\n       }\n    }\n}';
+        // pipeline += '            cleanWs()\n       }\n    }\n}';
         //Crear un job de Jenkins
         const xmlBodyStr = `<?xml version='1.1' encoding='UTF-8'?>
             <flow-definition plugin="workflow-job@2.40">
@@ -277,7 +308,14 @@ pipeline {
     return 'Se actualizó la configuracion';
 };
 
-const calcSteps = async (id_version, isParallel, index, jndex, endCommands) => {
+const calcSteps = async (
+    id_version,
+    isParallel,
+    index,
+    jndex,
+    endCommands,
+    currentApp
+) => {
     const version = await VersionPersistence.fetchVersion(id_version);
     const prueba = await TestPersistence.findTestById(version.test);
     if (version === null || prueba === null) {
@@ -314,21 +352,39 @@ const calcSteps = async (id_version, isParallel, index, jndex, endCommands) => {
         if (endCommands.find((c) => c.includes('junit')) === undefined) {
             endCommands.push('            junit "**/results/*.xml"');
         }
-    } else if (prueba.type === 'Cucumber') {
-        pipeline += `               ${parallel}sh "wget -O ${ver}-files.zip ${version.url}"\n`;
-        pipeline += `               ${parallel}sh "mkdir -p ${ver}-cucumber"\n`;
-        pipeline += `               ${parallel}sh "unzip ${ver}-files.zip -d ./${ver}-cucumber"\n`;
-        pipeline += `               ${parallel}sh "echo 'FROM node:lts' >> ./${ver}-cucumber/Dockerfile"\n`;
-        pipeline += `               ${parallel}sh "echo 'WORKDIR /home/cucumber' >>  ./${ver}-cucumber/Dockerfile"\n`;
-        pipeline += `               ${parallel}sh "echo 'COPY . /home/cucumber' >> ./${ver}-cucumber/Dockerfile"\n`;
-        pipeline += `               ${parallel}sh "echo 'RUN npm install --loglevel verbose' >> ./${ver}-cucumber/Dockerfile"\n`;
-        pipeline += `               ${parallel}sh "ls"\n`;
-        pipeline += `               ${parallel}sh "docker build -t ${ver} ./${ver}-cucumber/"\n`;
-        pipeline += `               ${parallel}sh "docker run  --rm --name ${ver} ${ver} npm test|| echo 'Failed Tests'"\n`;
-        endCommands.push(
-            `            sh "docker stop ${ver} || echo 'Not Found'"`
-        );
+        // } else if (prueba.type === 'Cucumber') {
+        //     pipeline += `               ${parallel}sh "wget -O ${ver}-files.zip ${version.url}"\n`;
+        //     pipeline += `               ${parallel}sh "mkdir -p ${ver}-cucumber"\n`;
+        //     pipeline += `               ${parallel}sh "unzip ${ver}-files.zip -d ./${ver}-cucumber"\n`;
+        //     pipeline += `               ${parallel}sh "echo 'FROM node:lts' >> ./${ver}-cucumber/Dockerfile"\n`;
+        //     pipeline += `               ${parallel}sh "echo 'WORKDIR /home/cucumber' >>  ./${ver}-cucumber/Dockerfile"\n`;
+        //     pipeline += `               ${parallel}sh "echo 'COPY . /home/cucumber' >> ./${ver}-cucumber/Dockerfile"\n`;
+        //     pipeline += `               ${parallel}sh "echo 'RUN npm install --loglevel verbose' >> ./${ver}-cucumber/Dockerfile"\n`;
+        //     pipeline += `               ${parallel}sh "docker build -t ${ver} ./${ver}-cucumber/"\n`;
+        //     pipeline += `               ${parallel}sh "docker run --rm --name ${ver} ${ver} npm test|| echo 'Failed Tests'"\n`;
+        //     endCommands.push(
+        //         `            sh "docker stop ${ver} || echo 'Not Found'"`
+        //     );
+    } else if (prueba.type === 'MobileMonkey') {
+        // const packageName = currentApp.package;
+        pipeline += `                ${parallel}sh "mkdir -p ${ver}-monkey"\n`;
+        pipeline += `                ${parallel}sh "cp ./APK/app.apk ./${ver}-monkey/app.apk"\n`;
+        pipeline += `                ${parallel}sh "echo 'FROM budtmo/docker-android-x86-8.1' >> ./${ver}-monkey/Dockerfile"\n`;
+        pipeline += `                ${parallel}sh "echo 'COPY ./app.apk /APK/' >> ./${ver}-monkey/Dockerfile"\n`;
+        pipeline += `                ${parallel}sh "echo 'ENV DEVICE=\\"${prueba.dispositivo}\\"' >> ./${ver}-monkey/Dockerfile"\n`;
+        pipeline += `                ${parallel}sh "docker build -t ${ver} ./${ver}-monkey/"\n`;
+        pipeline += `                ${parallel}sh "docker run --privileged -d -p 6080:6080 --rm --name ${ver} ${ver} || echo 'Failed Tests'"\n`;
+        pipeline += `                ${parallel}sh "docker exec ${ver} adb wait-for-device"\n`;
+        //Se espera a que cargue el emulador.
+        pipeline += `                ${parallel}sh "#!/bin/sh -e\\n while [ \\"\`docker exec ${ver} adb shell getprop sys.boot_completed | tr -d '\\r' \`\\" != \\"1\\" ] ; do sleep 10; done"\n`;
+        pipeline += `                ${parallel}sh "docker exec ${ver} adb install /APK/app.apk"\n`;
+        pipeline += `                ${parallel}sh "ls"\n`;
+        // endCommands.push(
+        //     `            sh "docker stop ${ver} || echo 'Not Found'"`
+        // );
     }
+
+    //docker run
     pipeline += `${parallel}            }
     ${parallel}    }\n`;
     return pipeline;

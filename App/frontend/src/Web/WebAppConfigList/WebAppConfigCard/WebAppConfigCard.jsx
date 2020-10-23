@@ -4,7 +4,6 @@ import './WebAppConfigCard.css';
 import RightArrowIcon from '../../../Media/Icons/right-arrow.svg';
 import axiosInstance from '../../../AxiosAPI.js';
 function WebAppCard(props) {
-
     console.log(props);
 
     const renderPipeLinePrev = () => {
@@ -19,7 +18,7 @@ function WebAppCard(props) {
                                     marginLeft: index === 0 ? 'auto' : 0,
                                     marginRight:
                                         index ===
-                                            props.config.pruebas.length - 1
+                                        props.config.pruebas.length - 1
                                             ? 'auto'
                                             : 0,
                                 }}
@@ -40,7 +39,7 @@ function WebAppCard(props) {
                                     alt=""
                                     src={RightArrowIcon}
                                     className="arrowColPruebaPrev"
-                                    onClick={() => { }}
+                                    onClick={() => {}}
                                 />
                             )}
                         </React.Fragment>
@@ -81,7 +80,11 @@ function WebAppCard(props) {
                         className="bntModificarWebAppList"
                         onClick={() => {
                             props.history.push(
-                                `/${props.app.mobile ? 'mobile' : 'web'}/${props.app._id}/versions/${props.app.version._id}/configs/${props.config._id}`
+                                `/${props.app.mobile ? 'mobile' : 'web'}/${
+                                    props.app._id
+                                }/versions/${props.app.version._id}/configs/${
+                                    props.config._id
+                                }`
                             );
                         }}
                     >
@@ -90,39 +93,23 @@ function WebAppCard(props) {
                     <button
                         className="bntConfirmarWebAppList"
                         onClick={() => {
-                            if (props.app.mobile) {
-                                axiosInstance
-                                    .post(
-                                        '/mobile/' +
+                            axiosInstance
+                                .post(
+                                    '/web/' +
                                         props.app._id +
                                         '/versiones/' +
                                         props.app.version._id +
                                         '/configs/' +
                                         props.config._id
-                                    )
-                                    .then(() => {
-                                        alert('Prueba enviada a ejecución de forma exitosa');
-                                    })
-                                    .catch((err) => {
-                                        console.error(err);
-                                    });
-                            } else {
-                                axiosInstance
-                                    .post(
-                                        '/web/' +
-                                        props.app._id +
-                                        '/versiones/' +
-                                        props.app.version._id +
-                                        '/configs/' +
-                                        props.config._id
-                                    )
-                                    .then(() => {
-                                        alert('Prueba enviada a ejecución de forma exitosa');
-                                    })
-                                    .catch((err) => {
-                                        console.error(err);
-                                    });
-                            }
+                                )
+                                .then(() => {
+                                    alert(
+                                        'Prueba enviada a ejecución de forma exitosa'
+                                    );
+                                })
+                                .catch((err) => {
+                                    console.error(err);
+                                });
                         }}
                     >
                         Ejecutar

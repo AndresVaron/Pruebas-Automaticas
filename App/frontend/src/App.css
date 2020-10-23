@@ -4,7 +4,6 @@
     min-height: 100vh;
 }
 
-
 .modalLayout {
     width: 100vw;
     height: 100vh;
@@ -13,7 +12,6 @@
     justify-content: center;
     align-items: center;
 }
-
 
 .modalContent {
     border-radius: 20px;
@@ -48,7 +46,6 @@
     box-shadow: 0 0 0 0.15rem rgba(0, 123, 255, 0.25);
 }
 
-
 .btn-confirm {
     padding: 5px 15px;
     background-color: #1d2f6f;
@@ -68,5 +65,5 @@
 }
 
 .lblTest {
-    width: 65px;
+    width: 85px;
 }

@@ -148,6 +148,10 @@
 }
 
 .selectWebAppTestType {
-    width: 200px;
+    width: 220px;
     z-index: 20;
+}
+.selectWebAppDeviceType {
+    z-index: 21;
+    width: 220px;
 }
