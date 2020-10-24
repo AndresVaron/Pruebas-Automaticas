@@ -401,46 +401,51 @@ module.exports.execWebAppConfig = async (id) => {
                     password: key,
                 },
             };
+            axios.post(url + '/job/' + id + '/build', {}, config);
             const testsToMake = response.pruebas.flat();
             if (testsToMake.length === 0) {
                 errJson.errMsg = 'No hay pruebas a ejecutar';
                 errJson.error = new Error();
                 throw errJson;
-            }
-            const testsVersions = await VersionPersistence.findVersions({
-                _id: { $in: testsToMake },
-            });
-            if (!testsVersions || testsVersions.length !== testsToMake.length) {
-                errJson.errMsg =
-                    'No se encontró la versión de la prueba a ejecutar';
-                errJson.error = new Error();
-                throw errJson;
-            }
-            const testsId = testsVersions.map((test) => test.test);
-            const testsInformation = await TestPersistence.findTests({
-                _id: { $in: testsId },
-            });
-            if (
-                !testsInformation ||
-                testsInformation.length !== testsId.length
-            ) {
-                errJson.errMsg = 'No se encontraron las pruebas a ejecutar';
-                errJson.error = new Error();
-                throw errJson;
-            }
-            const vrtTest = testsInformation.find(
-                (test) => test.type === 'VRT'
-            );
-            if (vrtTest) {
-                const testVersion = testsVersions.find(
-                    (test) => String(test.test) === String(vrtTest._id)
-                );
-                executeVRTTest(testVersion, testsInformation[0].aut, {
-                    _id: response.id_version,
-                    id_app: testsInformation[0].aut,
+            } else if (testsToMake.length === 1) {
+                const testsVersions = await VersionPersistence.findVersions({
+                    _id: { $in: testsToMake },
                 });
+                if (
+                    !testsVersions ||
+                    testsVersions.length !== testsToMake.length
+                ) {
+                    errJson.errMsg =
+                        'No se encontró la versión de la prueba a ejecutar';
+                    errJson.error = new Error();
+                    throw errJson;
+                }
+                const testsId = testsVersions.map((test) => test.test);
+                const testsInformation = await TestPersistence.findTests({
+                    _id: { $in: testsId },
+                });
+                if (
+                    !testsInformation ||
+                    testsInformation.length !== testsId.length
+                ) {
+                    errJson.errMsg = 'No se encontraron las pruebas a ejecutar';
+                    errJson.error = new Error();
+                    throw errJson;
+                }
+                const vrtTest = testsInformation.find(
+                    (test) => test.type === 'VRT'
+                );
+                if (vrtTest) {
+                    const testVersion = testsVersions.find(
+                        (test) => String(test.test) === String(vrtTest._id)
+                    );
+                    executeVRTTest(testVersion, testsInformation[0].aut, {
+                        _id: response.id_version,
+                        id_app: testsInformation[0].aut,
+                    });
+                }
             }
-            axios.post(url + '/job/' + id + '/build', {}, config);
+
             return true;
         }
     } catch (err) {
