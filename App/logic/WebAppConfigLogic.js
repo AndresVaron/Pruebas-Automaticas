@@ -246,8 +246,7 @@ pipeline {
         for (let i = 0; i < endCommands.length; i++) {
             pipeline += endCommands[i] + '\n';
         }
-        pipeline += '            sh "echo hello"\n       }\n    }\n}';
-        // pipeline += '            cleanWs()\n       }\n    }\n}';
+        pipeline += '            cleanWs()\n       }\n    }\n}';
         //Crear un job de Jenkins
         const xmlBodyStr = `<?xml version='1.1' encoding='UTF-8'?>
             <flow-definition plugin="workflow-job@2.40">
@@ -354,19 +353,6 @@ const calcSteps = async (
         if (endCommands.find((c) => c.includes('junit')) === undefined) {
             endCommands.push('            junit "**/results/*.xml"');
         }
-        // } else if (prueba.type === 'Cucumber') {
-        //     pipeline += `               ${parallel}sh "wget -O ${ver}-files.zip ${version.url}"\n`;
-        //     pipeline += `               ${parallel}sh "mkdir -p ${ver}-cucumber"\n`;
-        //     pipeline += `               ${parallel}sh "unzip ${ver}-files.zip -d ./${ver}-cucumber"\n`;
-        //     pipeline += `               ${parallel}sh "echo 'FROM node:lts' >> ./${ver}-cucumber/Dockerfile"\n`;
-        //     pipeline += `               ${parallel}sh "echo 'WORKDIR /home/cucumber' >>  ./${ver}-cucumber/Dockerfile"\n`;
-        //     pipeline += `               ${parallel}sh "echo 'COPY . /home/cucumber' >> ./${ver}-cucumber/Dockerfile"\n`;
-        //     pipeline += `               ${parallel}sh "echo 'RUN npm install --loglevel verbose' >> ./${ver}-cucumber/Dockerfile"\n`;
-        //     pipeline += `               ${parallel}sh "docker build -t ${ver} ./${ver}-cucumber/"\n`;
-        //     pipeline += `               ${parallel}sh "docker run --rm --name ${ver} ${ver} npm test|| echo 'Failed Tests'"\n`;
-        //     endCommands.push(
-        //         `            sh "docker stop ${ver} || echo 'Not Found'"`
-        //     );
     } else if (prueba.type === 'MobileMonkey') {
         // const packageName = currentApp.package;
         pipeline += `                ${parallel}sh "mkdir -p ${ver}-monkey"\n`;
@@ -380,14 +366,14 @@ const calcSteps = async (
         //Se espera a que cargue el emulador.
         pipeline += `                ${parallel}sh "#!/bin/sh -e\\n while [ \\"\`docker exec ${ver} adb shell getprop sys.boot_completed | tr -d '\\r' \`\\" != \\"1\\" ] ; do sleep 10; done"\n`;
         pipeline += `                ${parallel}sh "docker exec ${ver} adb install /APK/app.apk"\n`;
-        pipeline += `                ${parallel}sh "docker exec ${ver} mkdir /Results"\n`;
-        pipeline += `                ${parallel}sh "docker exec ${ver} adb shell monkey -p ${currentApp.package} -v ${version.events} > /Results/${ver}-monkey.log"\n`;
         pipeline += `                ${parallel}sh "mkdir -p ./${ver}-monkey/Results"\n`;
-        pipeline += `                ${parallel}sh "docker cp ${ver}:/Results/ ./${ver}-monkey/Results/"\n`;
+        pipeline += `                ${parallel}sh "docker exec ${ver} adb shell monkey -p ${currentApp.package} -v ${version.events} > ./${ver}-monkey/Results/${ver}-monkey.log"\n`;
         pipeline += `                ${parallel}sh "ls"\n`;
-        // endCommands.push(
-        //     `            sh "docker stop ${ver} || echo 'Not Found'"`
-        // );
+        pipeline += `                ${parallel}sh "cat ./${ver}-monkey/Results/${ver}-monkey.log"\n`;
+        pipeline += `                ${parallel}sh "docker stop ${ver} || echo 'Not Found'"\n`;
+        endCommands.push(
+            `            sh "docker stop ${ver} || echo 'Not Found'"`
+        );
     }
 
     //docker run
@@ -454,7 +440,7 @@ module.exports.execWebAppConfig = async (id) => {
                     id_app: testsInformation[0].aut,
                 });
             }
-            // axios.post(url + '/job/' + id + '/build', {}, config);
+            axios.post(url + '/job/' + id + '/build', {}, config);
             return true;
         }
     } catch (err) {
