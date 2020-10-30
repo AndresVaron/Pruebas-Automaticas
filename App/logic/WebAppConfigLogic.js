@@ -479,12 +479,3 @@ module.exports.deleteWebAppConfig = async (id) => {
         throw errJson;
     }
 };
-
-const executeVRTTest = async (test, currentApp, appVersion) => {
-    const directory = `./cypress/integration/${currentApp}/versions/${appVersion._id}`;
-    const packageName = 'index.spec';
-    await executeVRT(test, directory, packageName, '', appVersion, false);
-    deleteDirectory(directory);
-    deleteDirectory(directory.replace('integration', 'screenshots'));
-    console.log('VRT finished');
-};

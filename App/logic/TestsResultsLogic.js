@@ -23,16 +23,18 @@ const getTestResults = async (id, query = {}) => {
 const postTestResults = async (results) => {
     console.log('ARRIVED LOGIC');
     try {
+        console.log(results);
         if (
             results &&
             results.id_app &&
             results.id_app_version &&
             results.id_test &&
             results.id_version &&
-            results.mobile &&
+            results.mobile !== undefined &&
             results.images &&
             results.numberOfImages
         ) {
+            console.log('inIF');
             const tests = await findTestResults({
                 appVersion: results.id_app_version,
                 testVersion: results.id_version,
