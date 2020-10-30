@@ -11,6 +11,8 @@ const url = process.env.JENKINS_URL || 'http://localhost:8080';
 const key = process.env.JENKINS_KEY || 'admin';
 const { deleteDirectory } = require('../utils/FilesUtils');
 
+const SERVER_URL = 'http://localhost';
+
 /*
 Método encargado de obtener todas las apps web
 */
@@ -222,7 +224,8 @@ pipeline {
                         i + 1,
                         j + 1,
                         endCommands,
-                        currentApp
+                        currentApp,
+                        configur
                     );
                     config.pruebas[i][j] = MongoFunctions.convertObjectId(
                         config.pruebas[i][j]
@@ -246,7 +249,8 @@ pipeline {
         for (let i = 0; i < endCommands.length; i++) {
             pipeline += endCommands[i] + '\n';
         }
-        pipeline += '            cleanWs()\n       }\n    }\n}';
+        //pipeline += '            cleanWs()\n       }\n    }\n}';
+        pipeline += '            sh "echo 123"\n       }\n    }\n}';
         //Crear un job de Jenkins
         const xmlBodyStr = `<?xml version='1.1' encoding='UTF-8'?>
             <flow-definition plugin="workflow-job@2.40">
@@ -315,7 +319,8 @@ const calcSteps = async (
     index,
     jndex,
     endCommands,
-    currentApp
+    currentApp,
+    currentConfig
 ) => {
     const version = await VersionPersistence.fetchVersion(id_version);
     const prueba = await TestPersistence.findTestById(version.test);
@@ -355,27 +360,57 @@ const calcSteps = async (
         }
     } else if (prueba.type === 'MobileMonkey') {
         // const packageName = currentApp.package;
-        pipeline += `                ${parallel}sh "mkdir -p ${ver}-monkey"\n`;
-        pipeline += `                ${parallel}sh "cp ./APK/app.apk ./${ver}-monkey/app.apk"\n`;
-        pipeline += `                ${parallel}sh "echo 'FROM budtmo/docker-android-x86-8.1' >> ./${ver}-monkey/Dockerfile"\n`;
-        pipeline += `                ${parallel}sh "echo 'COPY ./app.apk /APK/' >> ./${ver}-monkey/Dockerfile"\n`;
-        pipeline += `                ${parallel}sh "echo 'ENV DEVICE=\\"${prueba.dispositivo}\\"' >> ./${ver}-monkey/Dockerfile"\n`;
-        pipeline += `                ${parallel}sh "docker build -t ${ver} ./${ver}-monkey/"\n`;
-        pipeline += `                ${parallel}sh "docker run --privileged -d -p 90${index}${jndex}:6080 --rm --name ${ver} ${ver} || echo 'Failed Tests'"\n`;
-        pipeline += `                ${parallel}sh "docker exec ${ver} adb wait-for-device"\n`;
+        pipeline += `               ${parallel}sh "cp ./APK/app.apk ./${ver}-monkey/app.apk"\n`;
+        pipeline += `               ${parallel}sh "mkdir -p ${ver}-monkey"\n`;
+        pipeline += `               ${parallel}sh "echo 'FROM budtmo/docker-android-x86-8.1' >> ./${ver}-monkey/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'COPY ./app.apk /APK/' >> ./${ver}-monkey/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'ENV DEVICE=\\"${prueba.dispositivo}\\"' >> ./${ver}-monkey/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "docker build -t ${ver} ./${ver}-monkey/"\n`;
+        pipeline += `               ${parallel}sh "docker run --privileged -d -p 90${index}${jndex}:6080 --rm --name ${ver} ${ver} || echo 'Failed Tests'"\n`;
+        pipeline += `               ${parallel}sh "docker exec ${ver} adb wait-for-device"\n`;
         //Se espera a que cargue el emulador.
-        pipeline += `                ${parallel}sh "#!/bin/sh -e\\n while [ \\"\`docker exec ${ver} adb shell getprop sys.boot_completed | tr -d '\\r' \`\\" != \\"1\\" ] ; do sleep 10; done"\n`;
-        pipeline += `                ${parallel}sh "docker exec ${ver} adb install /APK/app.apk"\n`;
-        pipeline += `                ${parallel}sh "mkdir -p ./${ver}-monkey/Results"\n`;
-        pipeline += `                ${parallel}sh "docker exec ${ver} adb shell monkey -p ${currentApp.package} -v ${version.events} > ./${ver}-monkey/Results/${ver}-monkey.log"\n`;
-        pipeline += `                ${parallel}sh "ls"\n`;
-        pipeline += `                ${parallel}sh "cat ./${ver}-monkey/Results/${ver}-monkey.log"\n`;
-        pipeline += `                ${parallel}sh "docker stop ${ver} || echo 'Not Found'"\n`;
+        pipeline += `               ${parallel}sh "#!/bin/sh -e\\n while [ \\"\`docker exec ${ver} adb shell getprop sys.boot_completed | tr -d '\\r' \`\\" != \\"1\\" ] ; do sleep 10; done"\n`;
+        pipeline += `               ${parallel}sh "docker exec ${ver} adb install /APK/app.apk"\n`;
+        pipeline += `               ${parallel}sh "mkdir -p ./${ver}-monkey/Results"\n`;
+        pipeline += `               ${parallel}sh "docker exec ${ver} adb shell monkey -p ${currentApp.package} -v ${version.events} > ./${ver}-monkey/Results/${ver}-monkey.log"\n`;
+        pipeline += `               ${parallel}sh "ls"\n`;
+        pipeline += `               ${parallel}sh "cat ./${ver}-monkey/Results/${ver}-monkey.log"\n`;
+        pipeline += `               ${parallel}sh "docker stop ${ver} || echo 'Not Found'"\n`;
         endCommands.push(
             `            sh "docker stop ${ver} || echo 'Not Found'"`
         );
+        endCommands.push(
+            `            sh "docker container rm ${ver}|| echo 'Not Found'"`
+        );
+    } else if (prueba.type === 'VRT') {
+        pipeline += `               ${parallel}sh "wget -O ${ver}-files.zip ${version.url}"\n`;
+        pipeline += `               ${parallel}sh "mkdir -p ${ver}-cypress/cypress/integration"\n`;
+        pipeline += `               ${parallel}sh "unzip ${ver}-files.zip -d ./${ver}-cypress/cypress/integration"\n`;
+        pipeline += `               ${parallel}sh "echo '{\\n}' > ./${ver}-cypress/cypress.json"\n`;
+        pipeline += `               ${parallel}sh "docker create --ipc=host -w /home/cypress --name ${ver} cypress/included:5.0.0"\n`;
+        pipeline += `               ${parallel}sh "docker cp ./${ver}-cypress/. ${ver}:/home/cypress"\n`;
+        pipeline += `               ${parallel}sh "docker start -a ${ver} || echo 'Failed Tests' &amp;&amp; docker cp ${ver}:/home/cypress/cypress/screenshots/ ./${ver}-cypress/screenshots/ || echo 'no screenshots'"\n`;
+        endCommands.push(
+            `            sh "docker stop ${ver} || echo 'Not Found'"`
+        );
+        endCommands.push(
+            `            sh "docker container rm ${ver}|| echo 'Not Found'"`
+        );
+        //Se suben las imagenes al servidor.
+        pipeline += `               ${parallel}sh "echo 'FROM andresvm/uploadvrt:lts' >> ./${ver}-cypress/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'COPY ./screenshots/ /usr/src/app/screenshots/' >> ./${ver}-cypress/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'ENV ACCESS_KEY=\\"${process.env.ACCESS_KEY}\\"' >> ./${ver}-cypress/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'ENV SECRET_KEY=\\"${process.env.SECRET_KEY}\\"' >> ./${ver}-cypress/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'ENV BUCKET=\\"${process.env.BUCKET}\\"' >> ./${ver}-cypress/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'ENV MOBILE=\\"false\\"' >> ./${ver}-cypress/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'ENV ID_APP=\\"${currentApp._id}\\"' >> ./${ver}-cypress/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'ENV ID_APP_VERSION=\\"${currentConfig.id_version}\\"' >> ./${ver}-cypress/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'ENV ID_TEST=\\"${prueba._id}\\"' >> ./${ver}-cypress/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'ENV ID_VERSION=\\"${version._id}\\"' >> ./${ver}-cypress/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'ENV SERVER_URL=\\"${SERVER_URL}\\"' >> ./${ver}-cypress/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "docker build -t ${ver}-node ./${ver}-cypress/"\n`;
+        pipeline += `               ${parallel}sh "docker run --rm --name ${ver}-node ${ver}-node || echo 'Upload Failed'"\n`;
     }
-
     //docker run
     pipeline += `${parallel}            }
     ${parallel}    }\n`;
@@ -402,50 +437,6 @@ module.exports.execWebAppConfig = async (id) => {
                 },
             };
             axios.post(url + '/job/' + id + '/build', {}, config);
-            const testsToMake = response.pruebas.flat();
-            if (testsToMake.length === 0) {
-                errJson.errMsg = 'No hay pruebas a ejecutar';
-                errJson.error = new Error();
-                throw errJson;
-            } else if (testsToMake.length === 1) {
-                const testsVersions = await VersionPersistence.findVersions({
-                    _id: { $in: testsToMake },
-                });
-                if (
-                    !testsVersions ||
-                    testsVersions.length !== testsToMake.length
-                ) {
-                    errJson.errMsg =
-                        'No se encontró la versión de la prueba a ejecutar';
-                    errJson.error = new Error();
-                    throw errJson;
-                }
-                const testsId = testsVersions.map((test) => test.test);
-                const testsInformation = await TestPersistence.findTests({
-                    _id: { $in: testsId },
-                });
-                if (
-                    !testsInformation ||
-                    testsInformation.length !== testsId.length
-                ) {
-                    errJson.errMsg = 'No se encontraron las pruebas a ejecutar';
-                    errJson.error = new Error();
-                    throw errJson;
-                }
-                const vrtTest = testsInformation.find(
-                    (test) => test.type === 'VRT'
-                );
-                if (vrtTest) {
-                    const testVersion = testsVersions.find(
-                        (test) => String(test.test) === String(vrtTest._id)
-                    );
-                    executeVRTTest(testVersion, testsInformation[0].aut, {
-                        _id: response.id_version,
-                        id_app: testsInformation[0].aut,
-                    });
-                }
-            }
-
             return true;
         }
     } catch (err) {
