@@ -3,10 +3,7 @@ const {
     insertTestResult,
     updateTestResult,
 } = require('../persistence/TestsResultsPersistence');
-const {
-    convertObjectId,
-    convertListOfObjectId,
-} = require('../utils/MongoFunctions');
+const { convertObjectId } = require('../utils/MongoFunctions');
 
 const getTestResults = async (id, query = {}) => {
     try {
@@ -21,9 +18,7 @@ const getTestResults = async (id, query = {}) => {
 };
 
 const postTestResults = async (results) => {
-    console.log('ARRIVED LOGIC');
     try {
-        console.log(results);
         if (
             results &&
             results.id_app &&
@@ -34,14 +29,11 @@ const postTestResults = async (results) => {
             results.images &&
             results.numberOfImages
         ) {
-            console.log('inIF');
             const tests = await findTestResults({
-                appVersion: results.id_app_version,
-                testVersion: results.id_version,
+                appVersion: convertObjectId(results.id_app_version),
+                testVersion: convertObjectId(results.id_version),
             });
-            console.log(tests);
             if (tests && tests.length > 0) {
-                console.log('1');
                 await updateTestResult(tests[0]._id, {
                     $set: {
                         images: results.images,
@@ -49,8 +41,6 @@ const postTestResults = async (results) => {
                         creationDate: new Date(),
                     },
                 });
-            } else {
-                console.log('2');
                 await insertTestResult({
                     appVersion: convertObjectId(results.id_app_version),
                     aut: convertObjectId(results.id_app),
