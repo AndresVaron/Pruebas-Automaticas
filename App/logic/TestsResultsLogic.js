@@ -33,14 +33,16 @@ const postTestResults = async (results) => {
                 appVersion: convertObjectId(results.id_app_version),
                 testVersion: convertObjectId(results.id_version),
             });
+            console.log(tests);
             if (tests && tests.length > 0) {
-                await updateTestResult(tests[0]._id, {
+                await updateTestResult(convertObjectId(tests[0]._id), {
                     $set: {
                         images: results.images,
                         numberOfImages: results.numberOfImages,
                         creationDate: new Date(),
                     },
                 });
+            } else {
                 await insertTestResult({
                     appVersion: convertObjectId(results.id_app_version),
                     aut: convertObjectId(results.id_app),
