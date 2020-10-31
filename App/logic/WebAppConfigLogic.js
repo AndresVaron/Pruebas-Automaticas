@@ -5,13 +5,10 @@ const VersionPersistence = require('../persistence/VersionsPersistence');
 const MongoFunctions = require('../utils/MongoFunctions');
 const axios = require('axios');
 const AppVersionsPersistence = require('../persistence/AppVersionsPersistence');
-
-const executeVRT = require('../utils/ExecuteVRT');
 const url = process.env.JENKINS_URL || 'http://localhost:8080';
 const key = process.env.JENKINS_KEY || 'admin';
-const { deleteDirectory } = require('../utils/FilesUtils');
 
-const SERVER_URL = 'http://localhost';
+const SERVER_URL = 'http://34.66.17.69';
 
 /*
 Método encargado de obtener todas las apps web
@@ -360,9 +357,9 @@ const calcSteps = async (
         }
     } else if (prueba.type === 'MobileMonkey') {
         // const packageName = currentApp.package;
-        pipeline += `               ${parallel}sh "cp ./APK/app.apk ./${ver}-monkey/app.apk"\n`;
         pipeline += `               ${parallel}sh "mkdir -p ${ver}-monkey"\n`;
-        pipeline += `               ${parallel}sh "echo 'FROM budtmo/docker-android-x86-8.1' >> ./${ver}-monkey/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "cp ./APK/app.apk ./${ver}-monkey/app.apk"\n`;
+        pipeline += `               ${parallel}sh "echo 'FROM budtmo/docker-android-x86-11.0' >> ./${ver}-monkey/Dockerfile"\n`;
         pipeline += `               ${parallel}sh "echo 'COPY ./app.apk /APK/' >> ./${ver}-monkey/Dockerfile"\n`;
         pipeline += `               ${parallel}sh "echo 'ENV DEVICE=\\"${prueba.dispositivo}\\"' >> ./${ver}-monkey/Dockerfile"\n`;
         pipeline += `               ${parallel}sh "docker build -t ${ver} ./${ver}-monkey/"\n`;
@@ -373,7 +370,6 @@ const calcSteps = async (
         pipeline += `               ${parallel}sh "docker exec ${ver} adb install /APK/app.apk"\n`;
         pipeline += `               ${parallel}sh "mkdir -p ./${ver}-monkey/Results"\n`;
         pipeline += `               ${parallel}sh "docker exec ${ver} adb shell monkey -p ${currentApp.package} -v ${version.events} > ./${ver}-monkey/Results/${ver}-monkey.log"\n`;
-        pipeline += `               ${parallel}sh "ls"\n`;
         pipeline += `               ${parallel}sh "cat ./${ver}-monkey/Results/${ver}-monkey.log"\n`;
         pipeline += `               ${parallel}sh "docker stop ${ver} || echo 'Not Found'"\n`;
         endCommands.push(
@@ -381,6 +377,65 @@ const calcSteps = async (
         );
         endCommands.push(
             `            sh "docker container rm ${ver}|| echo 'Not Found'"`
+        );
+    } else if (currentApp.mobile && prueba.type === 'VRT') {
+        pipeline += `               ${parallel}sh "docker network create ${ver}-net"\n`;
+        pipeline += `               ${parallel}sh "mkdir -p ${ver}-vrt"\n`;
+        pipeline += `               ${parallel}sh "cp ./APK/app.apk ./${ver}-vrt/app.apk"\n`;
+        pipeline += `               ${parallel}sh "echo 'FROM budtmo/docker-android-x86-11.0' >> ./${ver}-vrt/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'COPY ./app.apk /APK/' >> ./${ver}-vrt/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'ENV DEVICE=\\"${
+            prueba.dispositivo || 'Samsung Galaxy S9'
+        }\\"' >> ./${ver}-vrt/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "docker build -t ${ver} ./${ver}-vrt/"\n`;
+        pipeline += `               ${parallel}sh "docker run --network=\\"${ver}-net\\" --privileged -d -p 90${index}${jndex}:6080 -e APPIUM=true --rm --name ${ver} ${ver} || echo 'Failed Tests'"\n`;
+        pipeline += `               ${parallel}sh "docker exec ${ver} adb wait-for-device"\n`;
+        pipeline += `               ${parallel}sh "#!/bin/sh -e\\n while [ \\"\`docker exec ${ver} adb shell getprop sys.boot_completed | tr -d '\\r' \`\\" != \\"1\\" ] ; do sleep 10; done"\n`;
+        pipeline += `               ${parallel}sh "docker exec ${ver} adb install /APK/app.apk"\n`;
+        endCommands.push(
+            `            sh "docker stop ${ver} || echo 'Not Found'"`
+        );
+        endCommands.push(
+            `            sh "docker container rm ${ver}|| echo 'Not Found'"`
+        );
+        pipeline += `               ${parallel}sh "wget -O ./${ver}-vrt/script.js ${version.url}"\n`;
+        pipeline += `               ${parallel}sh "echo 'FROM andresvm/execappium:fourth' >> ./${ver}-vrt/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'COPY ./script.js /usr/src/app/script.js' >> ./${ver}-vrt/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'RUN mkdir -p /usr/src/app/screenshots' >> ./${ver}-vrt/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'ENV HOST=\\"${ver}\\"' >> ./${ver}-vrt/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'ENV DEVICE=\\"emulator-5554\\"' >> ./${ver}-vrt/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "docker build -t ${ver}-exec ./${ver}-vrt/"\n`;
+        pipeline += `               ${parallel}sh "docker create --network=\\"${ver}-net\\" --name ${ver}-exec ${ver}-exec"\n`;
+        pipeline += `               ${parallel}sh "docker start -a ${ver}-exec || echo 'Failed Tests' &amp;&amp; docker cp ${ver}-exec:/usr/src/app/screenshots ./${ver}-vrt/screenshots || echo 'no screenshots'"\n`;
+        endCommands.push(
+            `            sh "docker stop ${ver}-exec || echo 'Not Found'"`
+        );
+        endCommands.push(
+            `            sh "docker container rm ${ver}-exec|| echo 'Not Found'"`
+        );
+        pipeline += `               ${parallel}sh "rm  ./${ver}-vrt/Dockerfile"\n`;
+        //Se suben las imagenes al servidor.
+        pipeline += `               ${parallel}sh "echo 'FROM andresvm/uploadvrt:lts' >> ./${ver}-vrt/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'COPY ./screenshots/ /usr/src/app/screenshots/' >> ./${ver}-vrt/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'ENV ACCESS_KEY=\\"${process.env.ACCESS_KEY}\\"' >> ./${ver}-vrt/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'ENV SECRET_KEY=\\"${process.env.SECRET_KEY}\\"' >> ./${ver}-vrt/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'ENV BUCKET=\\"${process.env.BUCKET}\\"' >> ./${ver}-vrt/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'ENV MOBILE=\\"true\\"' >> ./${ver}-vrt/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'ENV ID_APP=\\"${currentApp._id}\\"' >> ./${ver}-vrt/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'ENV ID_APP_VERSION=\\"${currentConfig.id_version}\\"' >> ./${ver}-vrt/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'ENV ID_TEST=\\"${prueba._id}\\"' >> ./${ver}-vrt/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'ENV ID_VERSION=\\"${version._id}\\"' >> ./${ver}-vrt/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'ENV SERVER_URL=\\"${SERVER_URL}\\"' >> ./${ver}-vrt/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "docker build -t ${ver}-node ./${ver}-vrt/"\n`;
+        pipeline += `               ${parallel}sh "docker run --rm --name ${ver}-node ${ver}-node || echo 'Upload Failed'"\n`;
+        endCommands.push(
+            `            sh "docker stop ${ver}-node || echo 'Not Found'"`
+        );
+        endCommands.push(
+            `            sh "docker container rm ${ver}-node|| echo 'Not Found'"`
+        );
+        endCommands.push(
+            `            sh "docker network rm ${ver}-net || echo 'Not Found'"`
         );
     } else if (prueba.type === 'VRT') {
         pipeline += `               ${parallel}sh "wget -O ${ver}-files.zip ${version.url}"\n`;
@@ -410,6 +465,12 @@ const calcSteps = async (
         pipeline += `               ${parallel}sh "echo 'ENV SERVER_URL=\\"${SERVER_URL}\\"' >> ./${ver}-cypress/Dockerfile"\n`;
         pipeline += `               ${parallel}sh "docker build -t ${ver}-node ./${ver}-cypress/"\n`;
         pipeline += `               ${parallel}sh "docker run --rm --name ${ver}-node ${ver}-node || echo 'Upload Failed'"\n`;
+        endCommands.push(
+            `            sh "docker stop ${ver}-node || echo 'Not Found'"`
+        );
+        endCommands.push(
+            `            sh "docker container rm ${ver}-node|| echo 'Not Found'"`
+        );
     }
     //docker run
     pipeline += `${parallel}            }
