@@ -209,11 +209,19 @@ function TestForm({ autId, setShowModal, web, reloadData }) {
                                           label: 'Cypress',
                                           value: 'Cypress',
                                       },
+                                      {
+                                          label: 'VRT',
+                                          value: 'VRT',
+                                      },
                                   ]
                                 : [
                                       {
                                           label: 'Random',
                                           value: 'MobileMonkey',
+                                      },
+                                      {
+                                          label: 'Appium',
+                                          value: 'Appium',
                                       },
                                       {
                                           label: 'VRT',

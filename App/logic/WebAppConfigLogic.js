@@ -246,8 +246,8 @@ pipeline {
         for (let i = 0; i < endCommands.length; i++) {
             pipeline += endCommands[i] + '\n';
         }
-        //pipeline += '            cleanWs()\n       }\n    }\n}';
-        pipeline += '            sh "echo 123"\n       }\n    }\n}';
+        pipeline += '            cleanWs()\n       }\n    }\n}';
+        // pipeline += '            sh "echo 123"\n       }\n    }\n}';
         //Crear un job de Jenkins
         const xmlBodyStr = `<?xml version='1.1' encoding='UTF-8'?>
             <flow-definition plugin="workflow-job@2.40">
@@ -377,6 +377,44 @@ const calcSteps = async (
         );
         endCommands.push(
             `            sh "docker container rm ${ver}|| echo 'Not Found'"`
+        );
+    } else if (prueba.type === 'Appium') {
+        pipeline += `               ${parallel}sh "docker network create ${ver}-net"\n`;
+        pipeline += `               ${parallel}sh "mkdir -p ${ver}-vrt"\n`;
+        pipeline += `               ${parallel}sh "cp ./APK/app.apk ./${ver}-vrt/app.apk"\n`;
+        pipeline += `               ${parallel}sh "echo 'FROM budtmo/docker-android-x86-11.0' >> ./${ver}-vrt/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'COPY ./app.apk /APK/' >> ./${ver}-vrt/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'ENV DEVICE=\\"${
+            prueba.dispositivo || 'Samsung Galaxy S9'
+        }\\"' >> ./${ver}-vrt/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "docker build -t ${ver} ./${ver}-vrt/"\n`;
+        pipeline += `               ${parallel}sh "docker run --network=\\"${ver}-net\\" --privileged -d -p 90${index}${jndex}:6080 -e APPIUM=true --rm --name ${ver} ${ver} || echo 'Failed Tests'"\n`;
+        pipeline += `               ${parallel}sh "docker exec ${ver} adb wait-for-device"\n`;
+        pipeline += `               ${parallel}sh "#!/bin/sh -e\\n while [ \\"\`docker exec ${ver} adb shell getprop sys.boot_completed | tr -d '\\r' \`\\" != \\"1\\" ] ; do sleep 10; done"\n`;
+        pipeline += `               ${parallel}sh "docker exec ${ver} adb install /APK/app.apk"\n`;
+        endCommands.push(
+            `            sh "docker stop ${ver} || echo 'Not Found'"`
+        );
+        endCommands.push(
+            `            sh "docker container rm ${ver}|| echo 'Not Found'"`
+        );
+        pipeline += `               ${parallel}sh "wget -O ./${ver}-vrt/script.js ${version.url}"\n`;
+        pipeline += `               ${parallel}sh "echo 'FROM andresvm/execappium:fourth' >> ./${ver}-vrt/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'COPY ./script.js /usr/src/app/script.js' >> ./${ver}-vrt/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'RUN mkdir -p /usr/src/app/screenshots' >> ./${ver}-vrt/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'ENV HOST=\\"${ver}\\"' >> ./${ver}-vrt/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'ENV DEVICE=\\"emulator-5554\\"' >> ./${ver}-vrt/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "docker build -t ${ver}-exec ./${ver}-vrt/"\n`;
+        pipeline += `               ${parallel}sh "docker create --network=\\"${ver}-net\\" --name ${ver}-exec ${ver}-exec"\n`;
+        pipeline += `               ${parallel}sh "docker start -a ${ver}-exec || echo 'Failed Tests' &amp;&amp; docker cp ${ver}-exec:/usr/src/app/screenshots ./${ver}-vrt/screenshots || echo 'no screenshots'"\n`;
+        endCommands.push(
+            `            sh "docker stop ${ver}-exec || echo 'Not Found'"`
+        );
+        endCommands.push(
+            `            sh "docker container rm ${ver}-exec|| echo 'Not Found'"`
+        );
+        endCommands.push(
+            `            sh "docker network rm ${ver}-net || echo 'Not Found'"`
         );
     } else if (currentApp.mobile && prueba.type === 'VRT') {
         pipeline += `               ${parallel}sh "docker network create ${ver}-net"\n`;
