@@ -12,7 +12,6 @@
         "axios": "^0.20.0",
         "connect-busboy": "0.0.2",
         "cookie-parser": "~1.4.4",
-        "cypress": "^5.4.0",
         "debug": "~2.6.9",
         "dotenv": "^8.2.0",
         "express": "~4.16.1",

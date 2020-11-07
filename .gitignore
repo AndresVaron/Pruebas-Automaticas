@@ -2,5 +2,3 @@
 App/.env
 mobileApps
 webApps
-App/cypress/integration
-App/cypress/screenshots
