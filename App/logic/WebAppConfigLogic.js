@@ -5,7 +5,7 @@ const VersionPersistence = require('../persistence/VersionsPersistence');
 const MongoFunctions = require('../utils/MongoFunctions');
 const axios = require('axios');
 const AppVersionsPersistence = require('../persistence/AppVersionsPersistence');
-const url = process.env.JENKINS_URL || 'http://localhost:8080';
+const url = process.env.JENKINS_URL || 'http://127.0.0.1:8080';
 const key = process.env.JENKINS_KEY || 'admin';
 
 const SERVER_URL = 'http://localhost';
