@@ -8,7 +8,7 @@ const AppVersionsPersistence = require('../persistence/AppVersionsPersistence');
 const url = process.env.JENKINS_URL || 'http://localhost:8080';
 const key = process.env.JENKINS_KEY || 'admin';
 
-const SERVER_URL = 'http://34.66.17.69';
+const SERVER_URL = 'http://localhost';
 
 /*
 Método encargado de obtener todas las apps web
