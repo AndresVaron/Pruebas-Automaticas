@@ -437,7 +437,7 @@ const calcSteps = async (
             `            sh "docker container rm ${ver}|| echo 'Not Found'"`
         );
         pipeline += `               ${parallel}sh "wget -O ./${ver}-vrt/script.js ${version.url}"\n`;
-        pipeline += `               ${parallel}sh "echo 'FROM andresvm/execappium:fourth' >> ./${ver}-vrt/Dockerfile"\n`;
+        pipeline += `               ${parallel}sh "echo 'FROM andresvm/execappium:fith' >> ./${ver}-vrt/Dockerfile"\n`;
         pipeline += `               ${parallel}sh "echo 'COPY ./script.js /usr/src/app/script.js' >> ./${ver}-vrt/Dockerfile"\n`;
         pipeline += `               ${parallel}sh "echo 'RUN mkdir -p /usr/src/app/screenshots' >> ./${ver}-vrt/Dockerfile"\n`;
         pipeline += `               ${parallel}sh "echo 'ENV HOST=\\"${ver}\\"' >> ./${ver}-vrt/Dockerfile"\n`;
