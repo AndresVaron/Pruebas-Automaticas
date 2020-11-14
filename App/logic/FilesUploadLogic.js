@@ -95,7 +95,7 @@ const PostUploadFile = async (req, res, next) => {
         console.log(fileToUpload.mimetype);
 
         if (
-            !'application/zip application/x-zip-compressed application/vnd.android.package-archive text/javascript/application/x-javascript'.includes(
+            !'application/zip application/x-zip-compressed application/vnd.android.package-archive text/javascript/application/x-javascript application/octet-stream'.includes(
                 fileToUpload.mimetype
             )
         ) {

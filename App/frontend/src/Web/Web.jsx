@@ -196,7 +196,7 @@ function Web({ location }) {
                                                 }`}
                                                 uploadedFileName={new Date().getTime()}
                                                 acceptedFiles={
-                                                    'application/vnd.android.package-archive'
+                                                    'application/vnd.android.package-archive|application/octet-stream'
                                                 }
                                             ></FileUploader>
                                         </div>
