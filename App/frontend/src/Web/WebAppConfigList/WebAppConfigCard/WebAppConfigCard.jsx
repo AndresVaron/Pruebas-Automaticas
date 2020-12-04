@@ -55,14 +55,6 @@ function WebAppCard(props) {
                     Creada: {props.config.fechaCreacion.substring(0, 10)}
                 </div>
             </div>
-            <div className="webAppInfoRow">
-                <div className="webAppInfoLbl">
-                    Ejecuciones: {props.config.numEjecuciones}
-                </div>
-                <div className="webAppInfoLbl">
-                    Pruebas: {props.config.numPruebas}
-                </div>
-            </div>
             <div className="containerRowSelectAppWebConfigList">
                 {renderPipeLinePrev()}
                 <div className="containerConfirmarListAppWebCard">

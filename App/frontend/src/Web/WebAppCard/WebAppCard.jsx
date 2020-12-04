@@ -148,21 +148,6 @@ function WebAppCard(props) {
                     Creada: {props.app.fechaCreacion.substring(0, 10)}
                 </div>
             </div>
-            <div className="webAppInfoRow">
-                <div className="webAppInfoLbl">
-                    Ejecuciones: {props.app.numEjecuciones}
-                </div>
-                {/* Como ponerle a los diferentes tipos de pruebas? */}
-                <div className="webAppInfoLbl">
-                    Pruebas: {props.app.numPruebas}
-                </div>
-                <div className="webAppInfoLbl">
-                    Configuraciones: {props.app.numConfiguraciones}
-                </div>
-                <div className="webAppInfoLbl">
-                    Versiones: {props.app.versiones.length}
-                </div>
-            </div>
             <div className="containerRowSelectAppWebList">{renderSelect()}</div>
         </div>
     );
