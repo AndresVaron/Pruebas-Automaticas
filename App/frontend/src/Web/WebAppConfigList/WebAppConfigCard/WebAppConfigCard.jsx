@@ -4,8 +4,6 @@ import './WebAppConfigCard.css';
 import RightArrowIcon from '../../../Media/Icons/right-arrow.svg';
 import axiosInstance from '../../../AxiosAPI.js';
 function WebAppCard(props) {
-    console.log(props);
-
     const renderPipeLinePrev = () => {
         return (
             <div className="containerPipeLineConfPrev">
@@ -69,7 +67,17 @@ function WebAppCard(props) {
                 {renderPipeLinePrev()}
                 <div className="containerConfirmarListAppWebCard">
                     <button
-                        className="bntCancelarWebAppList"
+                        className="bntEjecucionesWebAppList"
+                        onClick={() => {
+                            props.history.push(
+                                `/historico/${props.config._id}`
+                            );
+                        }}
+                    >
+                        Ver Ejecuciones
+                    </button>
+                    <button
+                        className="bntCancelarWebAppList2"
                         onClick={() => {
                             props.setShowDeleteConf(props.config);
                         }}

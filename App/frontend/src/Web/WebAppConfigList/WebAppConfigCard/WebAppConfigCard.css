@@ -61,3 +61,31 @@
     border-radius: 5px;
     font-size: 15px;
 }
+
+.bntCancelarWebAppList2 {
+    margin-right: 10px;
+    padding: 5px 15px;
+    color: white;
+    background-color: #c03221;
+    border-radius: 5px;
+    border: none;
+}
+
+.bntCancelarWebAppList2:focus {
+    outline: 0 !important;
+    box-shadow: 0 0 0 0.15rem rgb(192, 50, 33, 0.25);
+}
+.bntEjecucionesWebAppList {
+    margin-left: auto;
+    margin-right: 10px;
+    padding: 5px 15px;
+    color: white;
+    background-color: #2e6424;
+    border-radius: 5px;
+    border: none;
+}
+
+.bntEjecucionesWebAppList:focus {
+    outline: 0 !important;
+    box-shadow: 0 0 0 0.15rem rgb(192, 50, 33, 0.25);
+}

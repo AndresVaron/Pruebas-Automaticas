@@ -28,7 +28,6 @@ const VersionsManager = ({
                 reloadData();
             })
             .catch((err) => {
-                console.log(err);
                 setLoading(false);
             });
     };

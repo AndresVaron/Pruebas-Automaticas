@@ -1,0 +1,27 @@
+.Loading2 {
+    height: 100%;
+    width: 100%;
+    z-index: 8;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Loader2 {
+    border: 8px solid #e0e0e0;
+    border-top: 8px solid #1d2f6f; /* Blue */
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 2s linear infinite;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

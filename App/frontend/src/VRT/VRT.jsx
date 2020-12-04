@@ -97,7 +97,6 @@ const VRT = ({ match, history, location }) => {
                     }, 60000);
                 })
                 .catch((err) => {
-                    console.log(err);
                     setLoadingSubmit(false);
                 });
         }
@@ -240,7 +239,7 @@ const VRT = ({ match, history, location }) => {
                                     <div className="col-12 mb-4">
                                         <details>
                                             <summary className="text-center bg-white w-50 mx-auto rounded shadow p-2 no-select">
-                                                Reporte creado a las{' '} 
+                                                Reporte creado a las{' '}
                                                 {new Date(
                                                     creationDate
                                                 ).toLocaleString()}

@@ -39,7 +39,6 @@ function TestForm({ autId, setShowModal, web, reloadData }) {
                 reloadData();
             })
             .catch((err) => {
-                console.log(err);
                 setLoading(false);
             });
     };

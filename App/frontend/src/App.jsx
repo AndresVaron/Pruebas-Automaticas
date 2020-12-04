@@ -10,6 +10,8 @@ import Web from './Web/Web.jsx';
 import WebAppConfigList from './Web/WebAppConfigList/WebAppConfigList.jsx';
 import WebAppConfig from './Web/WebAppConfig/WebAppConfig.jsx';
 import VRT from './VRT/VRT.jsx';
+import Historico from './Historico/Historico.jsx';
+import Logs from './Historico/Logs/Logs.jsx';
 
 function App() {
     useEffect(() => {
@@ -43,6 +45,14 @@ function App() {
                     <Route
                         path="/(web|mobile)/:id_app/versions/:id_version/configs/:id_config"
                         render={() => <WebAppConfig />}
+                    />
+                    <Route
+                        path="/historico/:id_config"
+                        render={() => <Historico />}
+                    />
+                    <Route
+                        path="/logs/:id_config/:num_build"
+                        render={() => <Logs />}
                     />
                     <Route
                         path="/(web|mobile)/:id_app/versions/:id_version"
