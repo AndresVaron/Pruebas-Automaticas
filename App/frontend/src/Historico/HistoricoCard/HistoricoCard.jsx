@@ -14,6 +14,12 @@ function WebAppCard(props) {
                     SUCCESS
                 </div>
             );
+        } else if (props.build.result === 'UNSTABLE') {
+            return (
+                <div style={{ color: 'yellow' }} className="contentHistorico">
+                    UNSTABLE
+                </div>
+            );
         } else if (props.build.result === 'FAILURE') {
             return (
                 <div style={{ color: 'red' }} className="contentHistorico">
